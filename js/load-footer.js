@@ -45,5 +45,4 @@ if (typeof googleTranslateElementInit === 'function') {
   googleTranslateElementInit();
     }
   }
-
 });
