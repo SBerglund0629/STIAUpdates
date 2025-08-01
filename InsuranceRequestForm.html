@@ -13,8 +13,8 @@
 
 
       <!--StyleSheet-->
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/Footer.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Footer.css">
 
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -24,9 +24,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 
 <!--Flavicon-->
-<link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
-<link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
       <div class="row align-items-center">
         <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
           <a href="#">
-            <img src="Images/Logos/STIALogo.jpg" alt="Sunrise Texas Insurance Logo" class="img-fluid" id="indexlogo">
+            <img src="images/Logos/STIALogo.jpg" alt="Sunrise Texas Insurance Logo" class="img-fluid" id="indexlogo">
           </a>
         </div>
         <div class="col-12 col-md-6 d-flex flex-wrap justify-content-center gap-3 mb-3 mb-md-0 contact-info">
@@ -654,10 +654,13 @@
             Trampoline
            </label>
           </div>
-          <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="other" id="home-other-feature" name="homeOtherFeature">
-  <label class="form-check-label" for="home-other-feature">Other</label>
-  <input type="text" class="form-control-custom mt-2 hidden" name="homeOtherFeatureText" id="home-other-feature-text" placeholder="Specify other feature">
+          
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="featureOtherHome" value="Other">
+  <label class="form-check-label" for="featureOtherHome">Other</label>
+</div>
+<div id="otherFeatureTextContainerHome" class="hidden mt-2">
+  <input type="text" class="form-control" name="otherFeatureHomeText" placeholder="Please specify other feature">
 </div>
          </div>
          <h6 class="mt-4">
@@ -1313,6 +1316,107 @@ document.querySelectorAll('input[name="mailingSame"]').forEach(radio => {
 
         driversContainer.appendChild(div);
     });
+
+// Homeowners - How Many Stories
+const homeownersStoriesSelect = document.querySelector('#homeowners-section .stories-select');
+const homeownersStoriesInput = document.querySelector('#homeowners-section input[name="propertyStories"]');
+
+if (homeownersStoriesSelect && homeownersStoriesInput) {
+    homeownersStoriesSelect.addEventListener('change', () => {
+        homeownersStoriesInput.classList.toggle('hidden', homeownersStoriesSelect.value !== 'other');
+        if (homeownersStoriesSelect.value === 'other') {
+            homeownersStoriesInput.setAttribute('required', 'true');
+        } else {
+            homeownersStoriesInput.removeAttribute('required');
+            homeownersStoriesInput.value = ''; // Clear value if hidden
+        }
+    });
+}
+
+// Homeowners - Construction Type
+const homeownersConstructionSelect = document.querySelector('#homeowners-section .construction-select');
+const homeownersConstructionInput = document.querySelector('#homeowners-section input[name="constructionType"]');
+
+if (homeownersConstructionSelect && homeownersConstructionInput) {
+    homeownersConstructionSelect.addEventListener('change', () => {
+        homeownersConstructionInput.classList.toggle('hidden', homeownersConstructionSelect.value !== 'other');
+        if (homeownersConstructionSelect.value === 'other') {
+            homeownersConstructionInput.setAttribute('required', 'true');
+        } else {
+            homeownersConstructionInput.removeAttribute('required');
+            homeownersConstructionInput.value = ''; // Clear value if hidden
+        }
+    });
+}
+// Inside your DOMContentLoaded listener:
+
+// Homeowners - Other Feature Checkbox
+const featureOtherHomeCheckbox = document.getElementById('featureOtherHome');
+const otherFeatureTextContainerHome = document.getElementById('otherFeatureTextContainerHome');
+const otherFeatureHomeTextInput = document.querySelector('#otherFeatureTextContainerHome input[name="otherFeatureHomeText"]'); // Select the input inside the container
+
+if (featureOtherHomeCheckbox && otherFeatureTextContainerHome && otherFeatureHomeTextInput) {
+    featureOtherHomeCheckbox.addEventListener('change', () => {
+        const isChecked = featureOtherHomeCheckbox.checked;
+        otherFeatureTextContainerHome.classList.toggle('hidden', !isChecked);
+        if (isChecked) {
+            otherFeatureHomeTextInput.setAttribute('required', 'true');
+        } else {
+            otherFeatureHomeTextInput.removeAttribute('required');
+            otherFeatureHomeTextInput.value = ''; // Clear value if hidden
+        }
+    });
+}
+
+// Condo - Other Feature Checkbox
+// Note: You have an input directly inside the form-check div for condo-other-feature
+const condoOtherFeatureCheckbox = document.getElementById('condo-other-feature');
+const condoOtherFeatureTextInput = document.getElementById('condo-other-feature-text');
+
+if (condoOtherFeatureCheckbox && condoOtherFeatureTextInput) {
+    condoOtherFeatureCheckbox.addEventListener('change', () => {
+        const isChecked = condoOtherFeatureCheckbox.checked;
+        condoOtherFeatureTextInput.classList.toggle('hidden', !isChecked);
+        if (isChecked) {
+            condoOtherFeatureTextInput.setAttribute('required', 'true');
+        } else {
+            condoOtherFeatureTextInput.removeAttribute('required');
+            condoOtherFeatureTextInput.value = ''; // Clear value if hidden
+        }
+    });
+}
+
+// Condo - How Many Stories
+const condoStoriesSelect = document.querySelector('#condo-section .stories-select');
+const condoStoriesInput = document.querySelector('#condo-section input[name="specify_stories"]'); // Corrected name attribute
+
+if (condoStoriesSelect && condoStoriesInput) {
+    condoStoriesSelect.addEventListener('change', () => {
+        condoStoriesInput.classList.toggle('hidden', condoStoriesSelect.value !== 'other');
+        if (condoStoriesSelect.value === 'other') {
+            condoStoriesInput.setAttribute('required', 'true');
+        } else {
+            condoStoriesInput.removeAttribute('required');
+            condoStoriesInput.value = '';
+        }
+    });
+}
+
+// Condo - Construction Type
+const condoConstructionSelect = document.querySelector('#condo-section .construction-select');
+const condoConstructionInput = document.querySelector('#condo-section input[name="specify_construction_type"]'); // Corrected name attribute
+
+if (condoConstructionSelect && condoConstructionInput) {
+    condoConstructionSelect.addEventListener('change', () => {
+        condoConstructionInput.classList.toggle('hidden', condoConstructionSelect.value !== 'other');
+        if (condoConstructionSelect.value === 'other') {
+            condoConstructionInput.setAttribute('required', 'true');
+        } else {
+            condoConstructionInput.removeAttribute('required');
+            condoConstructionInput.value = '';
+        }
+    });
+}
 
     document.querySelectorAll('input[name="additionalInsured"]').forEach(radio => {
   radio.addEventListener('change', () => {
