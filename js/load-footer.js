@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (footerPlaceholder) {
         footerPlaceholder.innerHTML = `
-<footer class="py-5 mt-5 bg-orange text-white">
+<footer class="py-3 mt-3 bg-orange text-white">
   <div class="container">
     <div class="row">
       <div class="col-md-4 mb-4">
@@ -45,4 +45,5 @@ if (typeof googleTranslateElementInit === 'function') {
   googleTranslateElementInit();
     }
   }
+
 });
