@@ -436,3 +436,129 @@ footer.bg-orange a {
 footer.bg-orange a:hover {
   color: #ffe2c1 !important; /* Lighter on hover for visibility */
 }
+
+.hero-section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+
+.hero-content-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 15px;
+
+}
+
+
+
+.hero-section .row {
+height: auto;
+align-items: stretch;
+
+}
+
+
+
+/* Text Column - Centered */
+
+.hero-text-column {
+padding: 80px 15px 80px 0;
+text-align: Left;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+
+
+.hero-text-column > div {
+max-width: 500px;
+margin: 0 auto;
+
+}
+
+
+
+.welcome-text {
+  color: #f85a33; /* Orange color */
+  font-weight: bold;
+  font-size: 2em; /* Reduced from 2.5em */
+  margin-bottom: 10px;
+  white-space: nowrap; /* Prevents line break */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+* Main Heading - Changed to Black */
+
+.main-heading {
+color: #000000; /* Changed to BLACK */
+font-size: 3.0em;
+font-weight: bold;
+line-height: 1.1;
+margin-bottom: 20px;
+
+}
+
+
+
+.sub-text {
+font-size: 1.2em;
+color: #555;
+margin-bottom: 30px;
+
+}
+
+
+
+.btn-get-a-quote {
+  background-color: #fc9d04; /* Orange color */
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-get-a-quote:hover {
+    background-color: #f85b33;
+    color: white;
+
+}
+
+
+/* Image Column with Adjusted Fade Effect */
+.hero-image-column {
+position: relative;
+padding: 0;
+min-height: 400px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+
+
+.hero-main-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+/* Adjust the fade effect using mask-image */
+/* Increased the percentage where the fade starts and ends,
+and made the fade range smaller (e.g., 90% to 100% for a sharper fade,
+or 70% to 95% for a softer fade that doesn't cut off as much initially) */
+-webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+/* You can try different values like 80% to 100% or 70% to 95%
+The first percentage (75% here) is where the fade starts.
+The second percentage (100% here) is where it becomes fully transparent.*/
+
+}
