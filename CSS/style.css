@@ -399,7 +399,7 @@ a:hover {
   }
 
   footer {
-  background-color: #f85a33 !important; /* Sunrise orange - Force override */
+  background-color: #ff6600 !important; /* Sunrise orange - Force override */
   color: white !important; /* Force override */
   font-family: 'Lora', serif !important; /* Force override */
 }
@@ -417,9 +417,12 @@ footer h5 {
   color: white !important; /* Force override */
   font-weight: 600 !important; /* Force override */
 }
+.bg-orange {
+  background-color: #ff6600 !important; /* Use your exact brand orange */
+}
 
 .bg-orange {
-  background-color: ##f85a33 !important; /* Replace with your actual orange */
+  background-color: #ff6600 !important; /* Replace with your actual orange */
 }
 
 footer.bg-orange {
@@ -559,4 +562,5 @@ The first percentage (75% here) is where the fade starts.
 The second percentage (100% here) is where it becomes fully transparent.*/
 
 }
+
 
