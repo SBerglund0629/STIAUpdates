@@ -174,8 +174,8 @@ a:hover {
         margin-bottom: 1rem; /* Space between cards */
     }
 
-    .required {
-  color: red;
+    .required-star {
+  color: #dc3545;
 }
 
 /* Hover dropdowns */
@@ -562,6 +562,7 @@ The first percentage (75% here) is where the fade starts.
 The second percentage (100% here) is where it becomes fully transparent.*/
 
 }
+
 
 
 
