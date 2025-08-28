@@ -174,9 +174,10 @@ a:hover {
         margin-bottom: 1rem; /* Space between cards */
     }
 
-    .required {
-  color: red;
+    .required-star {
+  color: #dc3545;
 }
+
 
 /* Hover dropdowns */
 .navbar-nav .dropdown:hover .dropdown-menu {
@@ -205,15 +206,15 @@ a:hover {
 /* Styles for the active nav-link */
 .nav-pills .nav-item .nav-link.active { /* Highly specific selector for active state */
   background-color: transparent !important;
-  color: #f15a29 !important; /* Your desired orange color */
+  color: #f75b2c !important; /* Your desired orange color */
   font-weight: 700;
-  border-bottom: 3px solid #f15a29 !important; /* Force the orange underline with !important */
+  border-bottom: 3px solid #f75b2c !important; /* Force the orange underline with !important */
 }
 
 /* Styles for hover state */
 .nav-pills .nav-item .nav-link:hover { /* More specific selector for hover */
   color: #d94e1f !important; /* Slightly darker orange on hover */
-  border-bottom: 3px solid #f15a29 !important; /* Keep the orange underline on hover */
+  border-bottom: 3px solid #f75b2c !important; /* Keep the orange underline on hover */
 }
 
 /* If Bootstrap adds a background color when active, you might need to counter it directly */
@@ -241,7 +242,7 @@ a:hover {
             font-weight: 600;
             margin-bottom: 0.75rem;
         }
-        .form-step h6 {
+        .form-ste {
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
@@ -399,7 +400,7 @@ a:hover {
   }
 
   footer {
-  background-color: #ff6600 !important; /* Sunrise orange - Force override */
+  background-color: #f75b2c !important; /* Sunrise orange - Force override */
   color: white !important; /* Force override */
   font-family: 'Lora', serif !important; /* Force override */
 }
@@ -418,11 +419,11 @@ footer h5 {
   font-weight: 600 !important; /* Force override */
 }
 .bg-orange {
-  background-color: #ff6600 !important; /* Use your exact brand orange */
+  background-color: #f75b2c !important; /* Use your exact brand orange */
 }
 
 .bg-orange {
-  background-color: #ff6600 !important; /* Replace with your actual orange */
+  background-color: #f75b2c !important; /* Replace with your actual orange */
 }
 
 footer.bg-orange {
@@ -434,7 +435,7 @@ footer.bg-orange a {
 }
 
 footer.bg-orange a:hover {
-  color: #ffe2c1 !important; /* Lighter on hover for visibility */
+  color: black !important; /* Lighter on hover for visibility */
 }
 
 .hero-section {
@@ -483,7 +484,7 @@ margin: 0 auto;
 
 
 .welcome-text {
-  color: #f85a33; /* Orange color */
+  color: #f75b2c; /* Orange color */
   font-weight: bold;
   font-size: 2em; /* Reduced from 2.5em */
   margin-bottom: 10px;
@@ -492,7 +493,7 @@ margin: 0 auto;
   text-overflow: ellipsis;
 }
 
-* Main Heading - Changed to Black */
+* Main Heading  hanged to Black */
 
 .main-heading {
 color: #000000; /* Changed to BLACK */
@@ -514,24 +515,55 @@ margin-bottom: 30px;
 
 
 
-.btn-get-a-quote {
-  background-color: #fc9d04; /* Orange color */
-  color: white;
-  padding: 15px 30px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 1.1em;
-  display: inline-block;
-  transition: background-color 0.3s ease, color 0.3s ease;
+:root{
+    --st-orange:#f58634;    /* light orange from your site */
+    --st-orange-dark:#f75b2c;
+    --st-black:#2b2b2b;
+    --st-black-2:#111111;
+    --st-grey:#444444;
+    --st-border:#1f1f1f;
+  }
+
+  /* Button: orange bg, white text; a bit darker on hover/open */
+  .hero-quote-dropdown .btn-get-a-quote {
+  background-color: var(--st-orange, #f78c2a);
+  border-color: var(--st-orange, #f78c2a);
+  color: #fff;
 }
 
-.btn-get-a-quote:hover {
-    background-color: #f85b33;
-    color: white;
-
+/* Hover/focus/open: white bg, dark grey text, orange border */
+/* HOVER/FOCUS/OPEN: keep orange bg, dark grey text */
+.hero-quote-dropdown .btn-get-a-quote:hover,
+.hero-quote-dropdown .btn-get-a-quote:focus,
+.hero-quote-dropdown.show .btn-get-a-quote{
+  background-color: var(--st-orange) !important; /* stop it from going white */
+  border-color: var(--st-orange-dark) !important;
+  color: #444444 !important; /* text becomes dark grey */
 }
 
+/* Dropdown caret should inherit the text color */
+.hero-quote-dropdown .btn-get-a-quote.dropdown-toggle::after{
+  border-top-color: currentColor;
+}
+
+  /* Menu: black background, white text */
+  .hero-quote-dropdown .dropdown-menu-hero{
+    background-color:var(--st-black)!important;
+    border:1px solid var(--st-border)!important;
+    min-width:18rem;
+    padding:.5rem 0;
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.25);
+  }
+  .hero-quote-dropdown .dropdown-menu-hero .dropdown-item{
+    color:#fff!important;
+    padding:.6rem 1rem;
+  }
+  /* Hover: grey bg + orange text (match header) */
+  .hero-quote-dropdown .dropdown-menu-hero .dropdown-item:hover,
+  .hero-quote-dropdown .dropdown-menu-hero .dropdown-item:focus{
+    background-color:var(--st-grey)!important;
+    color:var(--st-orange)!important;
+  }
 
 /* Image Column with Adjusted Fade Effect */
 .hero-image-column {
@@ -562,3 +594,17 @@ The first percentage (75% here) is where the fade starts.
 The second percentage (100% here) is where it becomes fully transparent.*/
 
 }
+
+/* Open on hover (Bootstrap 5 friendly) */
+.hero-quote-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Make sure the menu sits above nearby elements and is clickable */
+.hero-quote-dropdown .dropdown-menu {
+  z-index: 2000;
+}
+
+/* If your hero image overlaps, keep text column above it */
+.hero-text-column { position: relative; z-index: 2; }
+.hero-image-column { position: relative; z-index: 1; }

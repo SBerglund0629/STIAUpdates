@@ -27,54 +27,80 @@
 </head>
 
 <body>
-
-  <!-- Header / Nav -->
-  <nav>
-    <div id="menu"></div>
-  </nav>
-
+ <!-- Header -->
+   <div id="header-placeholder">
+  </div>
 <section class="hero-section">
-  <div class="row g-0">
-    <!-- TEXT COLUMN -->
-    <div class="col-md-6 hero-text-column d-flex align-items-center">
-      <div class="container hero-content-container">
-        <div>
-          <h5 class="welcome-text">Welcome to Sunrise Texas</h5>
-          <h1 class="main-heading">Protecting What<br>Matters Most—<br>With Heart and Expertise</h1>
-          <p class="sub-text">We offer FREE quotes on all of your insurance needs.</p>
-          <a href="InsuranceRequestForm.html" class="btn btn-get-a-quote">Get a Quote</a>
+    <div class="row g-0">
+      <!-- TEXT COLUMN -->
+      <div class="col-md-6 hero-text-column d-flex align-items-center">
+        <div class="container hero-content-container">
+          <div>
+            <h5 class="welcome-text">Welcome to Sunrise Texas</h5>
+            <h1 class="main-heading">
+              Protecting What<br>Matters Most—<br>With Heart and Expertise
+            </h1>
+            <p class="sub-text">We offer FREE quotes on all of your insurance needs.</p>
+
+            <!-- Header-like dropdown in hero -->
+<div class="dropdown hero-quote-dropdown">
+  <button
+    class="btn btn-get-a-quote dropdown-toggle"
+    id="heroQuoteMenu"
+    type="button"
+    aria-expanded="false">
+    Get a Quote
+  </button>
+
+  <ul class="dropdown-menu dropdown-menu-hero" aria-labelledby="heroQuoteMenu">
+    <li><a class="dropdown-item" href="/InsuranceRequestForm.html">Personal Insurance Quote</a></li>
+    <li><a class="dropdown-item" href="/CommercialRequestForm.html">Commercial Insurance Quote</a></li>
+    <li><a class="dropdown-item" href="/LifeInsuranceRequestForm.html">Life Insurance Quote</a></li>
+  </ul>
+</div>
+            <!-- /dropdown -->
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- IMAGE COLUMN -->
-    <div class="col-md-6 hero-image-column">
-      <img src="images/SitePics/homepagenew.jpg" alt="Happy family outside" class="img-fluid hero-main-image">
+      <!-- IMAGE COLUMN -->
+      <div class="col-md-6 hero-image-column">
+        <img src="images/SitePics/homepagenew.jpg" alt="Happy family outside" class="img-fluid hero-main-image">
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
 
   <!-- Footer -->
-  <footer>
-    <div id="footer"></div>
-  </footer>
-
-  <!-- Bootstrap 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- jQuery (for legacy code only if still needed, optional) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- Load external nav & footer -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      $("#menu").load("assets/headerNav.html");
-      $("#footer").load("assets/footer.html");
-    });
+  <div id="footer-placeholder">
+  </div>
+ </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
   </script>
+<script src="js/load-footer.js"></script>
+<script src="js/load-header.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.hero-quote-dropdown').forEach(drop => {
+      const toggle = drop.querySelector('[data-bs-toggle="dropdown"]');
+      if (!toggle) return;
 
-  <!-- Custom JS -->
-  <script src="js/script.js"></script>
+      const dd = bootstrap.Dropdown.getOrCreateInstance(toggle, { autoClose: true });
+
+      // open on hover (desktop)
+      drop.addEventListener('mouseenter', () => dd.show());
+      drop.addEventListener('mouseleave', () => dd.hide());
+
+      // optional: allow focusing with keyboard to open
+      toggle.addEventListener('focus', () => dd.show());
+      toggle.addEventListener('blur',  () => dd.hide());
+    });
+  });
+</script>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>

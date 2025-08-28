@@ -22,12 +22,3 @@ $(document).ready(function() {
 
 
 
-function googleTranslateElementInit() {new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay: false, includedLanguages: ''}, 'google_translate_element');}
-
-document.addEventListener('DOMContentLoaded', function () {
-  fetch('assets/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-});

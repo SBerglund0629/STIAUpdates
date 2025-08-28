@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STIA - Insurance Request</title>
+  <title>STIA - Personal Insurance Request</title>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -13,8 +13,8 @@
 
 
       <!--StyleSheet-->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/Footer.css">
 
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -30,81 +30,20 @@
 </head>
 
 <body>
-    <!-- Header -->
-  <div class="alert alert-light mb-0 pb-3 border-bottom">
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
-          <a href="#">
-            <img src="images/Logos/STIALogo.jpg" alt="Sunrise Texas Insurance Logo" class="img-fluid" id="indexlogo">
-          </a>
-        </div>
-        <div class="col-12 col-md-6 d-flex flex-wrap justify-content-center gap-3 mb-3 mb-md-0 contact-info">
-                    <p class="m-2"><strong>Houston:</strong> <i class="fas fa-phone-alt"></i> <a href="tel:8326455100">(832) 645-5100</a></p>
-                    <p class="m-2"><strong>Lake Jackson:</strong> <i class="fas fa-phone-alt"></i> <a href="tel:9792825500">(979) 282-5500</a></p>
-                    <p class="m-2"><strong>Rio Grande Valley:</strong> <i class="fas fa-phone-alt"></i> <a href="tel:9565194663">(956) 519-4663</a></p>
-                    <p class="m-2"><strong>Fax:</strong> <i class="fas fa-fax"></i> (979) 393-0038</p>
-                    <p class="m-2"><strong>Email:</strong> <i class="fas fa-envelope-open-text"></i> <a href="mailto:docs@sunrisetexas.com">docs@sunrisetexas.com</a></p>
-                </div>
-
-                <div class="col-12 col-md-3 text-center text-md-end">
-                    <h5 class="mb-2">Se Habla Español</h5>
-                    <a href="#" class="btn btn-orange">Contact Us!</a>
-                </div>
-            </div>
-    </div>
+  <div id="header-placeholder">
   </div>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-light" id='navBar'>
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="nav-item active ">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link custom-dropdown-link" href="#" id="navbarDropdownMenuLink" role="button" aria-haspopup="true" aria-expanded="false">
-                Personal Insurance
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="AutoInsurance.html">Auto Insurance</a>
-                    <a class="dropdown-item" href="HomeInsurance.html">Home Insurance</a>
-                    <a class="dropdown-item" href="Renters.html">Renters Insurance</a>
-                    <a class="dropdown-item" href="Condo.html">Condo Insurance</a>
-                    <a class="dropdown-item" href="LifeInsurance.html">Life Insurance</a>
-                </div>
-            </li>
-
-             <div class='navCommercialLink justify-content-end ms-auto'> <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a class="nav-link float-end" href="CommercialInsurance.html">Commercial Insurance</a>
-                </li>
-            </ul>
-        </div>
-            <li class="nav-item dropdown">
-                <a class="nav-link custom-dropdown-link" href="#" id="navbarDropdownMenuLink" role="button" aria-haspopup="true" aria-expanded="false">
-                About Us
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="AboutUs.html">About Us</a>
-                    <a class="dropdown-item" href="OurStaff.html">Our Staff</a>
-                    <a class="dropdown-item" href="OurLocation.html">Our Location</a>
-                    <a class="dropdown-item" href="CompaniesWeRepresent.html">Companies We Represent</a>
-            </li>
-        </ul>
-       </div>
-</nav>
-    <!-- End of User-Provided Header and Navigation -->
 
 <!-- Start of the multi-step form -->
   <main class="container py-5">
    <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8">
-     <form action="https://formsubmit.co/docs@sunrisetexas.com" id="quoteForm" method="POST">
+     
       <div class="form-card">
+      <form id="quoteForm" action="https://formsubmit.co/docs@sunrisetexas.com" method="POST">
+      <input type="hidden" name="_next" value="https://sunrisetexas.com/ThankYou.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Personal Insurance Quote Request from Website!">
+
        <div class="progress-buttons">
         <button class="progress-button active" data-step="0" type="button">
          Getting Started
@@ -123,6 +62,11 @@
         <h2 class="mb-4">
          Getting Started
         </h2>
+        <p>We value your privacy and work hard to keep your information safe. 
+        Please complete this form as fully as possible so we can provide you with the most accurate quote.</p>
+        <br>
+        <p>*An Insurance quote does not impact your credit score. 
+        Quotes will take approximately 5-10 minutes to complete.</p>
         <div class="row g-3">
          <div class="col-md-6">
           <label class="form-label" for="firstName">
@@ -168,7 +112,7 @@
            </span>
           </label>
           <div class="form-check">
-           <input checked="" class="form-radio" id="quoteAuto" name="quoteType" type="radio" value="Auto"/>
+           <input class="form-radio" id="quoteAuto" name="quoteType" type="radio" value="Auto"/>
            <label class="form-check-label" for="quoteAuto">
             Auto
            </label>
@@ -193,6 +137,7 @@
          </button>
         </div>
        </div>
+
        <!-- Step 2: Auto Quote (Updated with detailed form) -->
        <div class="form-step" id="step-1">
         <h4>
@@ -207,10 +152,22 @@
         <div id="vehiclesContainer">
          <div class="vehicle-entry mb-3 p-3 border rounded">
           <div class="form-group-grid md-cols-4">
+            <div>
+              <label class="form-label" for="vehicleYear">Year</label>
            <input class="form-control-custom" name="vehicleYear" placeholder="YYYY" required="" type="text"/>
+            </div>
+            <div>
+              <label class="form-label" for="vehicleMake">Make</label>
            <input class="form-control-custom" name="vehicleMake" placeholder="e.g., Toyota" required="" type="text"/>
+           </div>
+           <div>
+            <label class="form-label" for="vehicleModel">Model</label>
            <input class="form-control-custom" name="vehicleModel" placeholder="e.g., Camry" required="" type="text"/>
+           </div>
+           <div>
+            <label class="form-label" for="vehicleVin">Vin</label>
            <input class="form-control-custom" name="vehicleVin" placeholder="17-digit VIN" required="" type="text"/>
+           </div>
           </div>
           <div class="mb-3">
            <label class="form-label">
@@ -246,10 +203,22 @@
          </span>
         </h5>
         <div class="form-group-grid md-cols-4">
-         <input class="form-control-custom" name="driverName" placeholder="Full Name" required="" type="text"/>
+          <div>
+          <label class="form-label" for="driverName">Full Name</label>
+         <input class="form-control-custom" name="driverName" placeholder="John Doe" required="" type="text"/>
+        </div>
+        <div>
+          <label class="form-label" for="driverDOB">DOB</label>
          <input class="form-control-custom" name="driverDOB" placeholder="DOB" required="" type="date"/>
+        </div>
+        <div>
+          <label class="form-label" for="driverLicense">License</label>
          <input class="form-control-custom" name="driverLicense" placeholder="License Number" required="" type="text"/>
-         <input class="form-control-custom" maxlength="4" name="driverSSN" pattern="\d{4}" placeholder="Last 4 of SSN" required="" type="text"/>
+        </div>
+        <div>
+          <label class="form-label" for="driverSSN">SSN</label>
+         <input class="form-control-custom" maxlength="4" name="driverSSN" pattern="\d{4}" placeholder="Last 4 of SSN" type="text"/>
+        </div>
         </div>
         <div class="mb-3">
          <label class="form-label">
@@ -275,7 +244,10 @@
         </h5>
         <div class="form-group-grid md-cols-3">
          <div class="col-span-1">
-          <input class="form-control-custom" name="driverAddress" placeholder="Home Address" required="" type="text"/>
+          <div>
+          <label class="form-label" for="driverAddress">Home Address</label>
+          <input class="form-control-custom" name="driverAddress" placeholder="123 Daisy St McAllen, TX" required="" type="text"/>
+          </div>
          </div>
          <div class="col-span-1">
           <label class="form-label">
@@ -300,7 +272,10 @@
           </div>
          </div>
          <div class="col-span-1">
-          <input class="form-control-custom" name="yearsAtResidence" placeholder="Years at Residence" required="" type="number"/>
+          <div>
+          <label class="form-label" for="yearsAtResidence">Years at Residence</label>
+          <input class="form-control-custom" name="yearsAtResidence" placeholder="e.g, 7 years" required="" type="number"/>
+          </div>
          </div>
         </div>
         <div class="mb-3">
@@ -364,20 +339,44 @@
         </div>
         <div class="mb-3 hidden" id="currentCoverageSection">
          <div id="detailedCoverageInputs">
-          <input class="form-control-custom mb-2" name="currentCarrier" placeholder="Current Carrier Name*" type="text"/>
-          <input class="form-control-custom mb-2" name="currentPolicyNumber" placeholder="Current Policy Number" type="text"/>
+          <div>
+          <label class="form-label" for="currentCarrier">Current Carrier Name</label>
+          <input class="form-control-custom mb-2" name="currentCarrier" placeholder="e.g., Progressive, Geico" type="text"/>
+          </div>
+          <div>
+          <label class="form-label" for="currentPolicyNumber">Current Policy Number</label>
+          <input class="form-control-custom mb-2" name="currentPolicyNumber" placeholder="Policy # (Optional)" type="text"/>
+          </div>
           <div class="mb-2">
            <label class="form-label" for="policyExpirationDate">
             Current Policy Expiration*
            </label>
            <input class="form-control-custom" id="policyExpirationDate" name="policyExpirationDate" type="date"/>
           </div>
+          <div>
+          <label class="form-label" for="currentPremium">Current Premium</label>
           <input class="form-control-custom mb-2" name="currentPremium" placeholder="$1,000" type="text"/>
-          <input class="form-control-custom mb-2" name="bodilyInjuryCurrent" placeholder="e.g.,25/50,100/30" type="text"/>
-          <input class="form-control-custom mb-2" name="propertyDamageCurrent" placeholder="e.g.,25k,50k" type="text"/>
-          <input class="form-control-custom mb-2" name="medicalPaymentsCurrent" placeholder="e.g.,2.5k,5k" type="text"/>
-          <input class="form-control-custom mb-2" name="comprehensiveDeductibleCurrent" placeholder="e.g.,$500, $1,000" type="text"/>
+          </div>
+          <div>
+          <label class="form-label" for="bodilyInjuryCurrent">Bodily Injury Liability</label>
+          <input class="form-control-custom mb-2" name="bodilyInjuryCurrent" placeholder="e.g.,25/50, 100/30" type="text"/>
+          </div>
+          <div>
+          <label class="form-label" for="propertyDamageCurrent">Property Damage</label>
+          <input class="form-control-custom mb-2" name="propertyDamageCurrent" placeholder="e.g., 25k, 50k" type="text"/>
+          </div>
+          <div>
+          <label class="form-label" for="medicalPaymentsCurrent">Medical Payment (PIP)</label>
+          <input class="form-control-custom mb-2" name="medicalPaymentsCurrent" placeholder="e.g., 2.5k, 5k" type="text"/>
+          </div>
+          <div>
+          <label class="form-label" for="comprehensiveDeductibleCurrent">Comprehensive Deductible</label>
+          <input class="form-control-custom mb-2" name="comprehensiveDeductibleCurrent" placeholder="e.g., $500, $1,000" type="text"/>
+          </div>
+          <div>
+          <label class="form-label" for="collisionDeductibleCurrent">Collision Deductible</label>
           <input class="form-control-custom mb-2" name="collisionDeductibleCurrent" placeholder="e.g., $500, $1,000" type="text"/>
+          </div>
           <label class="form-label mt-2">
            Any other current coverages (e.g., Roadside, Rental)?
           </label>
@@ -388,13 +387,33 @@
          <h6>
           Desired Coverage
          </h6>
-         <input class="form-control-custom mb-2" name="bodilyInjuryDesired" placeholder="e.g., 50/100, 250/500" type="text"/>
+         <div>
+          <label class="form-label" for="bodilyInjuryDesired">Bodily Injury Liability</label>
+          <input class="form-control-custom mb-2" name="bodilyInjuryDesired" placeholder="e.g., 50/100, 250/500" type="text"/>
+         </div>
+         <div>
+          <label class="form-label" for="propertyDamageDesired">Property Damamge</label>
          <input class="form-control-custom mb-2" name="propertyDamageDesired" placeholder="e.g., 50k, 100k" type="text"/>
+         </div>
+         <div>
+          <label class="form-label" for="medicalPaymentsDesired">Medical Payments (PIP)</label>
          <input class="form-control-custom mb-2" name="medicalPaymentsDesired" placeholder="e.g.,5k, 10k" type="text"/>
+         </div>
+         <div>
+          <label class="form-label" for="uninsuredBodilyInjury">Uninsured/Underinsured Bodily Injury</label>
          <input class="form-control-custom mb-2" name="uninsuredBodilyInjury" placeholder="e.g., 50/100, reject" type="text"/>
+         </div>
+         <div>
+          <label class="form-label" for="uninsuredPropertyDamage">Uninsured/Underinsured Motorist Property Damage</label>
          <input class="form-control-custom mb-2" name="uninsuredPropertyDamage" placeholder="e.g., 25k, reject" type="text"/>
+         </div><div>
+          <label class="form-label" for="comprehensiveDeductibleDesired">Comprehensive Deductible</label>
          <input class="form-control-custom mb-2" name="comprehensiveDeductibleDesired" placeholder="e.g., $250, $500" type="text"/>
+         </div>
+         <div>
+          <label class="form-label" for="collisionDeductibleDesired">Collision Deductible</label>
          <input class="form-control-custom mb-2" name="collisionDeductibleDesired" placeholder="e.g., $250, $500" type="text"/>
+         </div>
          <label class="form-label mt-2">
           Any other desired coverages (e.g., Roadside, Rental)?
          </label>
@@ -499,21 +518,37 @@
          <!-- Address Section -->
          <div class="mb-3">
           <label class="form-label">
+           Is this property a dwelling?
+          </label>
+          <div class="form-check">
+           <input class="form-radio" id="dwellingYes" name="isDwelling" type="radio" value="yes"/>
+           <label class="form-check-label" for="dwellingYes">
+            Yes
+           </label>
+          </div>
+          <div class="form-check">
+           <input class="form-radio" id="dwellingNo" name="isDwelling" type="radio" value="no"/>
+           <label class="form-check-label" for="dwellingNo">
+            No
+           </label>
+          </div>
+          <label class="form-label">
            Is the mailing address the same as the property address?
           </label>
           <div class="form-check">
-           <input checked="" class="form-check-input" id="mailingYes" name="mailingSame" type="radio" value="yes"/>
+           <input class="form-radio" id="mailingYes" name="mailingSame" type="radio" value="yes"/>
            <label class="form-check-label" for="mailingYes">
             Yes
            </label>
           </div>
           <div class="form-check">
-           <input class="form-check-input" id="mailingNo" name="mailingSame" type="radio" value="no"/>
+           <input class="form-radio" id="mailingNo" name="mailingSame" type="radio" value="no"/>
            <label class="form-check-label" for="mailingNo">
             No
            </label>
           </div>
          </div>
+         
          <!-- Mailing address section to show/hide -->
          <div class="hidden" id="mailingAddressSection">
           <div class="form-group-grid md-cols-2">
@@ -526,20 +561,43 @@
          <h6 class="mt-4">
           Property Address
          </h6>
-         <div class="form-group-grid md-cols-4" id="homeowners-address-fields">
+         <div class="form-group-grid md-cols-2" id="homeowners-address-fields">
           <input class="form-control-custom" name="propertyStreet" placeholder="Address Line 1" required="" type="text"/>
-          <input class="form-control-custom" name="propertycity" placeholder="propertyCity" required="" type="text"/>
-          <input class="form-control-custom" name="propertystate" placeholder="propertyState" required="" type="text"/>
-          <input class="form-control-custom" name="propertyzip" placeholder="propertyZip" required="" type="text"/>
+          <input class="form-control-custom" name="propertycity" placeholder="City" required="" type="text"/>
+          <input class="form-control-custom" name="propertystate" placeholder="State" required="" type="text"/>
+          <input class="form-control-custom" name="propertyzip" placeholder="Zip" required="" type="text"/>
          </div>
          <!-- Property Details -->
-         <h6 class="mt-4">
-          Property Details
+          <h6 class="mt-4">
+          <strong>Property Details</strong>
          </h6>
          <div class="form-group-grid md-cols-3">
           <div class="col">
+            <label class=" form-label">
+              Purchase Date:
+              <span class="required-star">
+           *
+          </span>
+            </label>
+            <input class="form-control-custom" name="purchaseDate" type="date"/>
+          </div>
+
+          <div class="col">
+           <label class="form-label">
+            Year of Construction
+            <span class="required-star">
+           *
+          </span>
+           </label>
+           <input class="form-control-custom" name="constructionYear" placeholder="e.g., 1995" type="text"/>
+          </div>
+
+          <div class="col">
            <label class="form-label">
             How Many Stories:
+            <span class="required-star">
+           *
+          </span>
            </label>
            <select class="form-select-custom stories-select" name="how_many_stories:">
             <option value="1">
@@ -560,9 +618,223 @@
            </select>
            <input class="form-control-custom mt-2 hidden" name="propertyStories" placeholder="Specify stories" type="text"/>
           </div>
+        
+          
+          <div class="col">
+           <label class="form-label">
+            Estimated Replacement Cost
+            <span class="required-star">
+           *
+          </span>
+           </label>
+           <input class="form-control-custom" name="replacementCost" placeholder="e.g., $300,000" type="text"/>
+          </div>
+
+          <div class="col">
+           <label class="form-label">
+            Square Footage
+            <span class="required-star">
+           *
+          </span>
+           </label>
+           <input class="form-control-custom" name="squareFootage" placeholder="e.g., 2000 sq ft" type="text"/>
+          </div>
+         </div>
+
+          <h6 class="mt-4">
+          <strong>Protection Information</strong>
+         </h6>
+         <div class="form-group-grid md-cols-2">
+         <div class="col">
+            <label class="form-label">
+              Distance to fire department (miles)
+              <span class="required-star">
+           *
+          </span>
+            </label>
+           <input class="form-control-custom" name="fireDepartment" placeholder="15" type="text"/>
+          </div>
+
+          <div class="col">
+            <label class="form-label">
+              Is property located within city limits?
+              <span class="required-star">
+           *
+          </span>
+            </label>
+            <div class="form-check">
+           <input class="form-radio" id="cityLimitsYes" name="cityLimits" type="radio" value="yes"/>
+           <label class="form-check-label" for="cityLimitsYes">
+            Yes
+           </label>
+          </div>
+          <div class="form-check">
+           <input class="form-radio" id="cityLimitsNo" name="cityLimits" type="radio" value="no"/>
+           <label class="form-check-label" for="cityLimitsNo">
+            No
+           </label>
+          </div>
+          </div>
+          <div class="col">
+            <label class="form-label">
+              Distance to fire hydrant (feet)
+              <span class="required-star">
+           *
+          </span>
+            </label>
+            <input class="form-control-custom" name="fireHydrant" placeholder="e.g., 25 feet" type="text"/>
+          </div>
+          <div class="col">
+            <label class="form-label">
+              Special personal property?
+            </label>
+            <div class="form-check">
+           <input class="form-radio" id="specialPropertyYes" name="specialPersonalProperty" type="radio" value="yes"/>
+           <label class="form-check-label" for="specialPropertyYes">
+            Yes
+           </label>
+          </div>
+          <div class="form-check">
+           <input class="form-radio" id="specialPropertyNo" name="specialPersonalProperty" type="radio" value="no"/>
+           <label class="form-check-label" for="specialPropertyNo">
+            No
+           </label>
+          </div>
+          </div>
+          <div class="col">
+            <label class="form-label">
+              Distance to tidal water or coast (miles): 
+              <span class="required-star">
+           *
+          </span>
+            </label>
+            <input class="form-control-custom" name="waterDistance" placeholder="e.g., 25 miles" type="text"/>
+          </div>
+         </div>
+        
+          <h6 class="mt-4">
+          <strong>Structure Information</strong>
+         </h6>
+          <div class="form-group-grid md-cols-3">
+           <div class="col">
+            <label class=" form-label">
+             Is this your primary residence? 
+            <span class="required-star">
+           *
+          </span>
+            </label>
+            <select class="form-select-custom residence-type" name="residence_type:">
+            <option value="priamry">
+             Primary
+            </option>
+            <option value="secondary">
+             Secondary
+            </option>
+            <option value="seasonal">
+             Seasonal
+            </option>
+            <option value="farm">
+             Farm
+            </option>
+            <option value="coc">
+             COC
+            </option>
+           </select>
+           <input class="form-control-custom mt-2 hidden" name="residenceTypeOther" placeholder="Specify residence type" type="text"/>
+          </div>
+          <div class="col">
+            <label class=" form-label">
+             Occupancy Type: 
+            <span class="required-star">
+           *
+          </span>
+            </label>
+            <select class="form-select-custom occupance-type" name="occupance_type:">
+            <option value="owner occupied">
+             Owner Occupied
+            </option>
+            <option value="renter occupied">
+             Renter Occupied
+            </option>
+            <option value="unoccupied">
+             Unoccupied
+            </option>
+            <option value="vacant">
+             Vacant
+            </option>
+           </select>
+           <input class="form-control-custom mt-2 hidden" name="OccupanceTypeOther" placeholder="Specify Occupancy type" type="text"/>
+          </div>
+
+            <div class="col">
+            <label class=" form-label">
+             Number of Families: 
+            <span class="required-star">
+           *
+          </span>
+            </label>
+            <select class="form-select-custom family-size" name="family_size:">
+            <option value="one family">
+             One Family
+            </option>
+            <option value="two families">
+             Two Families
+            </option>
+            <option value="three families">
+             Three Families
+            </option>
+            <option value="four families">
+             Four Families
+            </option>
+           </select>
+           <input class="form-control-custom mt-2 hidden" name="familySizeOther" placeholder="Number of Families" type="text"/>
+          </div>
+
+          <div class="col">
+            <label class=" form-label">
+             Number of Occupants 
+            <span class="required-star">
+           *
+          </span>
+            </label>
+            <select class="form-select-custom occupancy-size" name="occupancy_size:">
+            <option value="1">
+             1
+            </option>
+            <option value="2">
+             2
+            </option>
+            <option value="3">
+             3
+            </option>
+            <option value="4">
+             4
+            </option>
+            <option value="5">
+             5
+            </option>
+            <option value="6">
+             6
+            </option>
+            <option value="7">
+             7
+            </option>
+            <option value="8">
+             8
+            </option>
+            <option value="9+">
+             9 or more
+            </option>
+           </select>
+           <input class="form-control-custom mt-2 hidden" name="occupancySizeOther" placeholder="Number of Occupants" type="text"/>
+          </div>
+
           <div class="col">
            <label class="form-label">
             Construction Type:
+            <span class="required-star">
+           *
+          </span>
            </label>
            <select class="form-select-custom construction-select" name="construction_type:">
             <option value="wood">
@@ -583,24 +855,211 @@
            </select>
            <input class="form-control-custom mt-2 hidden" name="constructionType" placeholder="Specify construction type" type="text"/>
           </div>
+
           <div class="col">
-           <label class="form-label">
-            Estimated Replacement Cost
-           </label>
-           <input class="form-control-custom" name="replacementCost" placeholder="e.g., $300,000" type="text"/>
+            <label class=" form-label">
+             Roof Type:
+            <span class="required-star">
+           *
+          </span>
+            </label>
+            <select class="form-select-custom roof-type" name="roof_type:">
+            <option value="architectural shingles">
+             Architectural Shingles
+            </option>
+            <option value="asbestos">
+             Asbestos
+            </option>
+            <option value="asphalt shingles">
+             Asphalt Shingles
+            </option>
+            <option value="composition">
+             Composition
+            </option>
+            <option value="copper (flat)">
+             Copper (Flat)
+            </option>
+            <option value="copper (pitched)">
+             Copper (Pitched)
+            </option>
+            <option value="currogated steel (flat)">
+             Currogated Steel (Flat)
+            </option>
+            <option value="currogated steel (pitched)">
+             Currogated Steel (Pitched)
+            </option>
+            <option value="fiberglass">
+             Fiberglass
+            </option>
+            <option value="foam">
+             Foam
+            </option>
+            <option value="gravel">
+             Gravel
+            </option>
+            <option value="metal (flat)">
+             Metal (Flat)
+            </option>
+            <option value="metal (pitched)">
+             Metal (Pitched)
+            </option>
+            <option value="mineral fibershake">
+             Mineral Fibershake
+            </option>
+            <option value="plastic (flat)">
+             Plastic (Flat)
+            </option>
+            <option value="plastic (pitched)">
+             Plastic (Pitched)
+            </option>
+            <option value="rock">
+             Rock
+            </option>
+            <option value="rolled paper (flat)">
+             Rolled Paper (Flat)
+            </option>
+            <option value="rolled paper (pitched)">
+             Rolled Paper (Pitched)
+            </option>
+            <option value="rubber (flat)">
+             Rubber (Flat)
+            </option>
+            <option value="rubber (pitched)">
+             Rubber (Pitched)
+            </option>
+            <option value="slate">
+             Slate
+            </option>
+            <option value="solar">
+             Solar
+            </option>
+            <option value="thatch">
+             Thatch
+            </option>
+            <option value="tar">
+             Tar
+            </option>
+            <option value="tar and gravel">
+             Tar and Gravel
+            </option>
+            <option value="tile (day)">
+             Tile (Day)
+            </option>
+            <option value="tile (concrete)">
+             Tile (Concrete)
+            </option>
+            <option value="tile (spanish)">
+             Tile (Spanish)
+            </option>
+            <option value="tin (flat)">
+             Tin (Flat)
+            </option>
+            <option value="tin (pitched)">
+             Tin (Pitched)
+            </option>
+            <option value="wood fiberglass shingles">
+             Wood Fiberglass Shingles
+            </option>
+            <option value="wood shake">
+             Wood Shake
+            </option>
+            <option value="wood shingles">
+             Wood Shingles
+            </option>
+           </select>
+           <input class="form-control-custom mt-2 hidden" name="roofTypeOther" placeholder="Type of Roof" type="text"/>
           </div>
+
           <div class="col">
-           <label class="form-label">
-            Square Footage
-           </label>
-           <input class="form-control-custom" name="squareFootage" placeholder="e.g., 2000 sq ft" type="text"/>
+            <label class=" form-label">
+             Roof Design?
+            <span class="required-star">
+           *
+          </span>
+            </label>
+            <select class="form-select-custom roof-style" name="roof_style:">
+            <option value="dormer">
+             Dormer
+            </option>
+            <option value="flat">
+             Flat
+            </option>
+            <option value="gable">
+             Gable
+            </option>
+            <option value="gambrel">
+             Gambrel
+            </option>
+            <option value="hip">
+             Hip
+            </option>
+            <option value="mansard">
+             Mansard
+            </option>
+            <option value="pyramid">
+             Pyramid
+            </option>
+            <option value="shed">
+             Shed
+            </option>
+            <option value="turret">
+             Turet
+            </option>
+            </select>
+           <input class="form-control-custom mt-2 hidden" name="roofStyleOther" placeholder="Style of Roof" type="text"/>
           </div>
+
           <div class="col">
-           <label class="form-label">
-            Year of Construction
-           </label>
-           <input class="form-control-custom" name="constructionYear" placeholder="e.g., 1995" type="text"/>
+            <label class=" form-label">
+             Foundation Type
+            <span class="required-star">
+           *
+          </span>
+            </label>
+            <select class="form-select-custom foundation-type" name="foundation_type:">
+            <option value="basement-finished">
+             Basement-Finished
+            </option>
+            <option value="basement-partially finished">
+             Basement-Partially Finished
+            </option>
+            <option value="basement-unfinished">
+             Basement-Unfinished
+            </option>
+            <option value="basement-walkout">
+             Basement-Walkout
+            </option>
+            <option value="crawl space-enclosed">
+             Crawl Space-Enclosed
+            </option>
+            <option value="crawl space-open">
+             Crawl Space-Open
+            </option>
+            <option value="daylight basement-finished">
+             Daylight Basement-Finished
+            </option>
+            <option value="daylight basement-unfinished">
+             Daylight Basement-Unfinished
+            </option>
+            <option value="daylight basement-partially finished">
+             Daylight Basement-Partially Finished
+            </option>
+            <option value="hillside foundation">
+             Hillside Foundation
+            </option>
+            <option value="piers">
+             Piers
+            </option>
+            <option value="piling/stilts">
+             Piling/Stilts
+            </option>
+            <option value="slab">
+             Slab
+            </option>
+            </select>
+           <input class="form-control-custom mt-2 hidden" name="foundationTypeOther" placeholder="Type of Foundation" type="text"/>
           </div>
+
           <div class="col">
            <label class="form-label">
             Age of Roof
@@ -608,14 +1067,252 @@
            <input class="form-control-custom" name="roofAge" placeholder="e.g., 5 years" type="text"/>
           </div>
           <div class="col">
-           <label class="form-label">
-            Age of Water Heater
-           </label>
-           <input class="form-control-custom" name="waterAge" placeholder="e.g., 3 years" type="text"/>
+            <label class=" form-label">
+             Number of Full Baths
+            <span class="required-star">
+           *
+          </span>
+            </label>
+            <select class="form-select-custom full-baths" name="full_baths:">
+            <option value="1">
+             1
+            </option>
+            <option value="2">
+             2
+            </option>
+            <option value="3">
+             3
+            </option>
+            <option value="4">
+             4
+            </option>
+            <option value="5">
+             5
+            </option>
+            <option value="6">
+             6
+            </option>
+            <option value="7">
+             7
+            </option>
+            <option value="8">
+             8
+            </option>
+            <option value="9">
+             9
+            </option>
+            <option value="10+">
+             10 or More
+            </option>
+            </select>
+           <input class="form-control-custom mt-2 hidden" name="numberBathsOther" placeholder="Number of Full Baths" type="text"/>
           </div>
-         </div>
+
+          <div class="col">
+            <label class=" form-label">
+             Primary Heat Source:
+            <span class="required-star">
+           *
+          </span>
+            </label>
+            <select class="form-select-custom heat-source" name="heat_source:">
+            <option value="electric">
+             Electric
+            </option>
+            <option value="gas">
+             Gas
+            </option>
+            <option value="gas-forced">
+             Gas-Forced
+            </option>
+            <option value="gas-hotwater">
+             Gas-Hotwater
+            </option>
+            <option value="oil">
+             Oil
+            </option>
+            <option value="oil-forced">
+             Oil-Forced
+            </option>
+            <option value="oil-hotwater">
+             Oil-Hotwater
+            </option>
+            <option value="solid fuel">
+             Solid Fuel
+            </option>
+          </select>
+           <input class="form-control-custom mt-2 hidden" name="heatTypeOther" placeholder="Type of Heat" type="text"/>
+          </div>
+
+          <div class="col">
+            <label class="form-label">
+              Do you have an alternate source of heat?
+              <span class="required-star">
+           *
+          </span>
+            </label>
+            <div class="form-check">
+           <input class="form-check-input" id="altHeatYes" name="alternateHeat" type="radio" value="yes"/>
+           <label class="form-check-label" for="altHeatYes">
+            Yes
+           </label>
+          </div>
+          <div class="form-check">
+           <input class="form-check-input" id="altHeatYesNo" name="alternateHeatSame" type="radio" value="no"/>
+           <label class="form-check-label" for="altHeatYesNo">
+            No
+           </label>
+          </div>
+          </div>
+
+          <div class="col">
+           <label class="form-label">
+            Year Heating Updated:
+            <span class="required-star">
+           *
+          </span>
+           </label>
+           <input class="form-control-custom" name="heatYear" placeholder="YYYY" type="text"/>
+          </div>
+          
+          <div class="col">
+          <label class="form-label">
+              Does this home have an electric circuit breaker?
+              <span class="required-star">
+           *
+          </span>
+            </label>
+            <div class="form-check">
+           <input class="form-check-input" id="breakerYes" name="breakerSame" type="radio" value="yes"/>
+           <label class="form-check-label" for="breakerYes">
+            Yes
+           </label>
+          </div>
+          <div class="form-check">
+           <input class="form-check-input" id="breakerNo" name="breakerSame" type="radio" value="no"/>
+           <label class="form-check-label" for="breakerNo">
+            No
+           </label>
+          </div>
+          </div>
+
+          <div class="col">
+           <label class="form-label">
+            Year water heater updated
+            <span class="required-star">
+           *
+          </span>
+           </label>
+           <input class="form-control-custom" name="waterAge" placeholder="YYYY" type="text"/>
+          </div>
+
+          <div class="col">
+           <label class="form-label">
+            Year electrical updated
+            <span class="required-star">
+           *
+          </span>
+           </label>
+           <input class="form-control-custom" name="electricalAge" placeholder="YYYY" type="text"/>
+          </div>
+
+          <div class="col">
+           <label class="form-label">
+            Year plumbing updated
+            <span class="required-star">
+           *
+          </span>
+           </label>
+           <input class="form-control-custom" name="plumbingAge" placeholder="YYYY" type="text"/>
+          </div>
+
+          <div class="col">
+          <label class="form-label">
+              Do you conduct any type of business on this property (e.g. beauty salon, daycare)?
+              <span class="required-star">
+           *
+          </span>
+            </label>
+            <div class="form-check">
+           <input class="form-check-input" id="businessYes" name="homeBusiness" type="radio" value="yes"/>
+           <label class="form-check-label" for="businessYes">
+            Yes
+           </label>
+          </div>
+          <div class="form-check">
+           <input class="form-check-input" id="businessNo" name="homeBusiness" type="radio" value="no"/>
+           <label class="form-check-label" for="businessNo">
+            No
+           </label>
+          </div>
+          </div>
+
+          <div class="col">
+          <label class="form-label">
+              First Mortgagee?
+              <span class="required-star">
+           *
+          </span>
+            </label>
+            <div class="form-check">
+           <input class="form-check-input" id="firstMortgageeYes" name="firstMortgagee" type="radio" value="yes"/>
+           <label class="form-check-label" for="firstMortgageeYes">
+            Yes
+           </label>
+          </div>
+          <div class="form-check">
+           <input class="form-check-input" id="firstMortgageeNo" name="firstMortgagee" type="radio" value="no"/>
+           <label class="form-check-label" for="firstMortgageeNo">
+            No
+           </label>
+          </div>
+          </div>
+
+          <div class="col">
+          <label class="form-label">
+              Second Mortgagee?
+              <span class="required-star">
+           *
+          </span>
+            </label>
+            <div class="form-check">
+           <input class="form-check-input" id="secondMortgageeYes" name="secondMortgagee" type="radio" value="yes"/>
+           <label class="form-check-label" for="secondMortgageeYes">
+            Yes
+           </label>
+          </div>
+          <div class="form-check">
+           <input class="form-check-input" id="secondMortgageeNo" name="secondMortgagee" type="radio" value="no"/>
+           <label class="form-check-label" for="secondMortgageeNo">
+            No
+           </label>
+          </div>
+          </div>
+
+        <div class="col">
+          <label class="form-label">
+              Do you own any dogs of these breeds (Rottweiler, German Shepherd, Doberman, Pitbull, Chow, Wolf Hybrid, or a mix of these)?
+              <span class="required-star">
+           *
+          </span>
+            </label>
+            <div class="form-check">
+           <input class="form-check-input" id="restrictedDogYes" name="restrictedDog" type="radio" value="yes"/>
+           <label class="form-check-label" for="restrictedDogYes">
+            Yes
+           </label>
+          </div>
+          <div class="form-check">
+           <input class="form-check-input" id="restrictedDogNo" name="restrictedDog" type="radio" value="no"/>
+           <label class="form-check-label" for="restrictedDogNo">
+            No
+           </label>
+          </div>
+          </div>
+          </div>
+
          <h6 class="mt-4">
-          Other Features
+          <strong>Property Accessories</strong>
          </h6>
          <div class="form-group-grid md-cols-4">
           <div class="form-check">
@@ -637,9 +1334,21 @@
            </label>
           </div>
           <div class="form-check">
+           <input class="form-check-input" id="home-fireSprinkler" name="homeFireExt" type="checkbox" value="fireSprinkler"/>
+           <label class="form-check-label" for="home-fireSprinkler">
+            Indoor Fire Sprinkler
+           </label>
+          </div>
+          <div class="form-check">
            <input class="form-check-input" id="home-alarm" name="homeAlarm" type="checkbox" value="alarm"/>
            <label class="form-check-label" for="home-alarm">
-            Central Station Alarm
+            Burglar Alarm
+           </label>
+          </div>
+          <div class="form-check">
+           <input class="form-check-input" id="home-gate" name="homeGate" type="checkbox" value="gate"/>
+           <label class="form-check-label" for="home-gate">
+            Gated Community
            </label>
           </div>
           <div class="form-check">
@@ -654,31 +1363,48 @@
             Trampoline
            </label>
           </div>
-          <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="other" id="home-other-feature" name="homeOtherFeature">
-  <label class="form-check-label" for="home-other-feature">Other</label>
-  <input type="text" class="form-control-custom mt-2 hidden" name="homeOtherFeatureText" id="home-other-feature-text" placeholder="Specify other feature">
+          
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" id="featureOtherHome" value="Other">
+  <label class="form-check-label" for="featureOtherHome">Other</label>
+</div>
+<div id="otherFeatureTextContainerHome" class="hidden mt-2">
+  <input type="text" class="form-control" name="otherFeatureHomeText" placeholder="Please specify other feature">
 </div>
          </div>
-         <h6 class="mt-4">
-          Current Coverage Information
+         <h6 class="mt-4"><strong>
+          Current Coverage Information</strong>
          </h6>
-         <div class="form-group-grid md-cols-3">
-          <input class="form-control-custom" name="carrierName" placeholder="Carrier Name" type="text"/>
-          <input class="form-control-custom" name="policyNumber" placeholder="Policy Number" type="text"/>
-          <div class="col">
-           <label class="form-label">
-            Expiration Date
-           </label>
-           <input class="form-control-custom" name="expirationDate" type="date"/>
+         <div class="mb-3">
+         <label class="form-label" for="currentCarrier">Current Carrier Name</label>
+          <input class="form-control-custom mb-2" name="currentCarrier" placeholder="e.g., Progressive, Geico" type="text"/>
           </div>
-         </div>
+          <div>
+          <label class="form-label" for="currentPolicyNumber">Current Policy Number</label>
+          <input class="form-control-custom mb-2" name="currentPolicyNumber" placeholder="Policy # (Optional)" type="text"/>
+          </div>
+          <div class="mb-2">
+           <label class="form-label" for="policyExpirationDate">
+            Current Policy Expiration*
+           </label>
+           <input class="form-control-custom" id="policyExpirationDate" name="policyExpirationDate" type="date"/>
+          </div>
+          <div>
+
          <h6 class="mt-4">
-          Desired Insurance Information
+          <strong>Desired Insurance Information</strong>
          </h6>
-         <div class="form-group-grid md-cols-2">
-          <input class="form-control-custom" name="deductible_desired" placeholder="Deductible Desired" type="text"/>
-          <input class="form-control-custom" name="amount_of_liability_desired" placeholder="Amount of Liability Desired" type="text"/>
+         <div class="mb-2">
+          <label class="form-label" for="policyExpirationDate">
+            Desired Deductible
+           </label>
+          <input class="form-control-custom" name="deductible_desired" placeholder="e.g., $1000" type="text"/>
+         </div>
+         <div class="mb-2">
+          <label class="form-label" for="policyExpirationDate">
+            Desired Liability
+           </label>
+          <input class="form-control-custom" name="amount_of_liability_desired" placeholder="e.g., $50k/ $100k" type="text"/>
          </div>
          <div class="mb-3">
           <label class="form-label">
@@ -696,6 +1422,7 @@
           + Add Another Claim
          </button>
         </div>
+        </div>
         <!-- Condo Insurance Section -->
         <div class="hidden" id="condo-section">
          <h5>
@@ -707,25 +1434,25 @@
            Is the mailing address the same as the property address?
           </label>
           <div class="form-check">
-           <input checked="" class="form-check-input" id="mailingYes" name="mailingSame" type="radio" value="yes"/>
-           <label class="form-check-label" for="mailingYes">
+           <input class="form-check-input" id="condoMailingYes" name="condoMailingSame" type="radio" value="yes"/>
+           <label class="form-check-label" for="condoMailingYes">
             Yes
            </label>
           </div>
           <div class="form-check">
-           <input class="form-check-input" id="mailingNo" name="mailingSame" type="radio" value="no"/>
-           <label class="form-check-label" for="mailingNo">
+           <input class="form-check-input" id="condoMailingNo" name="condoMailingSame" type="radio" value="no"/>
+           <label class="form-check-label" for="condoMailingNo">
             No
            </label>
           </div>
          </div>
          <!-- Mailing address section to show/hide -->
-         <div class="hidden" id="mailingAddressSection">
+         <div class="hidden" id="condoMailingAddressSection">
           <div class="form-group-grid md-cols-2">
-           <input class="form-control-custom" name="mailingStreet" placeholder="Mailing Street Address" type="text"/>
-           <input class="form-control-custom" name="mailingCity" placeholder="Mailing City" type="text"/>
-           <input class="form-control-custom" name="mailingState" placeholder="Mailing State" type="text"/>
-           <input class="form-control-custom" name="mailingZip" placeholder="Mailing Zip Code" type="text"/>
+           <input class="form-control-custom" name="condoMailingStreet" placeholder="Mailing Street Address" type="text"/>
+           <input class="form-control-custom" name="condoMailingCity" placeholder="Mailing City" type="text"/>
+           <input class="form-control-custom" name="condoMailingState" placeholder="Mailing State" type="text"/>
+           <input class="form-control-custom" name="condoMailingZip" placeholder="Mailing Zip Code" type="text"/>
           </div>
          </div>
          <!-- Property Details -->
@@ -972,7 +1699,7 @@
             </label>
            </div>
            <div class="form-check">
-            <input checked="" class="form-radio" id="insuredNo" name="additionalInsured" type="radio" value="no"/>
+            <input class="form-radio" id="insuredNo" name="additionalInsured" type="radio" value="no"/>
             <label class="form-check-label">
              No
             </label>
@@ -1043,13 +1770,10 @@
      </form>
     </div>
    </div>
-   <input name="_subject" type="hidden" value="New Insurance Quote Request!"/>
-   <input name="_captcha" type="hidden" value="false"/>
-   <input name="_template" type="hidden" value="table"/>
-   <input name="_next" type="hidden" value="https://sunrisetexas.com/thank-you.html"/>
-  </main>
+   </main>
   <div id="footer-placeholder">
   </div>
+
   <script>
    document.addEventListener('DOMContentLoaded', () => {
     // --- ELEMENT SELECTORS ---
@@ -1159,32 +1883,56 @@
             }
         });
     });
-const homeQuoteTypeSelect = document.getElementById('homeQuoteType');
-const homeownersFields = document.getElementById('homeowners-section');
-const condoFields = document.getElementById('condo-section');
-const rentersFields = document.getElementById('renters-section');
+const homeSelect = document.getElementById('homeQuoteType');
+const sectionByValue = {
+    homeowners: document.getElementById('homeowners-section'),
+    condo:      document.getElementById('condo-section'),
+    renters:    document.getElementById('renters-section')
+  };
 
-// Initial hide
-homeownersFields.classList.add('hidden');
-condoFields.classList.add('hidden');
-rentersFields.classList.add('hidden');
-
-homeQuoteTypeSelect.addEventListener('change', () => {
-    const value = homeQuoteTypeSelect.value;
-
-    // Explicitly hide all
-    homeownersFields.classList.add('hidden');
-    condoFields.classList.add('hidden');
-    rentersFields.classList.add('hidden');
-
-    if (value === 'homeowners') {
-        homeownersFields.classList.remove('hidden');
-    } else if (value === 'condo') {
-        condoFields.classList.remove('hidden');
-    } else if (value === 'renters') {
-        rentersFields.classList.remove('hidden');
+  function showPropertySection(value) {
+    console.log('showPropertySection called with value:', value); // <-- Debug line
+    // hide all
+    Object.values(sectionByValue).forEach(el => el && el.classList.add('hidden'));
+    // show selected
+    const target = sectionByValue[value];
+    if (target) {
+        target.classList.remove('hidden');
+        console.log('Showing section:', target.id); // <-- Debug line
+    } else {
+        console.log('Could not find section for value:', value); // <-- Debug line
     }
-});
+}
+
+if (homeSelect) {
+    console.log('Home insurance dropdown found. Initializing...'); // <-- Debug line
+    // initialize based on current value (handles browser autofill/going back)
+    showPropertySection(homeSelect.value);
+    // update on change
+    homeSelect.addEventListener('change', e => showPropertySection(e.target.value));
+} else {
+    console.error('Home insurance dropdown (#homeQuoteType) not found!'); // <-- Debug line
+}
+  // --- Condo mailing toggle (scoped) ---
+  const condoMailingSection = document.getElementById('condoMailingAddressSection');
+  function updateCondoMailing(){
+    const selected = document.querySelector('#condo-section input[name="condoMailingSame"]:checked');
+    condoMailingSection?.classList.toggle('hidden', !selected || selected.value === 'yes');
+  }
+  document.querySelectorAll('#condo-section input[name="condoMailingSame"]').forEach(r => {
+    r.addEventListener('change', updateCondoMailing);
+  });
+  updateCondoMailing(); // init
+
+  // --- Homeowners mailing toggle (null-safe) ---
+  const hoMailingSection = document.getElementById('mailingAddressSection');
+  document.querySelectorAll('#homeowners-section input[name="mailingSame"]').forEach(r => {
+    r.addEventListener('change', () => {
+      const checked = document.querySelector('#homeowners-section input[name="mailingSame"]:checked');
+      hoMailingSection?.classList.toggle('hidden', !checked || checked.value === 'yes');
+    });
+  });
+
 
 const reviewSection = document.getElementById('review-section');
 
@@ -1314,6 +2062,106 @@ document.querySelectorAll('input[name="mailingSame"]').forEach(radio => {
         driversContainer.appendChild(div);
     });
 
+// Homeowners - How Many Stories
+const homeownersStoriesSelect = document.querySelector('#homeowners-section .stories-select');
+const homeownersStoriesInput = document.querySelector('#homeowners-section input[name="propertyStories"]');
+
+if (homeownersStoriesSelect && homeownersStoriesInput) {
+    homeownersStoriesSelect.addEventListener('change', () => {
+        homeownersStoriesInput.classList.toggle('hidden', homeownersStoriesSelect.value !== 'other');
+        if (homeownersStoriesSelect.value === 'other') {
+            homeownersStoriesInput.setAttribute('required', 'true');
+        } else {
+            homeownersStoriesInput.removeAttribute('required');
+            homeownersStoriesInput.value = ''; // Clear value if hidden
+        }
+    });
+}
+
+// Homeowners - Construction Type
+const homeownersConstructionSelect = document.querySelector('#homeowners-section .construction-select');
+const homeownersConstructionInput = document.querySelector('#homeowners-section input[name="constructionType"]');
+
+if (homeownersConstructionSelect && homeownersConstructionInput) {
+    homeownersConstructionSelect.addEventListener('change', () => {
+        homeownersConstructionInput.classList.toggle('hidden', homeownersConstructionSelect.value !== 'other');
+        if (homeownersConstructionSelect.value === 'other') {
+            homeownersConstructionInput.setAttribute('required', 'true');
+        } else {
+            homeownersConstructionInput.removeAttribute('required');
+            homeownersConstructionInput.value = ''; // Clear value if hidden
+        }
+    });
+}
+
+// Homeowners - Other Feature Checkbox
+const featureOtherHomeCheckbox = document.getElementById('featureOtherHome');
+const otherFeatureTextContainerHome = document.getElementById('otherFeatureTextContainerHome');
+const otherFeatureHomeTextInput = document.querySelector('#otherFeatureTextContainerHome input[name="otherFeatureHomeText"]'); // Select the input inside the container
+
+if (featureOtherHomeCheckbox && otherFeatureTextContainerHome && otherFeatureHomeTextInput) {
+    featureOtherHomeCheckbox.addEventListener('change', () => {
+        const isChecked = featureOtherHomeCheckbox.checked;
+        otherFeatureTextContainerHome.classList.toggle('hidden', !isChecked);
+        if (isChecked) {
+            otherFeatureHomeTextInput.setAttribute('required', 'true');
+        } else {
+            otherFeatureHomeTextInput.removeAttribute('required');
+            otherFeatureHomeTextInput.value = ''; // Clear value if hidden
+        }
+    });
+}
+
+// Condo - Other Feature Checkbox
+// Note: You have an input directly inside the form-check div for condo-other-feature
+const condoOtherFeatureCheckbox = document.getElementById('condo-other-feature');
+const condoOtherFeatureTextInput = document.getElementById('condo-other-feature-text');
+
+if (condoOtherFeatureCheckbox && condoOtherFeatureTextInput) {
+    condoOtherFeatureCheckbox.addEventListener('change', () => {
+        const isChecked = condoOtherFeatureCheckbox.checked;
+        condoOtherFeatureTextInput.classList.toggle('hidden', !isChecked);
+        if (isChecked) {
+            condoOtherFeatureTextInput.setAttribute('required', 'true');
+        } else {
+            condoOtherFeatureTextInput.removeAttribute('required');
+            condoOtherFeatureTextInput.value = ''; // Clear value if hidden
+        }
+    });
+}
+
+// Condo - How Many Stories
+const condoStoriesSelect = document.querySelector('#condo-section .stories-select');
+const condoStoriesInput = document.querySelector('#condo-section input[name="specify_stories"]'); // Corrected name attribute
+
+if (condoStoriesSelect && condoStoriesInput) {
+    condoStoriesSelect.addEventListener('change', () => {
+        condoStoriesInput.classList.toggle('hidden', condoStoriesSelect.value !== 'other');
+        if (condoStoriesSelect.value === 'other') {
+            condoStoriesInput.setAttribute('required', 'true');
+        } else {
+            condoStoriesInput.removeAttribute('required');
+            condoStoriesInput.value = '';
+        }
+    });
+}
+
+// Condo - Construction Type
+const condoConstructionSelect = document.querySelector('#condo-section .construction-select');
+const condoConstructionInput = document.querySelector('#condo-section input[name="specify_construction_type"]'); // Corrected name attribute
+
+if (condoConstructionSelect && condoConstructionInput) {
+    condoConstructionSelect.addEventListener('change', () => {
+        condoConstructionInput.classList.toggle('hidden', condoConstructionSelect.value !== 'other');
+        if (condoConstructionSelect.value === 'other') {
+            condoConstructionInput.setAttribute('required', 'true');
+        } else {
+            condoConstructionInput.removeAttribute('required');
+            condoConstructionInput.value = '';
+        }
+    });
+}
+
     document.querySelectorAll('input[name="additionalInsured"]').forEach(radio => {
   radio.addEventListener('change', () => {
     const show = radio.value === 'yes' && radio.checked;
@@ -1341,14 +2189,14 @@ document.getElementById('add-renters-insured-btn')?.addEventListener('click', ()
 });
 
     // --- INITIAL VISIBILITY STATE ---
-    occupationSection.classList.add('hidden');
-    insuranceSection.classList.add('hidden');
-    accidentComment.classList.add('hidden');
-    currentCoverageSection.classList.add('hidden');
-    driversContainer.classList.add('hidden');
-    addDriverBtn.classList.add('hidden');
-    rentersInsuredContainer.classList.add('hidden');
-    addRentersInsuredBtn.classList.add('hidden');
+    occupationSection?.classList.add('hidden');
+insuranceSection?.classList.add('hidden');
+accidentComment?.classList.add('hidden');
+currentCoverageSection?.classList.add('hidden');
+driversContainer?.classList.add('hidden');
+addDriverBtn?.classList.add('hidden');
+rentersInsuredContainer?.classList.add('hidden');
+addRentersInsuredBtn?.classList.add('hidden');
 
     // --- SHOW FIRST STEP ON LOAD ---
     showStep(0);
@@ -1384,9 +2232,49 @@ document.getElementById('add-renters-insured-btn')?.addEventListener('click', ()
             setTimeout(googleTranslateElementInit, 100);
         }
     }
-  </script>
 
-    <script src="js/load-footer.js"></script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const claimsContainer = document.getElementById('homeowners-claims-container');
+  const addClaimBtn = document.getElementById('add-homeowners-claim-btn');
+
+  let claimIndex = 0;
+
+  addClaimBtn.addEventListener('click', () => {
+    claimIndex++;
+
+    // Create a new claim row
+    const claimDiv = document.createElement('div');
+    claimDiv.classList.add('claim-entry', 'mb-3');
+
+    claimDiv.innerHTML = `
+      <div class="row g-2">
+        <div class="col-md-6">
+          <label class="form-label">Claim Date <span class="required-star">*</span></label>
+          <input type="date" name="homeownersClaimDate${claimIndex}" class="form-control form-control-sm" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Claim Amount <span class="required-star">*</span></label>
+          <input type="number" name="homeownersClaimAmount${claimIndex}" class="form-control form-control-sm" placeholder="e.g., 5000" required>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Claim Description</label>
+          <textarea name="homeownersClaimDescription${claimIndex}" class="form-control form-control-sm" rows="2" placeholder="Brief description of the claim"></textarea>
+        </div>
+      </div>
+    `;
+
+    claimsContainer.appendChild(claimDiv);
+  });
+});
+   </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
+  </script>
+<script src="js/load-footer.js"></script>
+<script src="js/load-header.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
 
 
 </body>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STIA - Life Insurance Request</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+      <!--StyleSheet-->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/Footer.css">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!--google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+<!--Flavicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+</head>
+
+<body>
+  <div id="header-placeholder">
+  </div>
+
+<!--Start of Life Insurance Form-->
+<main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="form-card p-3 p-md-4 border rounded-3 shadow-sm">
+
+          <form id="lifeQuoteForm" action="https://formsubmit.co/docs@sunrisetexas.com" method="POST" novalidate>
+            <!-- FormSubmit hidden fields -->
+            <input type="hidden" name="_next" value="https://sunrisetexas.com/ThankYou.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Life Insurance Quote Request from Website!">
+            <input type="text" name="_honey" style="display:none"/>
+
+            <!-- Progress -->
+            <div class="progress-buttons">
+              <button class="progress-button active" data-step="0" type="button">Getting Started</button>
+              <button class="progress-button" data-step="1" type="button">Mailing Address</button>
+              <button class="progress-button" data-step="2" type="button">Insurance Details</button>
+              <button class="progress-button" data-step="3" type="button">Review & Submit</button>
+            </div>
+
+            <!-- Step 1: Getting Started -->
+            <div class="form-step" id="step-0">
+              <h2 class="mb-4">Getting Started</h2>
+              <p>We value your privacy and work hard to keep your information safe. Please complete this form as fully as possible so we can provide you with the most accurate quote.</p>
+              <p class="mb-4">*An Insurance quote does not impact your credit score. Quotes will take approximately 3–5 minutes to complete.</p>
+
+              <h5 class="mb-3">Primary Insured</h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="firstName">First Name <span class="required-star">*</span></label>
+                  <input class="form-control" id="firstName" name="First-Name" type="text" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="lastName">Last Name <span class="required-star">*</span></label>
+                  <input class="form-control" id="lastName" name="Last-Name" type="text" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="email">Email <span class="required-star">*</span></label>
+                  <input class="form-control" id="email" name="Email" type="email" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="phone">Phone Number <span class="required-star">*</span></label>
+                  <input class="form-control" id="phone" name="Phone-Number" type="tel" required>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label d-block">Insurance Type <span class="required-star">*</span></label>
+
+                  <!-- Term Life -->
+                  <div class="form-check d-flex align-items-start mb-3">
+                    <input class="form-radio" id="typeTerm" name="Insurance-Type" type="radio" value="Term" required>
+                    <div class="ms-2">
+                      <label class="form-check-label fw-bold" for="typeTerm">Term Life</label>
+                      <div class="text-muted small">Provides coverage at a fixed rate of payments for a limited period of time (the relevant term).</div>
+                    </div>
+                  </div>
+
+                  <!-- Whole Life -->
+                  <div class="form-check d-flex align-items-start mb-3">
+                    <input class="form-radio" id="typeWhole" name="Insurance-Type" type="radio" value="Whole" required>
+                    <div class="ms-2">
+                      <label class="form-check-label fw-bold" for="typeWhole">Whole Life</label>
+                      <div class="text-muted small">A policy guaranteed to remain in force for the insured’s entire lifetime (as long as premiums are paid) or until the maturity date.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-end mt-4">
+<button type="button" class="btn btn-orange next-step-btn">Next</button>
+</div>
+</div>
+
+<!-- Step 2 -->
+<div class="form-step d-none" id="step-1">
+  <h4 class="mb-3">Mailing Address</h4>
+  <div class="row g-3">
+    <div class="col-12">
+      <label class="form-label" for="mailAddress">Address <span class="required-star">*</span></label>
+      <input class="form-control" id="mailAddress" name="Mailing-Address" type="text" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label" for="mailCity">City <span class="required-star">*</span></label>
+      <input class="form-control" id="mailCity" name="Mailing-City" type="text" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label" for="mailState">State <span class="required-star">*</span></label>
+      <input class="form-control" id="mailState" name="Mailing-State" type="text" required>
+    </div>
+    <div class="col-md-2">
+      <label class="form-label" for="mailZip">Zip <span class="required-star">*</span></label>
+      <input class="form-control" id="mailZip" name="Mailing-Zip" type="text" required>
+    </div>
+  </div>
+
+ <div class="d-flex justify-content-between mt-4">
+         <button class="btn btn-secondary prev-step-btn" data-prev-step="0" type="button">
+          Back
+         </button>
+         <button class="btn btn-orange next-step-btn" type="button">
+          Next
+         </button>
+        </div>
+       </div>
+
+<!-- Step 3 -->
+<div class="form-step d-none" id="step-2">
+  <h4 class="mb-3">Insurance Details</h4>
+  <div class="row g-3">
+    <div class="col-md-3">
+      <label class="form-label" for="desiredCoverage">Desired Coverage</label>
+      <input class="form-control" id="desiredCoverage" name="Desired-Coverage" type="text" placeholder="$250,000">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label" for="dob">Date of Birth <span class="required-star">*</span></label>
+      <input class="form-control" id="dob" name="DOB" type="date" required>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label" for="height">Height</label>
+      <input class="form-control" id="height" name="Height" type="text" placeholder="e.g., 5'10&quot;">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label" for="weight">Weight</label>
+      <input class="form-control" id="weight" name="Weight" type="text" placeholder="e.g., 180 lbs">
+    </div>
+
+    <!-- Only for Term Life -->
+    <div class="col-md-4 d-none" id="termLengthContainer">
+      <label class="form-label" for="termLength">Term Length</label>
+      <select class="form-select" id="termLength" name="Term-Length">
+        <option value="">Select…</option>
+        <option value="10 years">10 years</option>
+        <option value="20 years">20 years</option>
+        <option value="30 years">30 years</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <label class="form-label" for="additionalInfo">Additional Information</label>
+    <textarea class="form-control" id="additionalInfo" name="Additional-Info" rows="3"></textarea>
+  </div>
+
+<div class="d-flex justify-content-between mt-4">
+         <button class="btn btn-secondary prev-step-btn" data-prev-step="0" type="button">
+          Back
+         </button>
+         <button class="btn btn-orange next-step-btn" type="button">
+          Next
+         </button>
+        </div>
+       </div>
+
+<!-- Step 4 -->
+<div class="form-step d-none" id="step-3">
+  <h4 class="mb-3">Review & Submit</h4>
+  <p class="text-muted">Please review your information before submitting.</p>
+  <div id="lifeReviewSummary" class="mb-3"></div>
+ <div class="d-flex justify-content-between mt-4">
+    <button class="btn btn-secondary prev-step-btn" type="button">Back</button>
+    <button class="btn btn-success" id="submitBtn" type="submit">Submit</button>
+  </div>
+</div>
+<!-- CLOSE THE FORM AFTER STEP 4 -->
+</form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('lifeQuoteForm');
+
+    // Steps
+    const steps = Array.from(document.querySelectorAll('.form-step'));
+    const progressBtns = Array.from(document.querySelectorAll('.progress-button'));
+
+    // Radios & conditional UI
+    const typeTerm = document.getElementById('typeTerm');
+    const typeWhole = document.getElementById('typeWhole');
+    const termLengthContainer = document.getElementById('termLengthContainer');
+
+    // Review box
+    const reviewBox = document.getElementById('lifeReviewSummary');
+
+    // Navigation
+    let currentStep = 0;
+
+    function showStep(i) {
+      steps.forEach((s, idx) => {
+        if (idx === i) {
+          s.classList.add('active');
+          s.classList.remove('d-none');     // <-- make visible
+        } else {
+          s.classList.remove('active');
+          s.classList.add('d-none');        // <-- hide others
+        }
+      });
+      progressBtns.forEach((b, idx) => b.classList.toggle('active', idx === i));
+      currentStep = i;
+
+      // If last step, build review
+      if (i === steps.length - 1) buildReview();
+    }
+
+    // Next/Prev with event delegation (so we don't miss buttons)
+    form.addEventListener('click', (e) => {
+      const nextBtn = e.target.closest('.next-step-btn');
+      const prevBtn = e.target.closest('.prev-step-btn');
+      const pillBtn = e.target.closest('.progress-button');
+
+      if (nextBtn) {
+        if (currentStep < steps.length - 1) showStep(currentStep + 1);
+      }
+      if (prevBtn) {
+        if (currentStep > 0) showStep(currentStep - 1);
+      }
+      if (pillBtn) {
+        const idx = parseInt(pillBtn.getAttribute('data-step'), 10);
+        // Allow jumping back only (prevent skipping required fields forward)
+        if (!Number.isNaN(idx) && idx <= currentStep) showStep(idx);
+      }
+    });
+
+    // Term Length visibility
+    function updateTermVisibility() {
+      const show = !!(typeTerm && typeTerm.checked);
+      if (termLengthContainer) {
+        termLengthContainer.classList.toggle('d-none', !show);
+      }
+    }
+    if (typeTerm) typeTerm.addEventListener('change', updateTermVisibility);
+    if (typeWhole) typeWhole.addEventListener('change', updateTermVisibility);
+
+    // Build review safely
+    function buildReview() {
+      if (!reviewBox) return;
+
+      const rows = [];
+      form.querySelectorAll('input, select, textarea').forEach(el => {
+        const name = el.name || '';
+        if (!name || name.startsWith('_') || el.type === 'hidden') return;
+
+        let value = '';
+        if (el.type === 'radio' || el.type === 'checkbox') {
+          if (!el.checked) return;
+          value = el.value;
+        } else {
+          value = el.value;
+          if (!value) return;
+        }
+
+        // Find label (prefer explicit "for" label)
+        let label = '';
+        if (el.id) {
+          const lab = form.querySelector(`label[for="${el.id}"]`);
+          label = lab ? lab.innerText.trim() : '';
+        }
+        if (!label) label = name.replace(/[-_]/g, ' ');
+
+        rows.push({ label, value });
+      });
+
+      let html = '<ul class="list-group">';
+      rows.forEach(({label, value}) => {
+        html += `
+          <li class="list-group-item d-flex justify-content-between">
+            <strong>${label}</strong>
+            <span>${value}</span>
+          </li>`;
+      });
+      html += '</ul>';
+
+      reviewBox.innerHTML = html;
+    }
+
+    // Initialize
+    showStep(0);
+    updateTermVisibility();
+  });
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+<script src="js/load-footer.js"></script>
+<script src="js/load-header.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+
+</body>
+</html>
