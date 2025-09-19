@@ -7,465 +7,658 @@
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- jQuery (optional; used for header/footer loaders you already have) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+  <!-- Styles -->
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/Footer.css">
 
-      <!--StyleSheet-->
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/Footer.css">
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 
-<!--google font-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-
-<!--Flavicon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <style>
+    /* small helpers so you can see sections toggling even without your site CSS */
+    .form-card { background: #fff; border-radius: 16px; box-shadow: 0 6px 24px rgba(0,0,0,.06); padding: 1.5rem; }
+    .progress-buttons { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem }
+    .progress-button { border:0; padding:.6rem .9rem; border-radius:999px; background:#eee; font-weight:600 }
+    .progress-button.active { background:#ff7a00; color:#fff }
+    .section-divider { border-top:1px solid #e5e7eb; margin:1.25rem 0 }
+    .btn-orange { background:#ff7a00; color:#fff }
+    .btn-orange:hover { filter:brightness(.95); color:#fff }
+    .required-star{ color:#dc3545 }
+  </style>
 </head>
-
 <body>
-  <div id="header-placeholder">
-  </div>
+  <div id="header-placeholder"></div>
 
   <!--Start of Commercial Form-->
-<main class="container py-5">
-   <div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-8">
-     
-      <div class="form-card">
-      <form id="quoteForm" action="https://formsubmit.co/docs@sunrisetexas.com" method="POST">
-      <input type="hidden" name="_next" value="https://sunrisetexas.com/ThankYou.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" value="New Commercial Insurance Quote Request from Website!">
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="form-card">
+          <form id="quoteForm" action="https://formsubmit.co/docs@sunrisetexas.com" method="POST">
+            <input type="hidden" name="_next" value="https://sunrisetexas.com/ThankYou.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Commercial Insurance Quote Request from Website!">
 
-       <div class="progress-buttons">
-        <button class="progress-button active" data-step="0" type="button">
-         Getting Started
-        </button>
-        <button class="progress-button" data-step="1" type="button">
-         Business Info
-        </button>
-        <button class="progress-button" data-step="2" type="button">
-         Coverage Info
-        </button>
-        <button class="progress-button" data-step="3" type="button">
-         Review and Submit
-        </button>
-       </div>
+            <div class="progress-buttons">
+              <button class="progress-button active" data-step="0" type="button">Getting Started</button>
+              <button class="progress-button" data-step="1" type="button">Business Info</button>
+              <button class="progress-button" data-step="2" type="button">Coverage Details</button>
+              <button class="progress-button" data-step="3" type="button">Claims & Coverage Info</button>
+              <button class="progress-button" data-step="4" type="button">Current Coverage</button>
+              <button class="progress-button" data-step="5" type="button">Review & Submit</button>
+            </div>
 
-       <!-- Step 1: Getting Started -->
-<div class="form-step active" id="step-0">
-        <h2 class="mb-4">
-         Getting Started
-        </h2>
-        <p>We value your privacy and work hard to keep your information safe. 
-        Please complete this form as fully as possible so we can provide you with the most accurate quote.</p>
-        <br>
-        <p>*An Insurance quote does not impact your credit score. 
-        Quotes will take approximately 3-5 minutes to complete.</p>
-<div class="row g-3">
-<div class="col-md-6">
-<label for="firstName" class="form-label">First Name <span class="required-star">
-            *
-           </span></label>
-<input type="text" class="form-control" name="First-Name" required="">
-</div>
-<div class="col-md-6">
-<label for="lastName" class="form-label">Last Name <span class="required-star">
-            *
-           </span></label>
-<input type="text" class="form-control" name="Last-Name" required="">
-</div>
-<div class="col-md-6">
-<label for="email" class="form-label">Email <span class="required-star">
-            *
-           </span></label>
-<input type="email" class="form-control" name="Email" required="">
-</div>
-<div class="col-md-6">
-<label for="phone" class="form-label">Phone Number <span class="required-star">
-            *
-           </span></label>
-<input type="text" class="form-control" name="Phone-Number" required="">
-</div>
+            <!-- Step 0: Getting Started -->
+            <div class="form-step active" id="step-0">
+              <h2 class="mb-3">Getting Started</h2>
+              <p class="mb-1">We value your privacy and work hard to keep your information safe. Please complete this form as fully as possible so we can provide you with the most accurate quote.</p>
+              <p class="text-muted">*An insurance quote does not impact your credit score. Quotes take approximately 3–5 minutes to complete.</p>
 
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="firstName">First Name <span class="required-star">*</span></label>
+                  <input id="firstName" type="text" class="form-control" name="First-Name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="lastName">Last Name <span class="required-star">*</span></label>
+                  <input id="lastName" type="text" class="form-control" name="Last-Name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="email">Email <span class="required-star">*</span></label>
+                  <input id="email" type="email" class="form-control" name="Email" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="phone">Phone Number <span class="required-star">*</span></label>
+                  <input id="phone" type="tel" class="form-control" name="Phone-Number" required>
+                </div>
+              </div>
 
-<div class="col-md-12">
-<label for="insType" class="form-label">Type of Insurance <span class="required-star">
-            *
-           </span>
-        </label>
-<select class="form-select" name="Ins-Type" required="">
-<option value="">Select Type</option>
-<option value="General Liability">General Liability</option>
-<option value="Commercial Auto">Commercial Auto</option>
-<option value="Workers Comp">Workers Comp</option>
-<option value="Property/Content">Property/Content</option>
-<option value="Contractor Insurance">Contractor Insurance</option>
-<option value="Other">Other</option>
-</select>
-</div>
-<div class="col-md-12 d-none" id="otherInsuranceContainer">
-<label for="otherInsuranceText" class="form-label">Please specify other insurance type</label>
-<input type="text" class="form-control form-control-custom" id="otherInsuranceText" name="Other-Insurance-Type">
-</div>
-</div>
-<div class="d-flex justify-content-end mt-4">
-<button type="button" class="btn btn-orange next-step-btn">Next</button>
-</div>
-</div>
+              <div class="d-flex justify-content-end mt-4">
+                <button type="button" class="btn btn-orange next-step-btn">Next</button>
+              </div>
+            </div>
 
-<!-- Step 2 -->
-<div class="form-step" id="step-1">
-<h4>Business Information</h4>
-<div class="row g-3">
-<div class="col-md-6">
-<label for="businessAddress" class="form-label">Address <span class="required-star">
-            *
-           </span></label>
-<input type="text" class="form-control" name="businessAddress" required="">
-</div>
-<div class="col-md-6">
-<label for="businessCity" class="form-label">City <span class="required-star">
-            *
-           </span>
-        </label>
-<input type="text" class="form-control" name="businessCity" required="">
-</div>
-<div class="col-md-6">
-<label for="businessState" class="form-label">State <span class="required-star">
-            *
-           </span>
-        </label>
-<input type="text" class="form-control" name="businessState" required="">
-</div>
-<div class="col-md-6">
-<label for="businessZip" class="form-label">Zip  <span class="required-star">
-            *
-           </span>
-        </label>
-<input type="text" class="form-control" name="businessZip" required="">
-</div>
-<div class="col-md-6">
-<label for="dba" class="form-label">Doing Business As</label>
-<input type="text" class="form-control" name="DBA" id="dba">
-</div>
-<div class="col-md-6">
-<label for="years" class="form-label">Years in Business</label>
-<input type="text" class="form-control" name="Years-in-Business" id="years">
-</div>
-</div>
+            <!-- Step 1: Business Info (Type of Insurance FIRST) -->
+            <div class="form-step d-none" id="step-1">
+              <h4 class="mb-3">Business Information</h4>
 
-<div class="row g-3 mt-2">
-<div class="col-md-4">
-<label for="yearBuilt" class="form-label">Year Built</label>
-<input type="text" class="form-control" name="Year-Built" id="yearBuilt">
-</div>
-<div class="col-md-4">
-<label for="occupiedPercent" class="form-label">% Occupied</label>
-<input type="text" class="form-control" name="Occupied-Percent" id="occupiedPercent">
-</div>
-<div class="col-md-4">
-<label for="buildingStories" class="form-label">Stories</label>
-<input type="text" class="form-control" name="Building-Stories" id="buildingStories">
-</div>
-<div class="col-md-4">
-<label for="businessFootage" class="form-label">Square Footage</label>
-<input type="text" class="form-control" name="Business-Footage" id="businessFootage">
-</div>
-<div class="col-md-4">
-<label for="buildingValue" class="form-label">Building Value</label>
-<input type="text" class="form-control" name="Building-Value" id="buildingValue">
-</div>
-<div class="col-md-4">
-<label for="buildingContent" class="form-label">Content</label>
-<input type="text" class="form-control" name="Building-Content" id="buildingContent">
-</div>
-<div class="col-md-4">
-<label for="buildingSprinklers" class="form-label">Sprinklers?</label>
-<input type="text" class="form-control" name="Building-Sprinklers" id="buildingSprinklers">
-</div>
-<div class="col-md-4">
-<label for="buildingAlarm" class="form-label">Burglar Alarm?</label>
-<input type="text" class="form-control" name="Building-Alarm" id="buildingAlarm">
-</div>
-<div class="col-md-4">
-<label for="buildingOccupied" class="form-label">Owner Occupied?</label>
-<input type="text" class="form-control" name="Building-Occupied" id="buildingOccupied">
-</div>
+              <!-- Type of Insurance (moved here and updated options) -->
+              <div class="mb-3">
+                <label class="form-label" for="insType">Type of Insurance <span class="required-star">*</span></label>
+                <select class="form-select" id="insType" name="Ins-Type" required>
+                  <option value="">Select Type</option>
+                  <option value="General Liability">General Liability</option>
+                  <option value="Workers Comp">Workers Comp</option>
+                  <option value="Commercial Auto">Commercial Auto</option>
+                  <option value="Business Property/Business Personal Property">Business Property/Business Personal Property</option>
+                  <option value="Business Rental Property">Business Rental Property</option>
+                  <option value="Builders Risk">Builders Risk</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="mb-3 d-none" id="otherInsuranceContainer">
+                <label class="form-label" for="otherInsuranceText">Please specify other insurance type</label>
+                <input type="text" class="form-control" id="otherInsuranceText" name="Other-Insurance-Type">
+              </div>
 
-<div class="d-flex justify-content-between mt-4">
-         <button class="btn btn-secondary prev-step-btn" data-prev-step="0" type="button">
-          Back
-         </button>
-         <button class="btn btn-orange next-step-btn" type="button">
-          Next
-         </button>
+              <div class="row g-3">
+                <div class="col-md-12">
+                  <label class="form-label" for="businessName">Business Name <span class="required-star">*</span></label>
+                  <input id="businessName" type="text" class="form-control" name="Business-Name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="businessType">Type of Business</label>
+                  <input id="businessType" type="text" class="form-control" name="Type-of-Business">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="businessEmail">Business Email</label>
+                  <input id="businessEmail" type="email" class="form-control" name="Business-Email">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="businessPhone">Business Phone</label>
+                  <input id="businessPhone" type="tel" class="form-control" name="Business-Phone">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="yearsStarted">Year Business Started</label>
+                  <input id="yearsStarted" type="text" class="form-control" name="Year-Business-Started" placeholder="YYYY">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="yearsExperience">Years of Experience in Industry</label>
+                  <input id="yearsExperience" type="number" min="0" class="form-control" name="Years-Experience-Industry">
+                </div>
+              </div>
+
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <label class="form-label" for="businessAddress">Address <span class="required-star">*</span></label>
+                  <input id="businessAddress" type="text" class="form-control" name="Business-Address" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="businessCity">City <span class="required-star">*</span></label>
+                  <input id="businessCity" type="text" class="form-control" name="Business-City" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="businessState">State <span class="required-star">*</span></label>
+                  <input id="businessState" type="text" class="form-control" name="Business-State" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="businessZip">Zip <span class="required-star">*</span></label>
+                  <input id="businessZip" type="text" class="form-control" name="Business-Zip" required>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-secondary prev-step-btn" type="button">Back</button>
+                <button class="btn btn-orange next-step-btn" type="button">Next</button>
+              </div>
+            </div>
+
+            <!-- Step 2: Coverage Details (GL/WC first, then Property, Commercial Auto, Builders Risk shown conditionally) -->
+            <div class="form-step d-none" id="step-2">
+              <h4 class="mb-2">Coverage Details</h4>
+
+              <!-- GL & Workers Comp -->
+              <div id="section-glwc" class="mt-3 d-none">
+                <h5>General Liability & Workman’s Compensation Coverage</h5>
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <label class="form-label" for="liabilityLimits">Liability Limits Requested</label>
+                    <input id="liabilityLimits" type="text" class="form-control" name="Liability-Limits-Requested">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="grossSales">Annual Gross Sales</label>
+                    <input id="grossSales" type="text" class="form-control" name="Annual-Gross-Sales">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="payroll">Payroll</label>
+                    <input id="payroll" type="text" class="form-control" name="Payroll">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="subPayments">Subcontractor Payments</label>
+                    <input id="subPayments" type="text" class="form-control" name="Subcontractor-Payments">
+                  </div>
+                </div>
+              </div>
+
+              <hr class="section-divider d-none" id="div-line-1">
+
+              <!-- Property Information (Business Property/Business Personal Property & Business Rental Property) -->
+              <div id="section-property" class="mt-2 d-none">
+                <h5>Property Information</h5>
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <label class="form-label" for="yearBuilt">Year Built</label>
+                    <input id="yearBuilt" type="text" class="form-control" name="Year-Built">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="occupiedPercent">% Occupied</label>
+                    <input id="occupiedPercent" type="text" class="form-control" name="Occupied-Percent">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="buildingStories">Stories</label>
+                    <input id="buildingStories" type="text" class="form-control" name="Building-Stories">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="businessFootage">Square Footage</label>
+                    <input id="businessFootage" type="text" class="form-control" name="Business-Footage">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="buildingValue">Building Value</label>
+                    <input id="buildingValue" type="text" class="form-control" name="Building-Value">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="businessPersonalProperty">Business Personal Property</label>
+                    <input id="businessPersonalProperty" type="text" class="form-control" name="Business-Personal-Property">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="buildingSprinklers">Sprinklers?</label>
+                    <input id="buildingSprinklers" type="text" class="form-control" name="Building-Sprinklers">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="buildingAlarm">Burglar Alarm?</label>
+                    <input id="buildingAlarm" type="text" class="form-control" name="Building-Alarm">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="buildingOccupied">Owner Occupied?</label>
+                    <input id="buildingOccupied" type="text" class="form-control" name="Owner-Occupied">
+                  </div>
+                </div>
+              </div>
+
+              <hr class="section-divider d-none" id="div-line-2">
+
+              <!-- Commercial Auto -->
+              <div id="section-auto" class="mt-2 d-none">
+                <h5 class="mb-2">Commercial Auto</h5>
+
+                <!-- Vehicles -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="mb-0">Vehicles</h6>
+                  <button class="btn btn-sm btn-orange" type="button" id="addVehicleBtn">+ Add Vehicle</button>
+                </div>
+                <div id="vehiclesContainer" class="vstack gap-3"></div>
+
+                <hr class="section-divider">
+
+                <!-- Drivers -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="mb-0">Driver Information</h6>
+                  <button class="btn btn-sm btn-orange" type="button" id="addDriverBtn">+ Add Driver</button>
+                </div>
+                <div id="driversContainer" class="vstack gap-3"></div>
+
+                <hr class="section-divider">
+
+                <!-- Coverage Requested -->
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="autoCoverageType">Coverage Requested</label>
+                    <select id="autoCoverageType" class="form-select" name="Auto-Coverage-Type">
+                      <option value="">Select</option>
+                      <option value="Full Coverage">Full Coverage</option>
+                      <option value="Liability Only">Liability Only</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="autoCoverageAmount">Coverage Amount</label>
+                    <input id="autoCoverageAmount" type="text" class="form-control" name="Auto-Coverage-Amount">
+                  </div>
+                </div>
+              </div>
+
+              <hr class="section-divider d-none" id="div-line-3">
+
+              <!-- Builders Risk -->
+              <div id="section-builders" class="mt-2 d-none">
+                <h5 class="mb-2">Builders Risk</h5>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="mb-0">Locations</h6>
+                  <button class="btn btn-sm btn-orange" type="button" id="addLocationBtn">+ Add another location</button>
+                </div>
+                <div id="locationsContainer" class="vstack gap-3"></div>
+              </div>
+
+              <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-secondary prev-step-btn" type="button">Back</button>
+                <button class="btn btn-orange next-step-btn" type="button">Next</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Claims & Coverage Info -->
+            <div class="form-step d-none" id="step-3">
+              <h4>Claims and Coverage Information</h4>
+              <div class="mt-3">
+                <label class="form-label" for="claims">Any Claims in the Last 5 Years?</label>
+                <select class="form-select" id="claims" name="Any-Claims">
+                  <option value="" disabled selected>Select</option>
+                  <option value="No">No</option>
+                  <option value="Yes">Yes</option>
+                </select>
+              </div>
+              <div class="mt-3 d-none" id="claimsDetails">
+                <label class="form-label" for="claimsInfo">Please describe the claims</label>
+                <textarea id="claimsInfo" class="form-control" name="Claims-Details" rows="3"></textarea>
+              </div>
+
+              <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-secondary prev-step-btn" type="button">Back</button>
+                <button class="btn btn-orange next-step-btn" type="button">Next</button>
+              </div>
+            </div>
+
+            <!-- Step 4: Current Coverage (last before review) -->
+            <div class="form-step d-none" id="step-4">
+              <h4>Current Coverage</h4>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="currentCarrier">Carrier Name</label>
+                  <input id="currentCarrier" type="text" class="form-control" name="Current-Carrier">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="currentPolicy">Policy Number</label>
+                  <input id="currentPolicy" type="text" class="form-control" name="Current-Policy">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="policyEffective">Policy Effective Date</label>
+                  <input id="policyEffective" type="date" class="form-control" name="Policy-Effective-Date">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="currentType">Type of Insurance</label>
+                  <select id="currentType" class="form-select" name="Current-Type">
+                    <option value="">Select Type</option>
+                    <option value="General Liability">General Liability</option>
+                    <option value="Commercial Auto">Commercial Auto</option>
+                    <option value="Workers Comp">Workers Comp</option>
+                    <option value="Business Property/Business Personal Property">Business Property/Business Personal Property</option>
+                    <option value="Business Rental Property">Business Rental Property</option>
+                    <option value="Builders Risk">Builders Risk</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="col-12 d-none" id="currentOtherInsuranceContainer">
+                  <label class="form-label" for="currentOtherInsuranceText">Please specify other insurance type</label>
+                  <input type="text" class="form-control" id="currentOtherInsuranceText" name="Current-Other-Insurance-Type">
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-secondary prev-step-btn" type="button">Back</button>
+                <button class="btn btn-orange next-step-btn" type="button">Next</button>
+              </div>
+            </div>
+
+            <!-- Step 5: Review & Submit -->
+            <div class="form-step d-none" id="step-5">
+              <h4>Review & Submit</h4>
+              <p class="text-muted">Please review your information before submitting.</p>
+              <div id="formReviewSummary"></div>
+
+              <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-secondary prev-step-btn" type="button">Back</button>
+                <button class="btn btn-success" id="submitBtn" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
         </div>
-       </div>
-</div>
+      </div>
+    </div>
+  </main>
 
-<!-- Step 3 -->
-<div class="form-step" id="step-2">
-<h4>Coverage & Property Information</h4>
-<div class="row g-3">
-<h5>Current Coverage</h5>
+  <div id="footer-placeholder"></div>
 
-<div class="col-md-6">
-<label for="currentCarrier" class="form-label">Carrier Name</label>
-<input type="text" class="form-control" name="Current-Carrier" id="currentCarrier">
-</div>
-<div class="col-md-6">
-<label for="currentPolicy" class="form-label">Policy Number</label>
-<input type="text" class="form-control" name="Current-Policy" id="currentPolicy">
-</div>
-<div class="col-md-12">
-<label for="currentType" class="form-label">Type of Insurance <span class="required-star">
-            *
-           </span>
-        </label>
-<select class="form-select" name="Current-Type" required="">
-<option value="">Select Type</option>
-<option value="General Liability">General Liability</option>
-<option value="Commercial Auto">Commercial Auto</option>
-<option value="Workers Comp">Workers Comp</option>
-<option value="Property/Content">Property/Content</option>
-<option value="Contractor Insurance">Contractor Insurance</option>
-<option value="Other">Other</option>
-</select>
-</div>
+  <!-- Google Translate (if used elsewhere on site) -->
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
 
-<div class="row g-3">
-<h5>Insurance Information</h5>
-<div class="col-md-3">
-<label for="businessProperty" class="form-label">Business Personal Property Amount</label>
-<input type="text" class="form-control" name="Business-Property" id="businessProperty">
-</div>
-<div class="col-md-3">
-<label for="grossSales" class="form-label">Annual Gross Sales</label>
-<input type="text" class="form-control" name="Gross-Sales" id="grossSales">
-</div>
-<div class="col-md-3">
-<label for="businessPayroll" class="form-label">Payroll</label>
-<input type="text" class="form-control" name="Business-Payroll" id="businessPayroll">
-</div>
-<div class="col-md-3">
-<label for="businessLiability" class="form-label">Liablity Limites Requested</label>
-<input type="text" class="form-control" name="business-Liability" id="businessLiability">
-</div>
+  <!-- Your existing header/footer loaders -->
+  <script src="js/load-footer.js"></script>
+  <script src="js/load-header.js"></script>
 
-<div class="col-md-12 d-none" id="currentOtherInsuranceContainer">
-<label for="currentOtherInsuranceText" class="form-label">Please specify other insurance type</label>
-<input type="text" class="form-control form-control-custom" id="currentOtherInsuranceText" name="Other-Insurance-Type">
-</div>
-</div>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('quoteForm');
+    const formSteps = document.querySelectorAll('.form-step');
+    const progressButtons = document.querySelectorAll('.progress-button');
+    const nextButtons = document.querySelectorAll('.next-step-btn');
+    const prevButtons = document.querySelectorAll('.prev-step-btn');
 
+    let currentStep = 0;
 
-<div class="mt-4">
-<label for="claims" class="form-label">Any Claims in the Last 5 Years?</label>
-<select class="form-select" id="claims" name="Any-Claims">
-<option value="" disabled selected>Select</option>
-<option value="No">No</option>
-<option value="Yes">Yes</option>
-</select>
-</div>
-
-
-<div class="mt-3 d-none" id="claimsDetails">
-<label for="claimsInfo" class="form-label">Please describe the claims</label>
-<textarea class="form-control" id="claimsInfo" name="Claims-Details" rows="3"></textarea>
-</div>
-<div class="d-flex justify-content-between mt-4">
-         <button class="btn btn-secondary prev-step-btn" data-prev-step="0" type="button">
-          Back
-         </button>
-         <button class="btn btn-orange next-step-btn" type="button">
-          Next
-         </button>
-        </div>
-       </div>
-</div>
-
-
-
-<!-- Step 4 -->
-<div class="form-step d-none" id="step-3">
-  <h4>Review & Submit</h4>
-  <p class="text-muted">Please review your information before submitting.</p>
-  <div id="formReviewSummary"></div>
-
-  <div class="d-flex justify-content-between mt-4">
-    <button class="btn btn-secondary prev-step-btn" type="button">Back</button>
-    <button class="btn btn-success" id="submitBtn" type="submit">Submit</button>
-  </div>
-</div>
-</form>
-</div><!-- /form-card -->
-</div><!-- /col-12 col-md-10 col-lg-8 -->
-</div><!-- /row justify-content-center -->
-</main>
- <div id="footer-placeholder">
-  </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('quoteForm');
-  const formSteps = document.querySelectorAll('.form-step');
-  const progressButtons = document.querySelectorAll('.progress-button');
-  const nextButtons = document.querySelectorAll('.next-step-btn');
-  const prevButtons = document.querySelectorAll('.prev-step-btn');
-  const submitBtn = document.getElementById('submitBtn'); // now exists
-
-  let currentStep = 0;
-
-  function showStep(index) {
-    formSteps.forEach((step, i) => {
-      step.classList.toggle('active', i === index);
-      step.classList.toggle('d-none', i !== index);
-    });
-
-    progressButtons.forEach((btn, i) => {
-      btn.classList.toggle('active', i === index);
-    });
-
-    // On last step, build the review
-    if (index === formSteps.length - 1) {
-      generateReview();
+    function showStep(index){
+      formSteps.forEach((step,i)=>{
+        step.classList.toggle('active', i===index);
+        step.classList.toggle('d-none', i!==index);
+      });
+      progressButtons.forEach((btn,i)=>btn.classList.toggle('active', i===index));
+      if(index===formSteps.length-1){ generateReview(); }
     }
-  }
 
-  // Go forward
-  nextButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (currentStep < formSteps.length - 1) {
-        currentStep++;
-        showStep(currentStep);
-      }
-    });
+    nextButtons.forEach(btn=>btn.addEventListener('click', ()=>{ if(currentStep < formSteps.length-1){ currentStep++; showStep(currentStep); }}));
+    prevButtons.forEach(btn=>btn.addEventListener('click', ()=>{ if(currentStep > 0){ currentStep--; showStep(currentStep); }}));
+    progressButtons.forEach((btn,i)=>btn.addEventListener('click', ()=>{ if(i<=currentStep){ currentStep=i; showStep(currentStep); }}));
+
+    // --- Conditional UI & Section Routing ---
+    const insType = document.getElementById('insType');
+    const otherInsuranceContainer = document.getElementById('otherInsuranceContainer');
+
+    const sectionGLWC = document.getElementById('section-glwc');
+    const sectionProperty = document.getElementById('section-property');
+    const sectionAuto = document.getElementById('section-auto');
+    const sectionBuilders = document.getElementById('section-builders');
+
+    const divLine1 = document.getElementById('div-line-1');
+    const divLine2 = document.getElementById('div-line-2');
+    const divLine3 = document.getElementById('div-line-3');
+
+    function toggleCoverageSections(){
+      const val = insType.value;
+      const showGL = (val==='General Liability' || val==='Workers Comp');
+      const showProperty = (val==='Business Property/Business Personal Property' || val==='Business Rental Property' || val==='Home/Flood/Landlord Rentals');
+      const showAuto = (val==='Commercial Auto');
+      const showBuilders = (val==='Builders Risk');
+
+      sectionGLWC.classList.toggle('d-none', !showGL);
+      divLine1.classList.toggle('d-none', !(showGL && (showProperty || showAuto || showBuilders)));
+
+      sectionProperty.classList.toggle('d-none', !showProperty);
+      divLine2.classList.toggle('d-none', !(showProperty && (showAuto || showBuilders)));
+
+      sectionAuto.classList.toggle('d-none', !showAuto);
+      divLine3.classList.toggle('d-none', !(showAuto && showBuilders));
+
+      sectionBuilders.classList.toggle('d-none', !showBuilders);
+
+      otherInsuranceContainer.classList.toggle('d-none', val !== 'Other');
+    }
+
+    if(insType) insType.addEventListener('change', toggleCoverageSections);
+    toggleCoverageSections(); // initialize
+
+    // Current Coverage: Other type text box
+    const currentType = document.getElementById('currentType');
+    const currentOtherInsuranceContainer = document.getElementById('currentOtherInsuranceContainer');
+    if(currentType){
+      currentType.addEventListener('change', ()=>{
+        currentOtherInsuranceContainer.classList.toggle('d-none', currentType.value !== 'Other');
+      });
+    }
+
+    // Claims toggle
+    const claimsDropdown = document.getElementById('claims');
+    const claimsDetails = document.getElementById('claimsDetails');
+    if(claimsDropdown){
+      claimsDropdown.addEventListener('change', ()=>{
+        claimsDetails.classList.toggle('d-none', claimsDropdown.value !== 'Yes');
+      });
+    }
+
+    // --- Dynamic Repeaters ---
+    // Vehicles
+    const vehiclesContainer = document.getElementById('vehiclesContainer');
+    const addVehicleBtn = document.getElementById('addVehicleBtn');
+    let vehicleIdx = 0;
+    function addVehicle(){
+      const idx = vehicleIdx++;
+      const wrap = document.createElement('div');
+      wrap.className = 'card p-3';
+      wrap.innerHTML = `
+        <div class="row g-3">
+          <div class="col-md-3">
+            <label class="form-label" for="vehYear_${idx}">Year</label>
+            <input id="vehYear_${idx}" type="text" class="form-control" name="Vehicle[${idx}]-Year">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label" for="vehMake_${idx}">Make</label>
+            <input id="vehMake_${idx}" type="text" class="form-control" name="Vehicle[${idx}]-Make">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label" for="vehModel_${idx}">Model</label>
+            <input id="vehModel_${idx}" type="text" class="form-control" name="Vehicle[${idx}]-Model">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label" for="vehVIN_${idx}">VIN #</label>
+            <input id="vehVIN_${idx}" type="text" class="form-control" name="Vehicle[${idx}]-VIN">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="vehAddr_${idx}">Address where Vehicle Parked Nightly</label>
+            <input id="vehAddr_${idx}" type="text" class="form-control" name="Vehicle[${idx}]-Night-Address">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label" for="vehUse_${idx}">Used for</label>
+            <select id="vehUse_${idx}" class="form-select" name="Vehicle[${idx}]-Use">
+              <option value="">Select</option>
+              <option>Personal</option>
+              <option>Business</option>
+              <option>Business & Personal</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label" for="vehMiles_${idx}">Roundtrip Miles per day</label>
+            <input id="vehMiles_${idx}" type="number" min="0" class="form-control" name="Vehicle[${idx}]-Daily-Miles">
+          </div>
+        </div>
+        <div class="text-end mt-2">
+          <button type="button" class="btn btn-sm btn-outline-danger remove-vehicle">Remove</button>
+        </div>`;
+      wrap.querySelector('.remove-vehicle').addEventListener('click', ()=>wrap.remove());
+      vehiclesContainer.appendChild(wrap);
+    }
+    if(addVehicleBtn) addVehicleBtn.addEventListener('click', addVehicle);
+
+    // Drivers
+    const driversContainer = document.getElementById('driversContainer');
+    const addDriverBtn = document.getElementById('addDriverBtn');
+    let driverIdx = 0;
+    function addDriver(){
+      const idx = driverIdx++;
+      const wrap = document.createElement('div');
+      wrap.className = 'card p-3';
+      wrap.innerHTML = `
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label" for="drvName_${idx}">Name</label>
+            <input id="drvName_${idx}" type="text" class="form-control" name="Driver[${idx}]-Name">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="drvDOB_${idx}">Date of Birth</label>
+            <input id="drvDOB_${idx}" type="date" class="form-control" name="Driver[${idx}]-DOB">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="drvDL_${idx}">Driver’s License Number</label>
+            <input id="drvDL_${idx}" type="text" class="form-control" name="Driver[${idx}]-License">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="drvMarital_${idx}">Marital Status</label>
+            <select id="drvMarital_${idx}" class="form-select" name="Driver[${idx}]-Marital">
+              <option value="">Select</option>
+              <option>Married</option>
+              <option>Single</option>
+            </select>
+          </div>
+        </div>
+        <div class="text-end mt-2">
+          <button type="button" class="btn btn-sm btn-outline-danger remove-driver">Remove</button>
+        </div>`;
+      wrap.querySelector('.remove-driver').addEventListener('click', ()=>wrap.remove());
+      driversContainer.appendChild(wrap);
+    }
+    if(addDriverBtn) addDriverBtn.addEventListener('click', addDriver);
+
+    // Builders Risk Locations
+    const locationsContainer = document.getElementById('locationsContainer');
+    const addLocationBtn = document.getElementById('addLocationBtn');
+    let locIdx = 0;
+    function addLocation(){
+      const idx = locIdx++;
+      const wrap = document.createElement('div');
+      wrap.className = 'card p-3';
+      wrap.innerHTML = `
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="brStart_${idx}">Start Date</label>
+            <input id="brStart_${idx}" type="date" class="form-control" name="BuildersRisk[${idx}]-Start-Date">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="brEnd_${idx}">Anticipated Finish Date</label>
+            <input id="brEnd_${idx}" type="date" class="form-control" name="BuildersRisk[${idx}]-Finish-Date">
+          </div>
+          <div class="col-md-12">
+            <label class="form-label" for="brAddress_${idx}">Address</label>
+            <input id="brAddress_${idx}" type="text" class="form-control" name="BuildersRisk[${idx}]-Address">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="brSqft_${idx}">Square Footage</label>
+            <input id="brSqft_${idx}" type="text" class="form-control" name="BuildersRisk[${idx}]-Square-Footage">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="brCoverage_${idx}">Coverage Amount</label>
+            <input id="brCoverage_${idx}" type="text" class="form-control" name="BuildersRisk[${idx}]-Coverage-Amount">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="brMaterial_${idx}">Building Material</label>
+            <input id="brMaterial_${idx}" type="text" class="form-control" name="BuildersRisk[${idx}]-Building-Material">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label" for="brStories_${idx}">Stories</label>
+            <input id="brStories_${idx}" type="text" class="form-control" name="BuildersRisk[${idx}]-Stories">
+          </div>
+        </div>
+        <div class="mt-3">
+          <h6>Bank / Mortgagee Information</h6>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="brBank_${idx}">Bank Name</label>
+              <input id="brBank_${idx}" type="text" class="form-control" name="BuildersRisk[${idx}]-Bank-Name">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="brLoan_${idx}">Loan #</label>
+              <input id="brLoan_${idx}" type="text" class="form-control" name="BuildersRisk[${idx}]-Loan-Number">
+            </div>
+            <div class="col-md-12">
+              <label class="form-label" for="brBankAddr_${idx}">Bank Address</label>
+              <input id="brBankAddr_${idx}" type="text" class="form-control" name="BuildersRisk[${idx}]-Bank-Address">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="brCity_${idx}">City, St, Zip</label>
+              <input id="brCity_${idx}" type="text" class="form-control" name="BuildersRisk[${idx}]-City-State-Zip">
+            </div>
+            <div class="col-md-3">
+              <label class="form-label" for="brRep_${idx}">Bank Representative</label>
+              <input id="brRep_${idx}" type="text" class="form-control" name="BuildersRisk[${idx}]-Bank-Representative">
+            </div>
+            <div class="col-md-3">
+              <label class="form-label" for="brRepPhone_${idx}">Representative Phone #</label>
+              <input id="brRepPhone_${idx}" type="tel" class="form-control" name="BuildersRisk[${idx}]-Representative-Phone">
+            </div>
+          </div>
+        </div>
+        <div class="text-end mt-2">
+          <button type="button" class="btn btn-sm btn-outline-danger remove-location">Remove</button>
+        </div>`;
+      wrap.querySelector('.remove-location').addEventListener('click', ()=>wrap.remove());
+      locationsContainer.appendChild(wrap);
+    }
+    if(addLocationBtn) addLocationBtn.addEventListener('click', addLocation);
+
+    // --- Review builder ---
+    function generateReview(){
+      const summary = document.getElementById('formReviewSummary');
+      if(!summary) return;
+      const rows=[]; const fields=form.querySelectorAll('input, select, textarea');
+      fields.forEach(el=>{
+        if(!el.name || el.type==='hidden' || el.name.startsWith('_')) return;
+        let val='';
+        if((el.type==='radio'||el.type==='checkbox')){ if(!el.checked) return; val=el.value; } else { val=(el.value||'').trim(); }
+        if(!val) return;
+        let labelText='';
+        if(el.id){ const lf=form.querySelector(`label[for="${el.id}"]`); if(lf) labelText=lf.innerText.trim(); }
+        if(!labelText){ const nl=el.closest('.col-md-6, .col-md-4, .col-md-3, .mb-3, .card, .row, div')?.querySelector('label'); if(nl) labelText=nl.innerText.trim(); }
+        if(!labelText) labelText = el.name.replace(/[\[\]_\-]/g,' ').replace(/\s+/g,' ').trim();
+        rows.push({label:labelText, value:val});
+      });
+      let html='<h5 class="mb-3">Please review your information:</h5><ul class="list-group">';
+      rows.forEach(({label,value})=>{ html+=`<li class="list-group-item d-flex justify-content-between align-items-start"><strong class="me-3">${label}</strong><span class="text-end">${value}</span></li>`; });
+      html+='</ul>';
+      summary.innerHTML=html;
+    }
+
+    // init
+    showStep(0);
   });
-
-  // Go back
-  prevButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (currentStep > 0) {
-        currentStep--;
-        showStep(currentStep);
-      }
-    });
-  });
-
-  // Pill navigation (allow going back via pills)
-  progressButtons.forEach((btn, i) => {
-    btn.addEventListener('click', () => {
-      if (i <= currentStep) { // prevent jumping ahead if you want
-        currentStep = i;
-        showStep(currentStep);
-      }
-    });
-  });
-
-  // --- Conditional UI ---
-
-  // Getting Started: Other insurance text box
-  const insuranceTypeDropdown = form.querySelector('select[name="Ins-Type"]');
-  const otherInsuranceContainer = document.getElementById('otherInsuranceContainer');
-  if (insuranceTypeDropdown && otherInsuranceContainer) {
-    insuranceTypeDropdown.addEventListener('change', () => {
-      otherInsuranceContainer.classList.toggle('d-none', insuranceTypeDropdown.value !== 'Other');
-    });
-  }
-
-  // Current Coverage: Other insurance text box
-  const currentTypeDropdown = form.querySelector('select[name="Current-Type"]');
-  const currentOtherInsuranceContainer = document.getElementById('currentOtherInsuranceContainer');
-  if (currentTypeDropdown && currentOtherInsuranceContainer) {
-    currentTypeDropdown.addEventListener('change', () => {
-      currentOtherInsuranceContainer.classList.toggle('d-none', currentTypeDropdown.value !== 'Other');
-    });
-  }
-
-  // Claims toggle
-  const claimsDropdown = document.getElementById('claims');
-  const claimsDetails = document.getElementById('claimsDetails');
-  if (claimsDropdown && claimsDetails) {
-    claimsDropdown.addEventListener('change', () => {
-      claimsDetails.classList.toggle('d-none', claimsDropdown.value !== 'Yes');
-    });
-  }
-
-  // --- Review builder ---
-  function generateReview() {
-    const summary = document.getElementById('formReviewSummary');
-    if (!summary) return;
-
-    // Build a clean list of label/value pairs
-    const rows = [];
-    const fields = form.querySelectorAll('input, select, textarea');
-
-    fields.forEach(el => {
-      // Skip hidden/internal fields
-      if (!el.name || el.type === 'hidden' || el.name.startsWith('_')) return;
-
-      // Get value
-      let val = '';
-      if (el.type === 'radio' || el.type === 'checkbox') {
-        if (!el.checked) return; // only include checked
-        val = el.value;
-      } else {
-        val = el.value?.trim();
-      }
-      if (!val) return;
-
-      // Find a label near the input
-      let labelText = '';
-      // Try label[for]
-      if (el.id) {
-        const labelFor = form.querySelector(`label[for="${el.id}"]`);
-        if (labelFor) labelText = labelFor.innerText.trim();
-      }
-      // Fallback: nearest label inside same container
-      if (!labelText) {
-        const nearestLabel = el.closest('.col-md-6, .col-md-4, .col-md-3, .mb-3, .form-group, div')?.querySelector('label');
-        if (nearestLabel) labelText = nearestLabel.innerText.trim();
-      }
-      // Last fallback: name
-      if (!labelText) labelText = el.name.replace(/[-_]/g, ' ');
-
-      rows.push({ label: labelText, value: val });
-    });
-
-    // Render
-    let html = '<h5 class="mb-3">Please review your information:</h5><ul class="list-group">';
-    rows.forEach(({label, value}) => {
-      html += `
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <strong class="me-3">${label}</strong>
-          <span class="text-end">${value}</span>
-        </li>`;
-    });
-    html += '</ul>';
-
-    summary.innerHTML = html;
-  }
-
-  // Initialize the first step
-  showStep(0);
-});
- </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
   </script>
-<script src="js/load-footer.js"></script>
-<script src="js/load-header.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="js/script.js"></script>
-
+  <!-- Your site JS -->
+  <script src="js/script.js"></script>
 </body>
 </html>
