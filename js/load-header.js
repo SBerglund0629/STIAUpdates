@@ -4,28 +4,39 @@ document.addEventListener('DOMContentLoaded', function() {
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = `
 <div class="alert alert-light mb-0 pb-3 border-bottom">
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
-          <a href="#">
-            <img src="Images/Logos/STIALogo.jpg" alt="Sunrise Texas Insurance Logo" class="img-fluid" id="indexlogo">
-          </a>
-        </div>
-        <div class="col-12 col-md-6 d-flex flex-wrap justify-content-center gap-3 mb-3 mb-md-0 contact-info">
-                    <p class="m-2"><strong>Houston:</strong> <i class="fas fa-phone-alt"></i> <a href="tel:8326455100">(832) 645-5100</a></p>
-                    <p class="m-2"><strong>Lake Jackson:</strong> <i class="fas fa-phone-alt"></i> <a href="tel:9792825500">(979) 282-5500</a></p>
-                    <p class="m-2"><strong>Rio Grande Valley:</strong> <i class="fas fa-phone-alt"></i> <a href="tel:9565194663">(956) 519-4663</a></p>
-                    <p class="m-2"><strong>Fax:</strong> <i class="fas fa-fax"></i> (979) 393-0038</p>
-                    <p class="m-2"><strong>Email:</strong> <i class="fas fa-envelope-open-text"></i> <a href="mailto:docs@sunrisetexas.com">docs@sunrisetexas.com</a></p>
-                </div>
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      
+      <!-- Logo -->
+      <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
+        <a href="#">
+          <img src="Images/Logos/STIALogo.jpg" alt="Sunrise Texas Insurance Logo" class="img-fluid" id="indexlogo">
+        </a>
+      </div>
 
-                <div class="col-12 col-md-3 text-center text-md-end">
-                    <h5 class="mb-2">Se Habla Español</h5>
-                    <a href="#" class="btn btn-orange">Contact Us!</a>
-                </div>
-            </div>
+      <!-- Contact Info -->
+      <div class="col-md-6 d-flex flex-wrap justify-content-center gap-3 mb-3 mb-md-0 contact-info">
+        <p class="m-2"><strong>Houston:</strong> <i class="fas fa-phone-alt"></i> <a href="tel:8326455100">(832) 645-5100</a></p>
+        <p class="m-2"><strong>Lake Jackson:</strong> <i class="fas fa-phone-alt"></i> <a href="tel:9792825500">(979) 282-5500</a></p>
+        <p class="m-2"><strong>Rio Grande Valley:</strong> <i class="fas fa-phone-alt"></i> <a href="tel:9565194663">(956) 519-4663</a></p>
+        <p class="m-2"><strong>Fax:</strong> <i class="fas fa-fax"></i> (281) 466-1987</p>
+        <p class="m-2"><strong>Email:</strong> <i class="fas fa-envelope-open-text"></i> 
+          <a href="mailto:docs@sunrisetexas.com">docs@sunrisetexas.com</a>
+        </p>
+        <p class="m-2"><strong>Text:</strong> <i class="fas fa-phone-alt"></i> 
+          <a href="tel:8327803657">(832) 780-3657</a>
+        </p>
+      </div>
+
+      <!-- Espanol + Contact Us (on the same row, right side) -->
+      <div class="col-md-3 text-center text-md-end">
+        <h5 class="mb-2">Se Habla Español</h5>
+        <a href="#" class="btn btn-orange">Contact Us!</a>
+      </div>
+
     </div>
   </div>
+</div>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-light" id='navBar'>
     <a class="navbar-brand" href="#"></a>
