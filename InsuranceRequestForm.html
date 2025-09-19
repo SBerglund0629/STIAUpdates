@@ -137,2145 +137,1184 @@
          </button>
         </div>
        </div>
+       
+ <!-- Step 2: Auto Quote (UPDATED) -->
+            <div class="form-step" id="step-1">
+              <h4>Auto Insurance Quote</h4>
 
-       <!-- Step 2: Auto Quote (Updated with detailed form) -->
-       <div class="form-step" id="step-1">
-        <h4>
-         Auto Insurance Quote
-        </h4>
-        <h5 class="mt-4">
-         Vehicle 1
-         <span class="required-star">
-          *
-         </span>
-        </h5>
-        <div id="vehiclesContainer">
-         <div class="vehicle-entry mb-3 p-3 border rounded">
-          <div class="form-group-grid md-cols-4">
-            <div>
-              <label class="form-label" for="vehicleYear">Year</label>
-           <input class="form-control-custom" name="vehicleYear" placeholder="YYYY" required="" type="text"/>
+              <!-- Vehicles -->
+              <h5 class="mt-4">Vehicle 1 <span class="required-star">*</span></h5>
+              <div id="vehiclesContainer">
+                <div class="vehicle-entry mb-3 p-3 border rounded">
+                  <div class="form-group-grid md-cols-4">
+                    <div>
+                      <label class="form-label">Year</label>
+                      <input class="form-control-custom" name="vehicleYear" placeholder="YYYY" required type="text"/>
+                    </div>
+                    <div>
+                      <label class="form-label">Make</label>
+                      <input class="form-control-custom" name="vehicleMake" placeholder="e.g., Toyota" required type="text"/>
+                    </div>
+                    <div>
+                      <label class="form-label">Model</label>
+                      <input class="form-control-custom" name="vehicleModel" placeholder="e.g., Camry" required type="text"/>
+                    </div>
+                    <div>
+                      <label class="form-label">VIN</label>
+                      <input class="form-control-custom" name="vehicleVin" placeholder="17-digit VIN" required type="text"/>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Use of Vehicle <span class="required-star">*</span></label>
+                    <div class="d-flex">
+                      <div class="form-check me-4">
+                        <input class="form-radio" name="vehicle1Use" required type="radio" value="personal"/>
+                        <label class="form-check-label">Personal</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-radio" name="vehicle1Use" type="radio" value="work"/>
+                        <label class="form-check-label">Work</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Per-vehicle requested coverage -->
+                  <div class="mb-1">
+                    <label class="form-label">Coverage for Vehicle 1 <span class="required-star">*</span></label>
+                    <div class="d-flex">
+                      <div class="form-check me-4">
+                        <input class="form-radio" name="vehicle1Coverage" required type="radio" value="Full Coverage"/>
+                        <label class="form-check-label">Full Coverage</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-radio" name="vehicle1Coverage" type="radio" value="Liability Only"/>
+                        <label class="form-check-label">Liability Only</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="mt-3 btn btn-secondary" id="addVehicleBtn" type="button">+ Add Another Vehicle</button>
+
+              <!-- Drivers (inline, with add) -->
+              <h5 class="mt-4 d-flex align-items-center justify-content-between">
+                <span>Primary Driver <span class="required-star">*</span></span>
+                <button class="btn btn-secondary" id="addDriverInlineBtn" type="button">+ Add Another Driver</button>
+              </h5>
+
+              <div id="driversInlineContainer" class="vstack gap-3">
+                <div class="driver-entry border rounded p-3">
+                  <div class="form-group-grid md-cols-4">
+                    <div>
+                      <label class="form-label">Full Name</label>
+                      <input class="form-control-custom" name="driverName" placeholder="John Doe" required type="text"/>
+                    </div>
+                    <div>
+                      <label class="form-label">DOB</label>
+                      <input class="form-control-custom" name="driverDOB" required type="date"/>
+                    </div>
+                    <div>
+                      <label class="form-label">License</label>
+                      <input class="form-control-custom" name="driverLicense" placeholder="License Number" required type="text"/>
+                    </div>
+                    <div>
+                      <label class="form-label">SSN <small class="text-muted">(Optional)</small></label>
+                      <input class="form-control-custom" maxlength="4" name="driverSSN" pattern="\d{4}" placeholder="Last 4 of SSN" type="text"/>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">State of License</label>
+                    <select class="form-select-custom" name="driverState" required>
+                      <option disabled selected>Choose...</option>
+                      <option value="TX">Texas</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OTHER">Other</option>
+                    </select>
+                  </div>
+
+                  <h6 class="mt-4">Driver Details</h6>
+                  <div class="form-group-grid md-cols-4">
+                    <div class="col-span-2">
+                      <label class="form-label">Home Address</label>
+                      <input class="form-control-custom" name="driverAddress" placeholder="123 Daisy St, McAllen, TX" required type="text"/>
+                    </div>
+                    <div>
+                      <label class="form-label">ZIP Code</label>
+                      <input class="form-control-custom" name="driverZip" placeholder="ZIP" required type="text"/>
+                    </div>
+                    <div>
+                      <label class="form-label">Years at Residence</label>
+                      <input class="form-control-custom" name="yearsAtResidence" placeholder="e.g., 7" required type="number" min="0"/>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Employment Status</label>
+                    <div class="d-flex flex-wrap">
+                      <div class="form-check me-4">
+                        <input class="form-radio" name="employmentStatus" type="radio" value="working"/>
+                        <label class="form-check-label">Working</label>
+                      </div>
+                      <div class="form-check me-4">
+                        <input class="form-radio" name="employmentStatus" type="radio" value="notWorking"/>
+                        <label class="form-check-label">Not Working</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-radio" name="employmentStatus" type="radio" value="retired"/>
+                        <label class="form-check-label">Retired</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3 hidden" id="occupationSection">
+                    <label class="form-label">Occupation or Work Info <span class="required-star">*</span></label>
+                    <input class="form-control-custom" name="occupation" placeholder="Occupation or Employer" type="text"/>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Current Insurance -->
+              <h5 class="mt-4">Coverage Information</h5>
+              <div class="mb-3">
+                <label class="form-label">Do you currently have auto insurance? <span class="required-star">*</span></label>
+                <div class="d-flex">
+                  <div class="form-check me-4">
+                    <input class="form-radio" id="hasInsuranceYes" name="hasInsurance" required type="radio" value="yes"/>
+                    <label class="form-check-label" for="hasInsuranceYes">Yes</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-radio" id="hasInsuranceNo" name="hasInsurance" type="radio" value="no"/>
+                    <label class="form-check-label" for="hasInsuranceNo">No</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3 hidden" id="noInsuranceExpireSection">
+                <label class="form-label">If no, when did it expire?</label>
+                <input class="form-control-custom" name="noInsuranceExpireDate" type="date">
+              </div>
+
+              <div class="mb-3 hidden" id="currentCoverageSection">
+                <div id="detailedCoverageInputs">
+                  <div>
+                    <label class="form-label">Current Carrier Name</label>
+                    <input class="form-control-custom mb-2" name="currentCarrier" placeholder="e.g., Progressive, Geico" type="text"/>
+                  </div>
+                  <div>
+                    <label class="form-label">Current Policy Number</label>
+                    <input class="form-control-custom mb-2" name="currentPolicyNumber" placeholder="Policy # (Optional)" type="text"/>
+                  </div>
+                  <div class="mb-2">
+                    <label class="form-label">Current Policy Expiration</label>
+                    <input class="form-control-custom" id="policyExpirationDate" name="policyExpirationDate" type="date"/>
+                  </div>
+                  <div>
+                    <label class="form-label">Current Premium</label>
+                    <input class="form-control-custom mb-2" name="currentPremium" placeholder="$1,000" type="text"/>
+                  </div>
+                  <div>
+                    <label class="form-label">Bodily Injury Liability</label>
+                    <input class="form-control-custom mb-2" name="bodilyInjuryCurrent" placeholder="e.g., 25/50, 100/300" type="text"/>
+                  </div>
+                  <div>
+                    <label class="form-label">Property Damage</label>
+                    <input class="form-control-custom mb-2" name="propertyDamageCurrent" placeholder="e.g., 25k, 50k" type="text"/>
+                  </div>
+                  <div>
+                    <label class="form-label">Medical Payments (PIP)</label>
+                    <input class="form-control-custom mb-2" name="medicalPaymentsCurrent" placeholder="e.g., 2.5k, 5k" type="text"/>
+                  </div>
+                  <div>
+                    <label class="form-label">Comprehensive Deductible</label>
+                    <input class="form-control-custom mb-2" name="comprehensiveDeductibleCurrent" placeholder="e.g., $500, $1,000" type="text"/>
+                  </div>
+                  <div>
+                    <label class="form-label">Collision Deductible</label>
+                    <input class="form-control-custom mb-2" name="collisionDeductibleCurrent" placeholder="e.g., $500, $1,000" type="text"/>
+                  </div>
+                  <label class="form-label mt-2">Any other current coverages (e.g., Roadside, Rental)?</label>
+                  <textarea class="form-textarea-custom" name="otherCurrentCoverages" rows="3"></textarea>
+                </div>
+              </div>
+
+              <!-- Requested Coverage -->
+              <div class="mb-3">
+                <h6>Requested Coverage</h6>
+                <div>
+                  <label class="form-label">Bodily Injury Liability</label>
+                  <input class="form-control-custom mb-2" name="bodilyInjuryDesired" placeholder="e.g., 50/100, 250/500" type="text"/>
+                </div>
+                <div>
+                  <label class="form-label">Property Damage</label>
+                  <input class="form-control-custom mb-2" name="propertyDamageDesired" placeholder="e.g., 50k, 100k" type="text"/>
+                </div>
+                <div>
+                  <label class="form-label">Medical Payments (PIP)</label>
+                  <input class="form-control-custom mb-2" name="medicalPaymentsDesired" placeholder="e.g., 5k, 10k" type="text"/>
+                </div>
+                <div>
+                  <label class="form-label">Uninsured/Underinsured Bodily Injury</label>
+                  <input class="form-control-custom mb-2" name="uninsuredBodilyInjury" placeholder="e.g., 50/100, reject" type="text"/>
+                </div>
+                <div>
+                  <label class="form-label">Uninsured/Underinsured Motorist Property Damage</label>
+                  <input class="form-control-custom mb-2" name="uninsuredPropertyDamage" placeholder="e.g., 25k, reject" type="text"/>
+                </div>
+                <div>
+                  <label class="form-label">Comprehensive Deductible</label>
+                  <input class="form-control-custom mb-2" name="comprehensiveDeductibleDesired" placeholder="e.g., $250, $500" type="text"/>
+                </div>
+                <div>
+                  <label class="form-label">Collision Deductible</label>
+                  <input class="form-control-custom mb-2" name="collisionDeductibleDesired" placeholder="e.g., $250, $500" type="text"/>
+                </div>
+
+                <!-- Roadside / Rental yes-no -->
+                <div class="mt-3">
+                  <label class="form-label d-block">Requested Coverage (Yes/No)</label>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center gap-3">
+                        <strong class="me-2">Roadside:</strong>
+                        <div class="form-check me-3">
+                          <input class="form-radio" name="requestedRoadside" type="radio" value="Yes">
+                          <label class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-radio" name="requestedRoadside" type="radio" value="No">
+                          <label class="form-check-label">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center gap-3">
+                        <strong class="me-2">Rental:</strong>
+                        <div class="form-check me-3">
+                          <input class="form-radio" name="requestedRental" type="radio" value="Yes">
+                          <label class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-radio" name="requestedRental" type="radio" value="No">
+                          <label class="form-check-label">No</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accidents / Tickets repeater -->
+              <h6 class="mt-4">Accidents or Tickets in the past 5 years</h6>
+              <div id="violationsContainer" class="vstack gap-3"></div>
+              <button class="btn btn-secondary mt-2" id="addViolationBtn" type="button">+ Add Additional Accident or Ticket</button>
+
+              <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-secondary prev-step-btn" data-prev-step="0" type="button">Back</button>
+                <button class="btn btn-orange next-step-btn" type="button">Next</button>
+              </div>
             </div>
-            <div>
-              <label class="form-label" for="vehicleMake">Make</label>
-           <input class="form-control-custom" name="vehicleMake" placeholder="e.g., Toyota" required="" type="text"/>
-           </div>
-           <div>
-            <label class="form-label" for="vehicleModel">Model</label>
-           <input class="form-control-custom" name="vehicleModel" placeholder="e.g., Camry" required="" type="text"/>
-           </div>
-           <div>
-            <label class="form-label" for="vehicleVin">Vin</label>
-           <input class="form-control-custom" name="vehicleVin" placeholder="17-digit VIN" required="" type="text"/>
-           </div>
-          </div>
-          <div class="mb-3">
-           <label class="form-label">
-            Use of Vehicle
-            <span class="required-star">
-             *
-            </span>
-           </label>
-           <div class="d-flex">
-            <div class="form-check me-4">
-             <input class="form-radio" name="vehicle1Use" required="" type="radio" value="personal"/>
-             <label class="form-check-label">
-              Personal
-             </label>
+
+            <!-- Step 3: Home Quote -->
+            <div class="form-step" id="step-2">
+              <h4 class="mb-4">Home Quote</h4>
+              <p class="text-muted">Please provide details about your property.</p>
+
+              <!-- Selector now includes Flood + Landlord -->
+              <div class="mb-4">
+                <label class="form-label" for="homeQuoteType">What type of insurance do you need? <span class="required-star">*</span></label>
+                <select class="form-select-custom" id="homeQuoteType" name="homequotetype" required>
+                  <option value="" disabled selected>Select an insurance type</option>
+                  <option value="homeowners">Homeowners</option>
+                  <option value="condo">Condo</option>
+                  <option value="renters">Renters</option>
+                  <option value="flood">Flood Insurance</option>
+                  <option value="landlord">Landlord Rentals</option>
+                </select>
+              </div>
+
+              <!-- Homeowners -->
+              <div class="hidden" id="homeowners-section">
+                <h5>Homeowners Insurance Details</h5>
+
+                <!-- Property Address moved to top -->
+                <h6 class="mt-3">Property Address</h6>
+                <div class="form-group-grid md-cols-2" id="homeowners-address-fields">
+                  <input class="form-control-custom" name="propertyStreet" placeholder="Address Line 1" required type="text"/>
+                  <input class="form-control-custom" name="propertycity" placeholder="City" required type="text"/>
+                  <input class="form-control-custom" name="propertystate" placeholder="State" required type="text"/>
+                  <input class="form-control-custom" name="propertyzip" placeholder="Zip" required type="text"/>
+                </div>
+
+                <!-- Mailing same? -->
+                <div class="mb-3 mt-3">
+                  <label class="form-label">Is the mailing address the same as the property address?</label>
+                  <div class="form-check">
+                    <input class="form-radio" id="mailingYes" name="mailingSame" type="radio" value="yes"/>
+                    <label class="form-check-label" for="mailingYes">Yes</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-radio" id="mailingNo" name="mailingSame" type="radio" value="no"/>
+                    <label class="form-check-label" for="mailingNo">No</label>
+                  </div>
+                </div>
+
+                <!-- Mailing Address (label updated) -->
+                <div class="hidden" id="mailingAddressSection">
+                  <h6 class="mt-2">Mailing Address</h6>
+                  <div class="form-group-grid md-cols-2">
+                    <input class="form-control-custom" name="mailingStreet" placeholder="Mailing Street Address" type="text"/>
+                    <input class="form-control-custom" name="mailingCity" placeholder="Mailing City" type="text"/>
+                    <input class="form-control-custom" name="mailingState" placeholder="Mailing State" type="text"/>
+                    <input class="form-control-custom" name="mailingZip" placeholder="Mailing Zip Code" type="text"/>
+                  </div>
+                </div>
+
+                <!-- Property Details -->
+                <h6 class="mt-4"><strong>Property Details</strong></h6>
+                <div class="form-group-grid md-cols-3">
+                  <div class="col">
+                    <label class="form-label">Purchase Date <span class="required-star">*</span></label>
+                    <input class="form-control-custom" name="purchaseDate" type="date"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Year of Construction <span class="required-star">*</span></label>
+                    <input class="form-control-custom" name="constructionYear" placeholder="e.g., 1995" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">How Many Stories <span class="required-star">*</span></label>
+                    <select class="form-select-custom stories-select" name="how_many_stories:">
+                      <option value="1">1 Story</option>
+                      <option value="1.5">1.5 Stories</option>
+                      <option value="2">2 Stories</option>
+                      <option value="split">Split-Level</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <input class="form-control-custom mt-2 hidden" name="propertyStories" placeholder="Specify stories" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Estimated Replacement Cost <span class="required-star">*</span></label>
+                    <input class="form-control-custom" name="replacementCost" placeholder="e.g., $300,000" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Square Footage <span class="required-star">*</span></label>
+                    <input class="form-control-custom" name="squareFootage" placeholder="e.g., 2000 sq ft" type="text"/>
+                  </div>
+                </div>
+
+                <!-- Protection Information (no required stars, all optional) -->
+                <h6 class="mt-4"><strong>Protection Information</strong></h6>
+                <div class="form-group-grid md-cols-2">
+                  <div class="col">
+                    <label class="form-label">Distance to fire department (miles)</label>
+                    <input class="form-control-custom" name="fireDepartment" placeholder="15" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Is property located within city limits?</label>
+                    <div class="form-check">
+                      <input class="form-radio" id="cityLimitsYes" name="cityLimits" type="radio" value="yes"/>
+                      <label class="form-check-label" for="cityLimitsYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-radio" id="cityLimitsNo" name="cityLimits" type="radio" value="no"/>
+                      <label class="form-check-label" for="cityLimitsNo">No</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Distance to fire hydrant (feet)</label>
+                    <input class="form-control-custom" name="fireHydrant" placeholder="e.g., 25 feet" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Special personal property?</label>
+                    <div class="form-check">
+                      <input class="form-radio" id="specialPropertyYes" name="specialPersonalProperty" type="radio" value="yes"/>
+                      <label class="form-check-label" for="specialPropertyYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-radio" id="specialPropertyNo" name="specialPersonalProperty" type="radio" value="no"/>
+                      <label class="form-check-label" for="specialPropertyNo">No</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Distance to tidal water or coast (miles)</label>
+                    <input class="form-control-custom" name="waterDistance" placeholder="e.g., 25 miles" type="text"/>
+                  </div>
+                </div>
+
+                <!-- Structure Information -->
+                <h6 class="mt-4"><strong>Structure Information</strong></h6>
+                <div class="form-group-grid md-cols-3">
+                  <div class="col">
+                    <label class="form-label">Is this your primary residence? <span class="required-star">*</span></label>
+                    <select class="form-select-custom residence-type" name="residence_type:">
+                      <option value="primary">Primary</option>
+                      <option value="secondary">Secondary</option>
+                      <option value="seasonal">Seasonal</option>
+                      <option value="farm">Farm</option>
+                      <option value="coc">COC</option>
+                    </select>
+                    <input class="form-control-custom mt-2 hidden" name="residenceTypeOther" placeholder="Specify residence type" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Occupancy Type <span class="required-star">*</span></label>
+                    <select class="form-select-custom occupance-type" name="occupance_type:">
+                      <option value="owner occupied">Owner Occupied</option>
+                      <option value="renter occupied">Renter Occupied</option>
+                      <option value="unoccupied">Unoccupied</option>
+                      <option value="vacant">Vacant</option>
+                    </select>
+                    <input class="form-control-custom mt-2 hidden" name="OccupanceTypeOther" placeholder="Specify Occupancy type" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Number of Families <span class="required-star">*</span></label>
+                    <select class="form-select-custom family-size" name="family_size:">
+                      <option value="one family">One Family</option>
+                      <option value="two families">Two Families</option>
+                      <option value="three families">Three Families</option>
+                      <option value="four families">Four Families</option>
+                    </select>
+                    <input class="form-control-custom mt-2 hidden" name="familySizeOther" placeholder="Number of Families" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Number of Occupants <span class="required-star">*</span></label>
+                    <select class="form-select-custom occupancy-size" name="occupancy_size:">
+                      <option value="1">1</option><option value="2">2</option>
+                      <option value="3">3</option><option value="4">4</option>
+                      <option value="5">5</option><option value="6">6</option>
+                      <option value="7">7</option><option value="8">8</option>
+                      <option value="9+">9 or more</option>
+                    </select>
+                    <input class="form-control-custom mt-2 hidden" name="occupancySizeOther" placeholder="Number of Occupants" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Construction Type <span class="required-star">*</span></label>
+                    <select class="form-select-custom construction-select" name="construction_type:">
+                      <option value="wood">Wood</option>
+                      <option value="stucco">Stucco</option>
+                      <option value="masonry">Masonry</option>
+                      <option value="brick">Brick Veneer</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <input class="form-control-custom mt-2 hidden" name="constructionType" placeholder="Specify construction type" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Roof Type <span class="required-star">*</span></label>
+                    <select class="form-select-custom roof-type" name="roof_type:">
+                      <option value="architectural shingles">Architectural Shingles</option>
+                      <option value="asphalt shingles">Asphalt Shingles</option>
+                      <option value="composition">Composition</option>
+                      <option value="metal (pitched)">Metal (Pitched)</option>
+                      <option value="metal (flat)">Metal (Flat)</option>
+                      <option value="tile (concrete)">Tile (Concrete)</option>
+                      <option value="tile (spanish)">Tile (Spanish)</option>
+                      <option value="slate">Slate</option>
+                      <option value="wood shake">Wood Shake</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <input class="form-control-custom mt-2 hidden" name="roofTypeOther" placeholder="Type of Roof" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Roof Design</label>
+                    <select class="form-select-custom roof-style" name="roof_style:">
+                      <option value="dormer">Dormer</option>
+                      <option value="flat">Flat</option>
+                      <option value="gable">Gable</option>
+                      <option value="gambrel">Gambrel</option>
+                      <option value="hip">Hip</option>
+                      <option value="mansard">Mansard</option>
+                      <option value="pyramid">Pyramid</option>
+                      <option value="shed">Shed</option>
+                      <option value="turret">Turret</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <input class="form-control-custom mt-2 hidden" name="roofStyleOther" placeholder="Style of Roof" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Year Roof Updated</label>
+                    <input class="form-control-custom" name="roofYearUpdated" placeholder="YYYY" type="text"/>
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Number of Full Baths <span class="required-star">*</span></label>
+                    <select class="form-select-custom full-baths" name="full_baths:">
+                      <option value="1">1</option><option value="2">2</option>
+                      <option value="3">3</option><option value="4">4</option>
+                      <option value="5">5</option><option value="6">6</option>
+                      <option value="7">7</option><option value="8">8</option>
+                      <option value="9">9</option><option value="10+">10 or More</option>
+                    </select>
+                    <input class="form-control-custom mt-2 hidden" name="numberBathsOther" placeholder="Number of Full Baths" type="text"/>
+                  </div>
+                  <!-- New: Half Baths -->
+                  <div class="col">
+                    <label class="form-label">Number of Half Baths</label>
+                    <select class="form-select-custom half-baths" name="half_baths:">
+                      <option value="0">0</option><option value="1">1</option>
+                      <option value="2">2</option><option value="3">3</option>
+                      <option value="4+">4 or more</option>
+                    </select>
+                  </div>
+                  <!-- New: Number of Stories (explicit) -->
+                  <div class="col">
+                    <label class="form-label">Number of Stories</label>
+                    <select class="form-select-custom number-stories" name="number_of_stories:">
+                      <option value="1">1</option><option value="1.5">1.5</option>
+                      <option value="2">2</option><option value="3+">3 or more</option>
+                    </select>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Age of Roof (remove if duplicative)</label>
+                    <input class="form-control-custom" name="roofAge" placeholder="e.g., 5 years" type="text"/>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Primary Heat Source <span class="required-star">*</span></label>
+                    <select class="form-select-custom heat-source" name="heat_source:">
+                      <option value="electric">Electric</option>
+                      <option value="gas">Gas</option>
+                      <option value="gas-forced">Gas-Forced</option>
+                      <option value="oil">Oil</option>
+                      <option value="solid fuel">Solid Fuel</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <input class="form-control-custom mt-2 hidden" name="heatTypeOther" placeholder="Type of Heat" type="text"/>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Alternate heat source?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" id="altHeatYes" name="alternateHeat" type="radio" value="yes"/>
+                      <label class="form-check-label" for="altHeatYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" id="altHeatYesNo" name="alternateHeatSame" type="radio" value="no"/>
+                      <label class="form-check-label" for="altHeatYesNo">No</label>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Year Heating Updated <span class="required-star">*</span></label>
+                    <input class="form-control-custom" name="heatYear" placeholder="YYYY" type="text"/>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Electric circuit breaker?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" id="breakerYes" name="breakerSame" type="radio" value="yes"/>
+                      <label class="form-check-label" for="breakerYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" id="breakerNo" name="breakerSame" type="radio" value="no"/>
+                      <label class="form-check-label" for="breakerNo">No</label>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Year water heater updated <span class="required-star">*</span></label>
+                    <input class="form-control-custom" name="waterAge" placeholder="YYYY" type="text"/>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Year electrical updated <span class="required-star">*</span></label>
+                    <input class="form-control-custom" name="electricalAge" placeholder="YYYY" type="text"/>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Year plumbing updated <span class="required-star">*</span></label>
+                    <input class="form-control-custom" name="plumbingAge" placeholder="YYYY" type="text"/>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Do you conduct any type of business on this property?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" id="businessYes" name="homeBusiness" type="radio" value="yes"/>
+                      <label class="form-check-label" for="businessYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" id="businessNo" name="homeBusiness" type="radio" value="no"/>
+                      <label class="form-check-label" for="businessNo">No</label>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">First Mortgagee?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" id="firstMortgageeYes" name="firstMortgagee" type="radio" value="yes"/>
+                      <label class="form-check-label" for="firstMortgageeYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" id="firstMortgageeNo" name="firstMortgagee" type="radio" value="no"/>
+                      <label class="form-check-label" for="firstMortgageeNo">No</label>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Second Mortgagee?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" id="secondMortgageeYes" name="secondMortgagee" type="radio" value="yes"/>
+                      <label class="form-check-label" for="secondMortgageeYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" id="secondMortgageeNo" name="secondMortgagee" type="radio" value="no"/>
+                      <label class="form-check-label" for="secondMortgageeNo">No</label>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <label class="form-label">Restricted dog breed ownership?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" id="restrictedDogYes" name="restrictedDog" type="radio" value="yes"/>
+                      <label class="form-check-label" for="restrictedDogYes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" id="restrictedDogNo" name="restrictedDog" type="radio" value="no"/>
+                      <label class="form-check-label" for="restrictedDogNo">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Property Accessories -->
+                <h6 class="mt-4"><strong>Property Accessories</strong></h6>
+                <div class="form-group-grid md-cols-4">
+                  <div class="form-check">
+                    <input class="form-check-input" id="home-deadbolts" name="homeDeadbolts" type="checkbox" value="deadbolts"/>
+                    <label class="form-check-label" for="home-deadbolts">Deadbolts</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" id="home-smokeDetectors" name="homeSmokeDetector" type="checkbox" value="smokeDetectors"/>
+                    <label class="form-check-label" for="home-smokeDetectors">Smoke Detectors</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" id="home-fireExtinguisher" name="homeFireExt" type="checkbox" value="fireExtinguisher"/>
+                    <label class="form-check-label" for="home-fireExtinguisher">Fire Extinguisher</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" id="home-fireSprinkler" name="homeFireSprinkler" type="checkbox" value="fireSprinkler"/>
+                    <label class="form-check-label" for="home-fireSprinkler">Indoor Fire Sprinkler</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" id="home-alarm" name="homeAlarm" type="checkbox" value="alarm"/>
+                    <label class="form-check-label" for="home-alarm">Burglar Alarm</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" id="home-gate" name="homeGate" type="checkbox" value="gate"/>
+                    <label class="form-check-label" for="home-gate">Gated Community</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" id="home-pool" name="home_pool" type="checkbox" value="pool"/>
+                    <label class="form-check-label" for="home-pool">Swimming Pool</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" id="home-trampoline" name="homeTrampoline" type="checkbox" value="trampoline"/>
+                    <label class="form-check-label" for="home-trampoline">Trampoline</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="featureOtherHome" value="Other">
+                    <label class="form-check-label" for="featureOtherHome">Other</label>
+                  </div>
+                  <div id="otherFeatureTextContainerHome" class="hidden mt-2">
+                    <input type="text" class="form-control" name="otherFeatureHomeText" placeholder="Please specify other feature">
+                  </div>
+                </div>
+
+                <!-- Current Coverage / Desired Info (unchanged from your base) -->
+                <h6 class="mt-4"><strong>Current Coverage Information</strong></h6>
+                <div class="mb-3">
+                  <label class="form-label">Current Carrier Name</label>
+                  <input class="form-control-custom mb-2" name="currentCarrier" placeholder="e.g., Progressive, Geico" type="text"/>
+                </div>
+                <div>
+                  <label class="form-label">Current Policy Number</label>
+                  <input class="form-control-custom mb-2" name="currentPolicyNumber" placeholder="Policy # (Optional)" type="text"/>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Current Policy Expiration</label>
+                  <input class="form-control-custom" name="policyExpirationDate" type="date"/>
+                </div>
+
+                <h6 class="mt-4"><strong>Desired Insurance Information</strong></h6>
+                <div class="mb-2">
+                  <label class="form-label">Desired Deductible</label>
+                  <input class="form-control-custom" name="deductible_desired" placeholder="e.g., $1000" type="text"/>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Desired Liability</label>
+                  <input class="form-control-custom" name="amount_of_liability_desired" placeholder="e.g., $50k / $100k" type="text"/>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Is your home older than 20 years? If so, what updates have been done?</label>
+                  <textarea class="form-textarea-custom" name="home_updates_over_20_years" rows="3"></textarea>
+                </div>
+
+                <h6 class="mt-4">Claims History</h6>
+                <div id="homeowners-claims-container"></div>
+                <button class="btn btn-secondary mt-3" id="add-homeowners-claim-btn" type="button">+ Add Another Claim</button>
+              </div>
+
+              <!-- Condo/Renters unified -->
+              <div class="hidden" id="condo-renters-section">
+                <h5>Condo / Renters Details</h5>
+
+                <div class="form-group-grid md-cols-2 mt-2">
+                  <div>
+                    <label class="form-label" for="cr_address_line_1">Address</label>
+                    <input class="form-control-custom" id="cr_address_line_1" name="cr_address_line_1" placeholder="Address" type="text" required>
+                  </div>
+                  <div>
+                    <label class="form-label" for="cr_move_in_date">Move-in Date</label>
+                    <input class="form-control-custom" id="cr_move_in_date" name="cr_move_in_date" type="date" required>
+                  </div>
+                </div>
+
+                <div class="form-group-grid md-cols-3 mt-2">
+                  <div>
+                    <label class="form-label" for="cr_units_in_building">Number of Units in Building</label>
+                    <input class="form-control-custom" id="cr_units_in_building" name="cr_units_in_building" type="number">
+                  </div>
+                  <div>
+                    <label class="form-label" for="cr_building_material">Building Material</label>
+                    <input class="form-control-custom" id="cr_building_material" name="cr_building_material" type="text">
+                  </div>
+                  <div>
+                    <label class="form-label" for="cr_floor_location">Floor Location</label>
+                    <input class="form-control-custom" id="cr_floor_location" name="cr_floor_location" type="text">
+                  </div>
+                </div>
+
+                <div class="form-group-grid md-cols-2 mt-2">
+                  <div>
+                    <label class="form-label" for="cr_unit_sqft">Unit Square Footage</label>
+                    <input class="form-control-custom" id="cr_unit_sqft" name="cr_unit_sqft" type="text">
+                  </div>
+                  <div>
+                    <label class="form-label" for="cr_coverage_amount">Coverage Amount</label>
+                    <input class="form-control-custom" id="cr_coverage_amount" name="cr_coverage_amount" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Flood -->
+              <div class="hidden" id="flood-section">
+                <h5>Flood Insurance Details</h5>
+                <h6 class="mt-3">Property Address</h6>
+                <div class="form-group-grid md-cols-2">
+                  <input class="form-control-custom" name="flood_property_street" placeholder="Address Line 1" type="text" required>
+                  <input class="form-control-custom" name="flood_property_city" placeholder="City" type="text" required>
+                  <input class="form-control-custom" name="flood_property_state" placeholder="State" type="text" required>
+                  <input class="form-control-custom" name="flood_property_zip" placeholder="Zip" type="text" required>
+                </div>
+                <div class="form-group-grid md-cols-3 mt-3">
+                  <input class="form-control-custom" name="flood_zone" placeholder="Flood Zone (if known)" type="text">
+                  <input class="form-control-custom" name="flood_coverage_amount" placeholder="Coverage Amount" type="text">
+                  <input class="form-control-custom" name="flood_deductible" placeholder="Desired Deductible" type="text">
+                </div>
+              </div>
+
+              <!-- Landlord Rentals -->
+              <div class="hidden" id="landlord-section">
+                <h5>Landlord Rentals Details</h5>
+                <h6 class="mt-3">Property Address</h6>
+                <div class="form-group-grid md-cols-2">
+                  <input class="form-control-custom" name="landlord_property_street" placeholder="Address Line 1" type="text" required>
+                  <input class="form-control-custom" name="landlord_property_city" placeholder="City" type="text" required>
+                  <input class="form-control-custom" name="landlord_property_state" placeholder="State" type="text" required>
+                  <input class="form-control-custom" name="landlord_property_zip" placeholder="Zip" type="text" required>
+                </div>
+
+                <div class="form-group-grid md-cols-3 mt-3">
+                  <input class="form-control-custom" name="landlord_units_in_building" placeholder="Number of Units in Building" type="number">
+                  <input class="form-control-custom" name="landlord_building_material" placeholder="Building Material" type="text">
+                  <input class="form-control-custom" name="landlord_stories" placeholder="Number of Stories" type="text">
+                </div>
+
+                <div class="form-group-grid md-cols-3 mt-3">
+                  <input class="form-control-custom" name="landlord_floor_location" placeholder="Floor Location (if applicable)" type="text">
+                  <input class="form-control-custom" name="landlord_unit_sqft" placeholder="Unit Square Footage" type="text">
+                  <input class="form-control-custom" name="landlord_coverage_amount" placeholder="Coverage Amount" type="text">
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-secondary prev-step-btn" data-prev-step="0" type="button">Back</button>
+                <button class="btn btn-orange next-step-btn" type="button">Next</button>
+              </div>
             </div>
-            <div class="form-check">
-             <input class="form-radio" name="vehicle1Use" type="radio" value="work"/>
-             <label class="form-check-label">
-              Work
-             </label>
+
+            <!-- Step 4: Review & Submit -->
+            <div class="form-step" id="step-3">
+              <h2 class="mb-4">Review &amp; Submit</h2>
+              <div class="border p-3 bg-light rounded mb-4" id="review-section"></div>
+              <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary prev-step-btn" data-prev-step="2" type="button">Back</button>
+                <button class="btn btn-success" type="submit">Submit</button>
+              </div>
             </div>
-           </div>
-          </div>
-         </div>
-        </div>
-        <button class="mt-3 btn btn-secondary-custom" id="addVehicleBtn" type="button">
-         + Add Another Vehicle
-        </button>
-        <h5 class="mt-4">
-         Primary Driver
-         <span class="required-star">
-          *
-         </span>
-        </h5>
-        <div class="form-group-grid md-cols-4">
-          <div>
-          <label class="form-label" for="driverName">Full Name</label>
-         <input class="form-control-custom" name="driverName" placeholder="John Doe" required="" type="text"/>
-        </div>
-        <div>
-          <label class="form-label" for="driverDOB">DOB</label>
-         <input class="form-control-custom" name="driverDOB" placeholder="DOB" required="" type="date"/>
-        </div>
-        <div>
-          <label class="form-label" for="driverLicense">License</label>
-         <input class="form-control-custom" name="driverLicense" placeholder="License Number" required="" type="text"/>
-        </div>
-        <div>
-          <label class="form-label" for="driverSSN">SSN</label>
-         <input class="form-control-custom" maxlength="4" name="driverSSN" pattern="\d{4}" placeholder="Last 4 of SSN" type="text"/>
-        </div>
-        </div>
-        <div class="mb-3">
-         <label class="form-label">
-          State of License
-         </label>
-         <select class="form-select-custom" name="driverState" required="">
-          <option disabled="" selected="">
-           Choose...
-          </option>
-          <option value="TX">
-           Texas
-          </option>
-          <option value="LA">
-           Louisiana
-          </option>
-          <option value="OK">
-           Oklahoma
-          </option>
-         </select>
-        </div>
-        <h5 class="mt-4">
-         Primary Driver Details
-        </h5>
-        <div class="form-group-grid md-cols-3">
-         <div class="col-span-1">
-          <div>
-          <label class="form-label" for="driverAddress">Home Address</label>
-          <input class="form-control-custom" name="driverAddress" placeholder="123 Daisy St McAllen, TX" required="" type="text"/>
-          </div>
-         </div>
-         <div class="col-span-1">
-          <label class="form-label">
-           Do you rent or own?
-           <span class="required-star">
-            *
-           </span>
-          </label>
-          <div class="d-flex">
-           <div class="form-check me-4">
-            <input class="form-radio" name="residenceStatus" required="" type="radio" value="rent"/>
-            <label class="form-check-label">
-             Rent
-            </label>
-           </div>
-           <div class="form-check">
-            <input class="form-radio" name="residenceStatus" type="radio" value="own"/>
-            <label class="form-check-label">
-             Own
-            </label>
-           </div>
-          </div>
-         </div>
-         <div class="col-span-1">
-          <div>
-          <label class="form-label" for="yearsAtResidence">Years at Residence</label>
-          <input class="form-control-custom" name="yearsAtResidence" placeholder="e.g, 7 years" required="" type="number"/>
-          </div>
-         </div>
-        </div>
-        <div class="mb-3">
-         <label class="form-label">
-          Employment Status
-         </label>
-         <div class="d-flex flex-wrap">
-          <div class="form-check me-4">
-           <input class="form-radio" name="employmentStatus" type="radio" value="working"/>
-           <label class="form-check-label">
-            Working
-           </label>
-          </div>
-          <div class="form-check me-4">
-           <input class="form-radio" name="employmentStatus" type="radio" value="notWorking"/>
-           <label class="form-check-label">
-            Not Working
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-radio" name="employmentStatus" type="radio" value="retired"/>
-           <label class="form-check-label">
-            Retired
-           </label>
-          </div>
-         </div>
-        </div>
-        <div class="mb-3 hidden" id="occupationSection">
-         <label class="form-label">
-          Occupation or Work Info
-          <span class="required-star">
-           *
-          </span>
-         </label>
-         <input class="form-control-custom" name="occupation" placeholder="Occupation or Employer" type="text"/>
-        </div>
-        <h5 class="mt-4">
-         Coverage Information
-        </h5>
-        <div class="mb-3">
-         <label class="form-label">
-          Do you currently have auto insurance?
-          <span class="required-star">
-           *
-          </span>
-         </label>
-         <div class="d-flex">
-          <div class="form-check me-4">
-           <input class="form-radio" id="hasInsuranceYes" name="hasInsurance" required="" type="radio" value="yes"/>
-           <label class="form-check-label">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-radio" id="hasInsuranceNo" name="hasInsurance" type="radio" value="no"/>
-           <label class="form-check-label">
-            No
-           </label>
-          </div>
-         </div>
-        </div>
-        <div class="mb-3 hidden" id="currentCoverageSection">
-         <div id="detailedCoverageInputs">
-          <div>
-          <label class="form-label" for="currentCarrier">Current Carrier Name</label>
-          <input class="form-control-custom mb-2" name="currentCarrier" placeholder="e.g., Progressive, Geico" type="text"/>
-          </div>
-          <div>
-          <label class="form-label" for="currentPolicyNumber">Current Policy Number</label>
-          <input class="form-control-custom mb-2" name="currentPolicyNumber" placeholder="Policy # (Optional)" type="text"/>
-          </div>
-          <div class="mb-2">
-           <label class="form-label" for="policyExpirationDate">
-            Current Policy Expiration*
-           </label>
-           <input class="form-control-custom" id="policyExpirationDate" name="policyExpirationDate" type="date"/>
-          </div>
-          <div>
-          <label class="form-label" for="currentPremium">Current Premium</label>
-          <input class="form-control-custom mb-2" name="currentPremium" placeholder="$1,000" type="text"/>
-          </div>
-          <div>
-          <label class="form-label" for="bodilyInjuryCurrent">Bodily Injury Liability</label>
-          <input class="form-control-custom mb-2" name="bodilyInjuryCurrent" placeholder="e.g.,25/50, 100/30" type="text"/>
-          </div>
-          <div>
-          <label class="form-label" for="propertyDamageCurrent">Property Damage</label>
-          <input class="form-control-custom mb-2" name="propertyDamageCurrent" placeholder="e.g., 25k, 50k" type="text"/>
-          </div>
-          <div>
-          <label class="form-label" for="medicalPaymentsCurrent">Medical Payment (PIP)</label>
-          <input class="form-control-custom mb-2" name="medicalPaymentsCurrent" placeholder="e.g., 2.5k, 5k" type="text"/>
-          </div>
-          <div>
-          <label class="form-label" for="comprehensiveDeductibleCurrent">Comprehensive Deductible</label>
-          <input class="form-control-custom mb-2" name="comprehensiveDeductibleCurrent" placeholder="e.g., $500, $1,000" type="text"/>
-          </div>
-          <div>
-          <label class="form-label" for="collisionDeductibleCurrent">Collision Deductible</label>
-          <input class="form-control-custom mb-2" name="collisionDeductibleCurrent" placeholder="e.g., $500, $1,000" type="text"/>
-          </div>
-          <label class="form-label mt-2">
-           Any other current coverages (e.g., Roadside, Rental)?
-          </label>
-          <textarea class="form-textarea-custom" name="otherCurrentCoverages" rows="3"></textarea>
-         </div>
-        </div>
-        <div class="mb-3">
-         <h6>
-          Desired Coverage
-         </h6>
-         <div>
-          <label class="form-label" for="bodilyInjuryDesired">Bodily Injury Liability</label>
-          <input class="form-control-custom mb-2" name="bodilyInjuryDesired" placeholder="e.g., 50/100, 250/500" type="text"/>
-         </div>
-         <div>
-          <label class="form-label" for="propertyDamageDesired">Property Damamge</label>
-         <input class="form-control-custom mb-2" name="propertyDamageDesired" placeholder="e.g., 50k, 100k" type="text"/>
-         </div>
-         <div>
-          <label class="form-label" for="medicalPaymentsDesired">Medical Payments (PIP)</label>
-         <input class="form-control-custom mb-2" name="medicalPaymentsDesired" placeholder="e.g.,5k, 10k" type="text"/>
-         </div>
-         <div>
-          <label class="form-label" for="uninsuredBodilyInjury">Uninsured/Underinsured Bodily Injury</label>
-         <input class="form-control-custom mb-2" name="uninsuredBodilyInjury" placeholder="e.g., 50/100, reject" type="text"/>
-         </div>
-         <div>
-          <label class="form-label" for="uninsuredPropertyDamage">Uninsured/Underinsured Motorist Property Damage</label>
-         <input class="form-control-custom mb-2" name="uninsuredPropertyDamage" placeholder="e.g., 25k, reject" type="text"/>
-         </div><div>
-          <label class="form-label" for="comprehensiveDeductibleDesired">Comprehensive Deductible</label>
-         <input class="form-control-custom mb-2" name="comprehensiveDeductibleDesired" placeholder="e.g., $250, $500" type="text"/>
-         </div>
-         <div>
-          <label class="form-label" for="collisionDeductibleDesired">Collision Deductible</label>
-         <input class="form-control-custom mb-2" name="collisionDeductibleDesired" placeholder="e.g., $250, $500" type="text"/>
-         </div>
-         <label class="form-label mt-2">
-          Any other desired coverages (e.g., Roadside, Rental)?
-         </label>
-         <textarea class="form-textarea-custom" name="otherDesiredCoverages" rows="3"></textarea>
-        </div>
-        <div class="mb-3">
-         <label class="form-label">
-          Any accidents in the past 5 years?
-          <span class="required-star">
-           *
-          </span>
-         </label>
-         <div class="d-flex">
-          <div class="form-check me-4">
-           <input class="form-radio" id="accidentsYes" name="accidents" required="" type="radio" value="yes"/>
-           <label class="form-check-label">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-radio" id="accidentsNo" name="accidents" type="radio" value="no"/>
-           <label class="form-check-label">
-            No
-           </label>
-          </div>
-         </div>
-        </div>
-        <div class="mb-3 hidden" id="accidentComment">
-         <label class="form-label">
-          Please describe the accidents:
-         </label>
-         <textarea class="form-textarea-custom" name="accidentDetails" placeholder="Provide brief details of the accidents" rows="3"></textarea>
-        </div>
-        <div class="mb-3">
-         <label class="form-label">
-          Any Additional Drivers?
-          <span class="required-star">
-           *
-          </span>
-         </label>
-         <div class="d-flex">
-          <div class="form-check me-4">
-           <input class="form-radio" id="additionalDriverYes" name="additionalDriver" required="" type="radio" value="yes"/>
-           <label class="form-check-label" for="additionalDriverYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-radio" id="additionalDriverNo" name="additionalDriver" type="radio" value="no"/>
-           <label class="form-check-label" for="additionalDriverNo">
-            No
-           </label>
-          </div>
-         </div>
-        </div>
-        <div class="mb-3 hidden" id="driversContainer">
-         <h5 class="mt-3">
-          Additional Drivers
-         </h5>
-        </div>
-        <button class="btn btn-secondary-custom mt-3 hidden" id="addDriverBtn" type="button">
-         + Add Another Driver
-        </button>
-        <div class="d-flex justify-content-between mt-4">
-         <button class="btn btn-secondary prev-step-btn" data-prev-step="0" type="button">
-          Back
-         </button>
-         <button class="btn btn-orange next-step-btn" type="button">
-          Next
-         </button>
-        </div>
-       </div>
-       <!-- Step 3: Home Quote (UPDATED WITH CONDITIONAL SECTIONS) -->
-       <div class="form-step" id="step-2">
-        <h4 class="mb-4">
-         Home Quote
-        </h4>
-        <p class="text-muted">
-         Please provide details about your property.
-        </p>
-        <div class="mb-4">
-         <label class="form-label" for="homeQuoteType">
-          What type of insurance do you need?
-          <span class="required-star">
-           *
-          </span>
-         </label>
-         <select class="form-select-custom" id="homeQuoteType" name="homequotetype">
-          <option disabled="" selected="" value="">
-           Select an insurance type
-          </option>
-          <option value="homeowners">Homeowners</option>
-          <option value="condo">Condo</option>
-          <option value="renters">Renters</option>
-         </select>
-        </div>
-        <!-- Homeowners Insurance Section -->
-        <div class="hidden" id="homeowners-section">
-         <h5>
-          Homeowners Insurance Details
-         </h5>
-         <!-- Address Section -->
-         <div class="mb-3">
-          <label class="form-label">
-           Is this property a dwelling?
-          </label>
-          <div class="form-check">
-           <input class="form-radio" id="dwellingYes" name="isDwelling" type="radio" value="yes"/>
-           <label class="form-check-label" for="dwellingYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-radio" id="dwellingNo" name="isDwelling" type="radio" value="no"/>
-           <label class="form-check-label" for="dwellingNo">
-            No
-           </label>
-          </div>
-          <label class="form-label">
-           Is the mailing address the same as the property address?
-          </label>
-          <div class="form-check">
-           <input class="form-radio" id="mailingYes" name="mailingSame" type="radio" value="yes"/>
-           <label class="form-check-label" for="mailingYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-radio" id="mailingNo" name="mailingSame" type="radio" value="no"/>
-           <label class="form-check-label" for="mailingNo">
-            No
-           </label>
-          </div>
-         </div>
-         
-         <!-- Mailing address section to show/hide -->
-         <div class="hidden" id="mailingAddressSection">
-          <div class="form-group-grid md-cols-2">
-           <input class="form-control-custom" name="mailingStreet" placeholder="Mailing Street Address" type="text"/>
-           <input class="form-control-custom" name="mailingCity" placeholder="Mailing City" type="text"/>
-           <input class="form-control-custom" name="mailingState" placeholder="Mailing State" type="text"/>
-           <input class="form-control-custom" name="mailingZip" placeholder="Mailing Zip Code" type="text"/>
-          </div>
-         </div>
-         <h6 class="mt-4">
-          Property Address
-         </h6>
-         <div class="form-group-grid md-cols-2" id="homeowners-address-fields">
-          <input class="form-control-custom" name="propertyStreet" placeholder="Address Line 1" required="" type="text"/>
-          <input class="form-control-custom" name="propertycity" placeholder="City" required="" type="text"/>
-          <input class="form-control-custom" name="propertystate" placeholder="State" required="" type="text"/>
-          <input class="form-control-custom" name="propertyzip" placeholder="Zip" required="" type="text"/>
-         </div>
-         <!-- Property Details -->
-          <h6 class="mt-4">
-          <strong>Property Details</strong>
-         </h6>
-         <div class="form-group-grid md-cols-3">
-          <div class="col">
-            <label class=" form-label">
-              Purchase Date:
-              <span class="required-star">
-           *
-          </span>
-            </label>
-            <input class="form-control-custom" name="purchaseDate" type="date"/>
-          </div>
 
-          <div class="col">
-           <label class="form-label">
-            Year of Construction
-            <span class="required-star">
-           *
-          </span>
-           </label>
-           <input class="form-control-custom" name="constructionYear" placeholder="e.g., 1995" type="text"/>
-          </div>
-
-          <div class="col">
-           <label class="form-label">
-            How Many Stories:
-            <span class="required-star">
-           *
-          </span>
-           </label>
-           <select class="form-select-custom stories-select" name="how_many_stories:">
-            <option value="1">
-             1 Story
-            </option>
-            <option value="1.5">
-             1.5 Stories
-            </option>
-            <option value="2">
-             2 Stories
-            </option>
-            <option value="split">
-             Split-Level
-            </option>
-            <option value="other">
-             Other
-            </option>
-           </select>
-           <input class="form-control-custom mt-2 hidden" name="propertyStories" placeholder="Specify stories" type="text"/>
-          </div>
-        
-          
-          <div class="col">
-           <label class="form-label">
-            Estimated Replacement Cost
-            <span class="required-star">
-           *
-          </span>
-           </label>
-           <input class="form-control-custom" name="replacementCost" placeholder="e.g., $300,000" type="text"/>
-          </div>
-
-          <div class="col">
-           <label class="form-label">
-            Square Footage
-            <span class="required-star">
-           *
-          </span>
-           </label>
-           <input class="form-control-custom" name="squareFootage" placeholder="e.g., 2000 sq ft" type="text"/>
-          </div>
-         </div>
-
-          <h6 class="mt-4">
-          <strong>Protection Information</strong>
-         </h6>
-         <div class="form-group-grid md-cols-2">
-         <div class="col">
-            <label class="form-label">
-              Distance to fire department (miles)
-              <span class="required-star">
-           *
-          </span>
-            </label>
-           <input class="form-control-custom" name="fireDepartment" placeholder="15" type="text"/>
-          </div>
-
-          <div class="col">
-            <label class="form-label">
-              Is property located within city limits?
-              <span class="required-star">
-           *
-          </span>
-            </label>
-            <div class="form-check">
-           <input class="form-radio" id="cityLimitsYes" name="cityLimits" type="radio" value="yes"/>
-           <label class="form-check-label" for="cityLimitsYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-radio" id="cityLimitsNo" name="cityLimits" type="radio" value="no"/>
-           <label class="form-check-label" for="cityLimitsNo">
-            No
-           </label>
-          </div>
-          </div>
-          <div class="col">
-            <label class="form-label">
-              Distance to fire hydrant (feet)
-              <span class="required-star">
-           *
-          </span>
-            </label>
-            <input class="form-control-custom" name="fireHydrant" placeholder="e.g., 25 feet" type="text"/>
-          </div>
-          <div class="col">
-            <label class="form-label">
-              Special personal property?
-            </label>
-            <div class="form-check">
-           <input class="form-radio" id="specialPropertyYes" name="specialPersonalProperty" type="radio" value="yes"/>
-           <label class="form-check-label" for="specialPropertyYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-radio" id="specialPropertyNo" name="specialPersonalProperty" type="radio" value="no"/>
-           <label class="form-check-label" for="specialPropertyNo">
-            No
-           </label>
-          </div>
-          </div>
-          <div class="col">
-            <label class="form-label">
-              Distance to tidal water or coast (miles): 
-              <span class="required-star">
-           *
-          </span>
-            </label>
-            <input class="form-control-custom" name="waterDistance" placeholder="e.g., 25 miles" type="text"/>
-          </div>
-         </div>
-        
-          <h6 class="mt-4">
-          <strong>Structure Information</strong>
-         </h6>
-          <div class="form-group-grid md-cols-3">
-           <div class="col">
-            <label class=" form-label">
-             Is this your primary residence? 
-            <span class="required-star">
-           *
-          </span>
-            </label>
-            <select class="form-select-custom residence-type" name="residence_type:">
-            <option value="priamry">
-             Primary
-            </option>
-            <option value="secondary">
-             Secondary
-            </option>
-            <option value="seasonal">
-             Seasonal
-            </option>
-            <option value="farm">
-             Farm
-            </option>
-            <option value="coc">
-             COC
-            </option>
-           </select>
-           <input class="form-control-custom mt-2 hidden" name="residenceTypeOther" placeholder="Specify residence type" type="text"/>
-          </div>
-          <div class="col">
-            <label class=" form-label">
-             Occupancy Type: 
-            <span class="required-star">
-           *
-          </span>
-            </label>
-            <select class="form-select-custom occupance-type" name="occupance_type:">
-            <option value="owner occupied">
-             Owner Occupied
-            </option>
-            <option value="renter occupied">
-             Renter Occupied
-            </option>
-            <option value="unoccupied">
-             Unoccupied
-            </option>
-            <option value="vacant">
-             Vacant
-            </option>
-           </select>
-           <input class="form-control-custom mt-2 hidden" name="OccupanceTypeOther" placeholder="Specify Occupancy type" type="text"/>
-          </div>
-
-            <div class="col">
-            <label class=" form-label">
-             Number of Families: 
-            <span class="required-star">
-           *
-          </span>
-            </label>
-            <select class="form-select-custom family-size" name="family_size:">
-            <option value="one family">
-             One Family
-            </option>
-            <option value="two families">
-             Two Families
-            </option>
-            <option value="three families">
-             Three Families
-            </option>
-            <option value="four families">
-             Four Families
-            </option>
-           </select>
-           <input class="form-control-custom mt-2 hidden" name="familySizeOther" placeholder="Number of Families" type="text"/>
-          </div>
-
-          <div class="col">
-            <label class=" form-label">
-             Number of Occupants 
-            <span class="required-star">
-           *
-          </span>
-            </label>
-            <select class="form-select-custom occupancy-size" name="occupancy_size:">
-            <option value="1">
-             1
-            </option>
-            <option value="2">
-             2
-            </option>
-            <option value="3">
-             3
-            </option>
-            <option value="4">
-             4
-            </option>
-            <option value="5">
-             5
-            </option>
-            <option value="6">
-             6
-            </option>
-            <option value="7">
-             7
-            </option>
-            <option value="8">
-             8
-            </option>
-            <option value="9+">
-             9 or more
-            </option>
-           </select>
-           <input class="form-control-custom mt-2 hidden" name="occupancySizeOther" placeholder="Number of Occupants" type="text"/>
-          </div>
-
-          <div class="col">
-           <label class="form-label">
-            Construction Type:
-            <span class="required-star">
-           *
-          </span>
-           </label>
-           <select class="form-select-custom construction-select" name="construction_type:">
-            <option value="wood">
-             Wood
-            </option>
-            <option value="stucco">
-             Stucco
-            </option>
-            <option value="masonry">
-             Masonry
-            </option>
-            <option value="brick">
-             Brick Veneer
-            </option>
-            <option value="other">
-             Other
-            </option>
-           </select>
-           <input class="form-control-custom mt-2 hidden" name="constructionType" placeholder="Specify construction type" type="text"/>
-          </div>
-
-          <div class="col">
-            <label class=" form-label">
-             Roof Type:
-            <span class="required-star">
-           *
-          </span>
-            </label>
-            <select class="form-select-custom roof-type" name="roof_type:">
-            <option value="architectural shingles">
-             Architectural Shingles
-            </option>
-            <option value="asbestos">
-             Asbestos
-            </option>
-            <option value="asphalt shingles">
-             Asphalt Shingles
-            </option>
-            <option value="composition">
-             Composition
-            </option>
-            <option value="copper (flat)">
-             Copper (Flat)
-            </option>
-            <option value="copper (pitched)">
-             Copper (Pitched)
-            </option>
-            <option value="currogated steel (flat)">
-             Currogated Steel (Flat)
-            </option>
-            <option value="currogated steel (pitched)">
-             Currogated Steel (Pitched)
-            </option>
-            <option value="fiberglass">
-             Fiberglass
-            </option>
-            <option value="foam">
-             Foam
-            </option>
-            <option value="gravel">
-             Gravel
-            </option>
-            <option value="metal (flat)">
-             Metal (Flat)
-            </option>
-            <option value="metal (pitched)">
-             Metal (Pitched)
-            </option>
-            <option value="mineral fibershake">
-             Mineral Fibershake
-            </option>
-            <option value="plastic (flat)">
-             Plastic (Flat)
-            </option>
-            <option value="plastic (pitched)">
-             Plastic (Pitched)
-            </option>
-            <option value="rock">
-             Rock
-            </option>
-            <option value="rolled paper (flat)">
-             Rolled Paper (Flat)
-            </option>
-            <option value="rolled paper (pitched)">
-             Rolled Paper (Pitched)
-            </option>
-            <option value="rubber (flat)">
-             Rubber (Flat)
-            </option>
-            <option value="rubber (pitched)">
-             Rubber (Pitched)
-            </option>
-            <option value="slate">
-             Slate
-            </option>
-            <option value="solar">
-             Solar
-            </option>
-            <option value="thatch">
-             Thatch
-            </option>
-            <option value="tar">
-             Tar
-            </option>
-            <option value="tar and gravel">
-             Tar and Gravel
-            </option>
-            <option value="tile (day)">
-             Tile (Day)
-            </option>
-            <option value="tile (concrete)">
-             Tile (Concrete)
-            </option>
-            <option value="tile (spanish)">
-             Tile (Spanish)
-            </option>
-            <option value="tin (flat)">
-             Tin (Flat)
-            </option>
-            <option value="tin (pitched)">
-             Tin (Pitched)
-            </option>
-            <option value="wood fiberglass shingles">
-             Wood Fiberglass Shingles
-            </option>
-            <option value="wood shake">
-             Wood Shake
-            </option>
-            <option value="wood shingles">
-             Wood Shingles
-            </option>
-           </select>
-           <input class="form-control-custom mt-2 hidden" name="roofTypeOther" placeholder="Type of Roof" type="text"/>
-          </div>
-
-          <div class="col">
-            <label class=" form-label">
-             Roof Design?
-            <span class="required-star">
-           *
-          </span>
-            </label>
-            <select class="form-select-custom roof-style" name="roof_style:">
-            <option value="dormer">
-             Dormer
-            </option>
-            <option value="flat">
-             Flat
-            </option>
-            <option value="gable">
-             Gable
-            </option>
-            <option value="gambrel">
-             Gambrel
-            </option>
-            <option value="hip">
-             Hip
-            </option>
-            <option value="mansard">
-             Mansard
-            </option>
-            <option value="pyramid">
-             Pyramid
-            </option>
-            <option value="shed">
-             Shed
-            </option>
-            <option value="turret">
-             Turet
-            </option>
-            </select>
-           <input class="form-control-custom mt-2 hidden" name="roofStyleOther" placeholder="Style of Roof" type="text"/>
-          </div>
-
-          <div class="col">
-            <label class=" form-label">
-             Foundation Type
-            <span class="required-star">
-           *
-          </span>
-            </label>
-            <select class="form-select-custom foundation-type" name="foundation_type:">
-            <option value="basement-finished">
-             Basement-Finished
-            </option>
-            <option value="basement-partially finished">
-             Basement-Partially Finished
-            </option>
-            <option value="basement-unfinished">
-             Basement-Unfinished
-            </option>
-            <option value="basement-walkout">
-             Basement-Walkout
-            </option>
-            <option value="crawl space-enclosed">
-             Crawl Space-Enclosed
-            </option>
-            <option value="crawl space-open">
-             Crawl Space-Open
-            </option>
-            <option value="daylight basement-finished">
-             Daylight Basement-Finished
-            </option>
-            <option value="daylight basement-unfinished">
-             Daylight Basement-Unfinished
-            </option>
-            <option value="daylight basement-partially finished">
-             Daylight Basement-Partially Finished
-            </option>
-            <option value="hillside foundation">
-             Hillside Foundation
-            </option>
-            <option value="piers">
-             Piers
-            </option>
-            <option value="piling/stilts">
-             Piling/Stilts
-            </option>
-            <option value="slab">
-             Slab
-            </option>
-            </select>
-           <input class="form-control-custom mt-2 hidden" name="foundationTypeOther" placeholder="Type of Foundation" type="text"/>
-          </div>
-
-          <div class="col">
-           <label class="form-label">
-            Age of Roof
-           </label>
-           <input class="form-control-custom" name="roofAge" placeholder="e.g., 5 years" type="text"/>
-          </div>
-          <div class="col">
-            <label class=" form-label">
-             Number of Full Baths
-            <span class="required-star">
-           *
-          </span>
-            </label>
-            <select class="form-select-custom full-baths" name="full_baths:">
-            <option value="1">
-             1
-            </option>
-            <option value="2">
-             2
-            </option>
-            <option value="3">
-             3
-            </option>
-            <option value="4">
-             4
-            </option>
-            <option value="5">
-             5
-            </option>
-            <option value="6">
-             6
-            </option>
-            <option value="7">
-             7
-            </option>
-            <option value="8">
-             8
-            </option>
-            <option value="9">
-             9
-            </option>
-            <option value="10+">
-             10 or More
-            </option>
-            </select>
-           <input class="form-control-custom mt-2 hidden" name="numberBathsOther" placeholder="Number of Full Baths" type="text"/>
-          </div>
-
-          <div class="col">
-            <label class=" form-label">
-             Primary Heat Source:
-            <span class="required-star">
-           *
-          </span>
-            </label>
-            <select class="form-select-custom heat-source" name="heat_source:">
-            <option value="electric">
-             Electric
-            </option>
-            <option value="gas">
-             Gas
-            </option>
-            <option value="gas-forced">
-             Gas-Forced
-            </option>
-            <option value="gas-hotwater">
-             Gas-Hotwater
-            </option>
-            <option value="oil">
-             Oil
-            </option>
-            <option value="oil-forced">
-             Oil-Forced
-            </option>
-            <option value="oil-hotwater">
-             Oil-Hotwater
-            </option>
-            <option value="solid fuel">
-             Solid Fuel
-            </option>
-          </select>
-           <input class="form-control-custom mt-2 hidden" name="heatTypeOther" placeholder="Type of Heat" type="text"/>
-          </div>
-
-          <div class="col">
-            <label class="form-label">
-              Do you have an alternate source of heat?
-              <span class="required-star">
-           *
-          </span>
-            </label>
-            <div class="form-check">
-           <input class="form-check-input" id="altHeatYes" name="alternateHeat" type="radio" value="yes"/>
-           <label class="form-check-label" for="altHeatYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="altHeatYesNo" name="alternateHeatSame" type="radio" value="no"/>
-           <label class="form-check-label" for="altHeatYesNo">
-            No
-           </label>
-          </div>
-          </div>
-
-          <div class="col">
-           <label class="form-label">
-            Year Heating Updated:
-            <span class="required-star">
-           *
-          </span>
-           </label>
-           <input class="form-control-custom" name="heatYear" placeholder="YYYY" type="text"/>
-          </div>
-          
-          <div class="col">
-          <label class="form-label">
-              Does this home have an electric circuit breaker?
-              <span class="required-star">
-           *
-          </span>
-            </label>
-            <div class="form-check">
-           <input class="form-check-input" id="breakerYes" name="breakerSame" type="radio" value="yes"/>
-           <label class="form-check-label" for="breakerYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="breakerNo" name="breakerSame" type="radio" value="no"/>
-           <label class="form-check-label" for="breakerNo">
-            No
-           </label>
-          </div>
-          </div>
-
-          <div class="col">
-           <label class="form-label">
-            Year water heater updated
-            <span class="required-star">
-           *
-          </span>
-           </label>
-           <input class="form-control-custom" name="waterAge" placeholder="YYYY" type="text"/>
-          </div>
-
-          <div class="col">
-           <label class="form-label">
-            Year electrical updated
-            <span class="required-star">
-           *
-          </span>
-           </label>
-           <input class="form-control-custom" name="electricalAge" placeholder="YYYY" type="text"/>
-          </div>
-
-          <div class="col">
-           <label class="form-label">
-            Year plumbing updated
-            <span class="required-star">
-           *
-          </span>
-           </label>
-           <input class="form-control-custom" name="plumbingAge" placeholder="YYYY" type="text"/>
-          </div>
-
-          <div class="col">
-          <label class="form-label">
-              Do you conduct any type of business on this property (e.g. beauty salon, daycare)?
-              <span class="required-star">
-           *
-          </span>
-            </label>
-            <div class="form-check">
-           <input class="form-check-input" id="businessYes" name="homeBusiness" type="radio" value="yes"/>
-           <label class="form-check-label" for="businessYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="businessNo" name="homeBusiness" type="radio" value="no"/>
-           <label class="form-check-label" for="businessNo">
-            No
-           </label>
-          </div>
-          </div>
-
-          <div class="col">
-          <label class="form-label">
-              First Mortgagee?
-              <span class="required-star">
-           *
-          </span>
-            </label>
-            <div class="form-check">
-           <input class="form-check-input" id="firstMortgageeYes" name="firstMortgagee" type="radio" value="yes"/>
-           <label class="form-check-label" for="firstMortgageeYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="firstMortgageeNo" name="firstMortgagee" type="radio" value="no"/>
-           <label class="form-check-label" for="firstMortgageeNo">
-            No
-           </label>
-          </div>
-          </div>
-
-          <div class="col">
-          <label class="form-label">
-              Second Mortgagee?
-              <span class="required-star">
-           *
-          </span>
-            </label>
-            <div class="form-check">
-           <input class="form-check-input" id="secondMortgageeYes" name="secondMortgagee" type="radio" value="yes"/>
-           <label class="form-check-label" for="secondMortgageeYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="secondMortgageeNo" name="secondMortgagee" type="radio" value="no"/>
-           <label class="form-check-label" for="secondMortgageeNo">
-            No
-           </label>
-          </div>
-          </div>
-
-        <div class="col">
-          <label class="form-label">
-              Do you own any dogs of these breeds (Rottweiler, German Shepherd, Doberman, Pitbull, Chow, Wolf Hybrid, or a mix of these)?
-              <span class="required-star">
-           *
-          </span>
-            </label>
-            <div class="form-check">
-           <input class="form-check-input" id="restrictedDogYes" name="restrictedDog" type="radio" value="yes"/>
-           <label class="form-check-label" for="restrictedDogYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="restrictedDogNo" name="restrictedDog" type="radio" value="no"/>
-           <label class="form-check-label" for="restrictedDogNo">
-            No
-           </label>
-          </div>
-          </div>
-          </div>
-
-         <h6 class="mt-4">
-          <strong>Property Accessories</strong>
-         </h6>
-         <div class="form-group-grid md-cols-4">
-          <div class="form-check">
-           <input class="form-check-input" id="home-deadbolts" name="homeDeadbolts" type="checkbox" value="deadbolts"/>
-           <label class="form-check-label" for="home-deadbolts">
-            Deadbolts
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="home-smokeDetectors" name="homeSmokeDetector" type="checkbox" value="smokeDetectors"/>
-           <label class="form-check-label" for="home-smokeDetectors">
-            Smoke Detectors
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="home-fireExtinguisher" name="homeFireExt" type="checkbox" value="fireExtinguisher"/>
-           <label class="form-check-label" for="home-fireExtinguisher">
-            Fire Extinguisher
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="home-fireSprinkler" name="homeFireExt" type="checkbox" value="fireSprinkler"/>
-           <label class="form-check-label" for="home-fireSprinkler">
-            Indoor Fire Sprinkler
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="home-alarm" name="homeAlarm" type="checkbox" value="alarm"/>
-           <label class="form-check-label" for="home-alarm">
-            Burglar Alarm
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="home-gate" name="homeGate" type="checkbox" value="gate"/>
-           <label class="form-check-label" for="home-gate">
-            Gated Community
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="home-pool" ma,e="homePool" name="home_pool" type="checkbox" value="pool"/>
-           <label class="form-check-label" for="home-pool">
-            Swimming Pool
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="home-trampoline" name="homeTrampoline" type="checkbox" value="trampoline"/>
-           <label class="form-check-label" for="home-trampoline">
-            Trampoline
-           </label>
-          </div>
-          
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" id="featureOtherHome" value="Other">
-  <label class="form-check-label" for="featureOtherHome">Other</label>
-</div>
-<div id="otherFeatureTextContainerHome" class="hidden mt-2">
-  <input type="text" class="form-control" name="otherFeatureHomeText" placeholder="Please specify other feature">
-</div>
-         </div>
-         <h6 class="mt-4"><strong>
-          Current Coverage Information</strong>
-         </h6>
-         <div class="mb-3">
-         <label class="form-label" for="currentCarrier">Current Carrier Name</label>
-          <input class="form-control-custom mb-2" name="currentCarrier" placeholder="e.g., Progressive, Geico" type="text"/>
-          </div>
-          <div>
-          <label class="form-label" for="currentPolicyNumber">Current Policy Number</label>
-          <input class="form-control-custom mb-2" name="currentPolicyNumber" placeholder="Policy # (Optional)" type="text"/>
-          </div>
-          <div class="mb-2">
-           <label class="form-label" for="policyExpirationDate">
-            Current Policy Expiration*
-           </label>
-           <input class="form-control-custom" id="policyExpirationDate" name="policyExpirationDate" type="date"/>
-          </div>
-          <div>
-
-         <h6 class="mt-4">
-          <strong>Desired Insurance Information</strong>
-         </h6>
-         <div class="mb-2">
-          <label class="form-label" for="policyExpirationDate">
-            Desired Deductible
-           </label>
-          <input class="form-control-custom" name="deductible_desired" placeholder="e.g., $1000" type="text"/>
-         </div>
-         <div class="mb-2">
-          <label class="form-label" for="policyExpirationDate">
-            Desired Liability
-           </label>
-          <input class="form-control-custom" name="amount_of_liability_desired" placeholder="e.g., $50k/ $100k" type="text"/>
-         </div>
-         <div class="mb-3">
-          <label class="form-label">
-           Is your home older than 20 years? If so, what updates have been done?
-          </label>
-          <textarea class="form-textarea-custom" name="is_your_home_older_than_20_years_if_so,_what_updat" rows="3"></textarea>
-         </div>
-         <h6 class="mt-4">
-          Claims History
-         </h6>
-         <div id="homeowners-claims-container">
-          <!-- Claims will be dynamically added here -->
-         </div>
-         <button class="btn btn-secondary-custom mt-3" id="add-homeowners-claim-btn" type="button">
-          + Add Another Claim
-         </button>
+          </form>
         </div>
-        </div>
-        <!-- Condo Insurance Section -->
-        <div class="hidden" id="condo-section">
-         <h5>
-          Condo Insurance Details
-         </h5>
-         <!-- Address Section -->
-         <div class="mb-3">
-          <label class="form-label">
-           Is the mailing address the same as the property address?
-          </label>
-          <div class="form-check">
-           <input class="form-check-input" id="condoMailingYes" name="condoMailingSame" type="radio" value="yes"/>
-           <label class="form-check-label" for="condoMailingYes">
-            Yes
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="condoMailingNo" name="condoMailingSame" type="radio" value="no"/>
-           <label class="form-check-label" for="condoMailingNo">
-            No
-           </label>
-          </div>
-         </div>
-         <!-- Mailing address section to show/hide -->
-         <div class="hidden" id="condoMailingAddressSection">
-          <div class="form-group-grid md-cols-2">
-           <input class="form-control-custom" name="condoMailingStreet" placeholder="Mailing Street Address" type="text"/>
-           <input class="form-control-custom" name="condoMailingCity" placeholder="Mailing City" type="text"/>
-           <input class="form-control-custom" name="condoMailingState" placeholder="Mailing State" type="text"/>
-           <input class="form-control-custom" name="condoMailingZip" placeholder="Mailing Zip Code" type="text"/>
-          </div>
-         </div>
-         <!-- Property Details -->
-         <h6 class="mt-4">
-          Property Details
-         </h6>
-         <div class="form-group-grid md-cols-3">
-          <div class="col">
-           <label class="form-label">
-            How Many Stories:
-           </label>
-           <select class="form-select-custom stories-select" name="how_many_stories:">
-            <option value="1">
-             1 Story
-            </option>
-            <option value="1.5">
-             1.5 Stories
-            </option>
-            <option value="2">
-             2 Stories
-            </option>
-            <option value="split">
-             Split-Level
-            </option>
-            <option value="other">
-             Other
-            </option>
-           </select>
-           <input class="form-control-custom mt-2 hidden" name="specify_stories" placeholder="Specify stories" type="text"/>
-          </div>
-          <div class="col">
-           <label class="form-label">
-            Construction Type:
-           </label>
-           <select class="form-select-custom construction-select" name="construction_type:">
-            <option value="wood">
-             Wood
-            </option>
-            <option value="stucco">
-             Stucco
-            </option>
-            <option value="masonry">
-             Masonry
-            </option>
-            <option value="brick">
-             Brick Veneer
-            </option>
-            <option value="other">
-             Other
-            </option>
-           </select>
-           <input class="form-control-custom mt-2 hidden" name="specify_construction_type" placeholder="Specify construction type" type="text"/>
-          </div>
-          <div class="col">
-           <label class="form-label">
-            Primary Residence?
-           </label>
-           <div class="d-flex">
-            <div class="form-check me-4">
-             <input class="form-radio" name="condoPrimary" type="radio" value="yes"/>
-             <label class="form-check-label">
-              Yes
-             </label>
-            </div>
-            <div class="form-check">
-             <input class="form-radio" name="condoPrimary" type="radio" value="no"/>
-             <label class="form-check-label">
-              No
-             </label>
-            </div>
-           </div>
-          </div>
-          <div class="col">
-           <label class="form-label">
-            How Many Units:
-           </label>
-           <select class="form-select-custom units-select" name="how_many_units:">
-            <option value="1">
-             1
-            </option>
-            <option value="2">
-             2
-            </option>
-            <option value="3">
-             3
-            </option>
-            <option value="4">
-             4
-            </option>
-            <option value="5+">
-             5+
-            </option>
-           </select>
-           <input class="form-control-custom mt-2 hidden" name="specify_number_of_units" placeholder="Specify number of units" type="text"/>
-          </div>
-          <div class="col">
-           <label class="form-label">
-            Type of Building:
-           </label>
-           <select class="form-select-custom" name="type_of_building:">
-            <option value="apartment">
-             Apartment
-            </option>
-            <option value="condo">
-             Condo
-            </option>
-            <option value="townhouse">
-             Townhouse
-            </option>
-            <option value="house">
-             House
-            </option>
-            <option value="mobile">
-             Manufactured/Mobile Home
-            </option>
-           </select>
-          </div>
-         </div>
-         <h6 class="mt-4">
-          Other Features
-         </h6>
-         <div class="form-group-grid md-cols-4">
-          <div class="form-check">
-           <input class="form-check-input" id="condo-deadbolts" name="condo_deadbolts" type="checkbox" value="deadbolts"/>
-           <label class="form-check-label" for="condo-deadbolts">
-            Deadbolts
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="condo-smokeDetectors" name="condo_smokedetectors" type="checkbox" value="smokeDetectors"/>
-           <label class="form-check-label" for="condo-smokeDetectors">
-            Smoke Detectors
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="condo-fireExtinguisher" name="condo_fireextinguisher" type="checkbox" value="fireExtinguisher"/>
-           <label class="form-check-label" for="condo-fireExtinguisher">
-            Fire Extinguisher
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="condo-alarm" name="condo_alarm" type="checkbox" value="alarm"/>
-           <label class="form-check-label" for="condo-alarm">
-            Central Station Alarm
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="condo-pool" name="condo_pool" type="checkbox" value="pool"/>
-           <label class="form-check-label" for="condo-pool">
-            Swimming Pool
-           </label>
-          </div>
-          <div class="form-check">
-           <input class="form-check-input" id="condo-trampoline" name="condo_trampoline" type="checkbox" value="trampoline"/>
-           <label class="form-check-label" for="condo-trampoline">
-            Trampoline
-           </label>
-          </div>
-          <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="other" id="condo-other-feature" name="condoOtherFeature">
-  <label class="form-check-label" for="condo-other-feature">Other</label>
-  <input type="text" class="form-control-custom mt-2 hidden" name="condoOtherFeatureText" id="condo-other-feature-text" placeholder="Specify other feature">
-</div>
-         </div>
-         <h6 class="mt-4">
-          Current Coverage Information
-         </h6>
-         <div class="form-group-grid md-cols-3">
-          <input class="form-control-custom" name="carrier_name" placeholder="Carrier Name" type="text"/>
-          <input class="form-control-custom" name="policy_number" placeholder="Policy Number" type="text"/>
-          <div class="col">
-           <label class="form-label">
-            Expiration Date
-           </label>
-           <input class="form-control-custom" name="expiration_date" type="date"/>
-          </div>
-         </div>
-         <div class="form-group-grid md-cols-2">
-          <input class="form-control-custom" name="current_coverage_limits" placeholder="Current Coverage Limits" type="text"/>
-          <input class="form-control-custom" name="current_deductible" placeholder="Current Deductible" type="text"/>
-         </div>
-         <h6 class="mt-4">
-          Desired Coverage Information
-         </h6>
-         <div class="form-group-grid md-cols-2">
-          <input class="form-control-custom" name="deductible_desired" placeholder="Deductible Desired" type="text"/>
-          <input class="form-control-custom" name="amount_of_liability_desired" placeholder="Amount of Liability Desired" type="text"/>
-         </div>
-         <div class="mb-3">
-          <label class="form-label">
-           Is your home older than 20 years? If so, what updates have been done?
-          </label>
-          <textarea class="form-textarea-custom" name="is_your_home_older_than_20_years_if_so,_what_updat" rows="3"></textarea>
-         </div>
-         <h6 class="mt-4">
-          Claims History
-         </h6>
-         <div id="condo-claims-container">
-          <!-- Claims will be dynamically added here -->
-         </div>
-         <button class="btn btn-secondary-custom mt-3" id="add-condo-claim-btn" type="button">
-          + Add Another Claim
-         </button>
-         <h6 class="mt-4">
-          Additional Information
-         </h6>
-         <textarea class="form-textarea-custom" name="is_your_home_older_than_20_years_if_so,_what_updat" rows="3"></textarea>
-        </div>
-        <!-- Renters Insurance Section -->
-        <div class="hidden" id="renters-section">
-         <h5>
-          Renters Insurance Details
-         </h5>
-         <!-- Primary Insured Section -->
-         <h6 class="mt-4">
-          Primary Insured
-          <span class="required-star">
-           *
-          </span>
-         </h6>
-         <div class="form-group-grid md-cols-2">
-          <input class="form-control-custom" name="first_name" placeholder="First Name" required="" type="text"/>
-          <input class="form-control-custom" name="last_name" placeholder="Last Name" required="" type="text"/>
-          <div class="col-span-2">
-           <label class="form-label">
-            Date of Birth
-           </label>
-           <input class="form-control-custom" name="date_of_birth" placeholder="Date of Birth" required="" type="date"/>
-          </div>
-          <input class="form-control-custom" name="occupation" placeholder="Occupation" required="" type="text"/>
-          <input class="form-control-custom" name="email" placeholder="Email" required="" type="email"/>
-          <input class="form-control-custom" name="phone_number" placeholder="Phone Number" required="" type="tel"/>
-         </div>
-         <!-- Additional Insured Section -->
-         <div class="mb-3 mt-4">
-          <label class="form-label">
-           Additional Insured Parties?
-          </label>
-          <div class="d-flex">
-           <div class="form-check me-4">
-            <input class="form-radio" id="insuredYes" name="additionalInsured" type="radio" value="yes"/>
-            <label class="form-check-label">
-             Yes
-            </label>
-           </div>
-           <div class="form-check">
-            <input class="form-radio" id="insuredNo" name="additionalInsured" type="radio" value="no"/>
-            <label class="form-check-label">
-             No
-            </label>
-           </div>
-          </div>
-         </div>
-         <div id="renters-additional-insured-container">
-          <!-- Dynamic additional insured forms will go here -->
-         </div>
-         <button class="btn btn-secondary-custom mt-3 hidden" id="add-renters-insured-btn" type="button">
-          + Add Additional Insured
-         </button>
-         <!-- Property Address Section -->
-         <h6 class="mt-4">
-          Property Address
-         </h6>
-         <div class="form-group-grid md-cols-4">
-          <input class="form-control-custom" name="address_line_1" placeholder="Address Line 1" required="" type="text"/>
-          <input class="form-control-custom" name="address_line_2" placeholder="Address Line 2" type="text"/>
-          <input class="form-control-custom" name="city" placeholder="City" required="" type="text"/>
-          <input class="form-control-custom" name="state" placeholder="State" required="" type="text"/>
-          <input class="form-control-custom" name="zip" placeholder="Zip" required="" type="text"/>
-         </div>
-         <!-- Additional Info Section -->
-         <h6 class="mt-4">
-          Additional Information
-         </h6>
-         <div class="form-group-grid md-cols-2">
-          <input class="form-control-custom" name="name_of_complex" placeholder="Name of Complex" type="text"/>
-          <input class="form-control-custom" name="name_of_property_assistant" placeholder="Name of Property Assistant" type="text"/>
-          <input class="form-control-custom" name="phone_number" placeholder="Phone Number" type="text"/>
-          <input class="form-control-custom" name="email" placeholder="Email" type="text"/>
-         </div>
-         <div class="mb-3">
-          <label class="form-label">
-           Any other information to add?
-          </label>
-          <textarea class="form-textarea-custom" name="any_other_information_to_add" rows="3"></textarea>
-         </div>
-        </div>
-        <div class="d-flex justify-content-between mt-4">
-         <button class="btn btn-secondary prev-step-btn" data-prev-step="0" type="button">
-          Back
-         </button>
-         <button class="btn btn-orange next-step-btn" type="button">
-          Next
-         </button>
-        </div>
-       </div>
-       <!-- Step 4: Review and Submit -->
-       <div class="form-step" id="step-3">
-        <h2 class="mb-4">
-         Review &amp; Submit
-        </h2>
-        <div class="border p-3 bg-light rounded mb-4" id="review-section">
-         <!-- This will be filled in with review data using JS -->
-        </div>
-        <div class="d-flex justify-content-between">
-         <button class="btn btn-secondary prev-step-btn" data-prev-step="2" type="button">
-          Back
-         </button>
-         <button class="btn btn-success" type="submit">
-          Submit
-         </button>
-        </div>
-       </div>
       </div>
-     </form>
     </div>
-   </div>
-   </main>
-  <div id="footer-placeholder">
-  </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-   document.addEventListener('DOMContentLoaded', () => {
-    // --- ELEMENT SELECTORS ---
-    const formCard = document.querySelector('.form-card');
-    const progressButtons = document.querySelectorAll('.progress-button');
-    const formSteps = document.querySelectorAll('.form-step');
-    const nextStepButtons = document.querySelectorAll('.next-step-btn');
-    const prevStepButtons = document.querySelectorAll('.prev-step-btn');
+    document.addEventListener('DOMContentLoaded', () => {
+      const progressButtons = document.querySelectorAll('.progress-button');
+      const formSteps = document.querySelectorAll('.form-step');
+      const nextStepButtons = document.querySelectorAll('.next-step-btn');
+      const prevStepButtons = document.querySelectorAll('.prev-step-btn');
+      const reviewSection = document.getElementById('review-section');
 
-    const currentCoverageSection = document.getElementById('currentCoverageSection');
-    const driversContainer = document.getElementById('driversContainer');
-    const addDriverBtn = document.getElementById('addDriverBtn');
-    const occupationSection = document.getElementById('occupationSection');
-    const insuranceSection = document.getElementById('currentInsuranceSection');
-    const accidentComment = document.getElementById('accidentComment');
-    const rentersInsuredContainer = document.getElementById('renters-additional-insured-container');
-    const addRentersInsuredBtn = document.getElementById('add-renters-insured-btn');
+      const currentCoverageSection = document.getElementById('currentCoverageSection');
+      const occupationSection = document.getElementById('occupationSection');
+      const noInsuranceExpireSection = document.getElementById('noInsuranceExpireSection');
 
-    let currentStep = 0;
+      let currentStep = 0;
 
-    // --- VALIDATION ---
-    const validateStep = (stepIndex) => {
+      // Validation (ignores hidden)
+      const validateStep = (stepIndex) => {
         const currentStepElement = formSteps[stepIndex];
         const inputs = currentStepElement.querySelectorAll('input[required], select[required], textarea[required]');
         let isValid = true;
-
         for (const input of inputs) {
-            if (input.closest('.hidden') === null) {
-                if (!input.checkValidity()) {
-                    isValid = false;
-                    input.classList.add('is-invalid');
-                } else {
-                    input.classList.remove('is-invalid');
-                }
-            }
+          if (!input.closest('.hidden') && !input.checkValidity()) {
+            isValid = false;
+            input.classList.add('is-invalid');
+          } else {
+            input.classList.remove('is-invalid');
+          }
         }
-        if (!isValid) {
-            alert('Please fill out all required fields marked with an asterisk (*).');
-        }
+        if (!isValid) alert('Please fill out all required fields marked with an asterisk (*).');
         return isValid;
-    };
+      };
 
-    // --- STEP NAVIGATION ---
-    const showStep = (stepIndex) => {
+      const showStep = (stepIndex) => {
         formSteps.forEach((step, i) => step.classList.toggle('active', i === stepIndex));
         progressButtons.forEach((btn, i) => btn.classList.toggle('active', i === stepIndex));
         currentStep = stepIndex;
+        if (stepIndex === 3) buildReview();
+      };
 
-     // If final step, build review
-  if (stepIndex === 3) buildReview();   
-    };
+      nextStepButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          if (!validateStep(currentStep)) return;
 
-   nextStepButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        console.log("Next button clicked. Current step:", currentStep);
-        if (!validateStep(currentStep)) return;
+          const selectedQuoteType = document.querySelector('input[name="quoteType"]:checked')?.value;
+          let nextStep = -1;
 
-        const selectedQuoteType = document.querySelector('input[name="quoteType"]:checked')?.value;
-        console.log("Selected Quote Type:", selectedQuoteType);
-
-        let nextStep = -1;
-
-        if (currentStep === 0) {
-            if (!selectedQuoteType) {
-                alert("Please select a Quote Type to continue.");
-                return;
-            }
-
-            if (selectedQuoteType === 'Auto' || selectedQuoteType === 'Both') {
-                nextStep = 1;
-            } else if (selectedQuoteType === 'Home/Condo/Renters') {
-                nextStep = 2;
-            }
-        } else if (currentStep === 1) {
-            nextStep = selectedQuoteType === 'Both' ? 2 : 3;
-        } else {
+          if (currentStep === 0) {
+            if (!selectedQuoteType) { alert("Please select a Quote Type to continue."); return; }
+            nextStep = (selectedQuoteType === 'Auto' || selectedQuoteType === 'Both') ? 1 : 2;
+          } else if (currentStep === 1) {
+            const selected = document.querySelector('input[name="quoteType"]:checked')?.value;
+            nextStep = (selected === 'Both') ? 2 : 3;
+          } else {
             nextStep = currentStep + 1;
-        }
+          }
 
-        if (nextStep >= 0 && nextStep < formSteps.length) {
-            console.log("Navigating to step:", nextStep);
-            showStep(nextStep);
-        } else {
-            console.warn("No valid next step found.");
-        }
-    });
-});
-
-    prevStepButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const prevStepIndex = parseInt(button.dataset.prevStep);
-            const selectedQuoteType = document.querySelector('input[name="quoteType"]:checked')?.value;
-
-            if (currentStep === 2 && selectedQuoteType === 'Both') {
-                showStep(1);
-            } else if (!isNaN(prevStepIndex)) {
-                showStep(prevStepIndex);
-            }
+          if (nextStep >= 0 && nextStep < formSteps.length) showStep(nextStep);
         });
-    });
+      });
 
-    progressButtons.forEach(button => {
+      prevStepButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const stepIndex = parseInt(button.dataset.step);
-            if (stepIndex < currentStep) {
-                showStep(stepIndex);
-            }
+          const prevStepIndex = parseInt(button.dataset.prevStep);
+          const selected = document.querySelector('input[name="quoteType"]:checked')?.value;
+          if (currentStep === 2 && selected === 'Both') showStep(1);
+          else if (!isNaN(prevStepIndex)) showStep(prevStepIndex);
         });
-    });
-const homeSelect = document.getElementById('homeQuoteType');
-const sectionByValue = {
-    homeowners: document.getElementById('homeowners-section'),
-    condo:      document.getElementById('condo-section'),
-    renters:    document.getElementById('renters-section')
-  };
+      });
 
-  function showPropertySection(value) {
-    console.log('showPropertySection called with value:', value); // <-- Debug line
-    // hide all
-    Object.values(sectionByValue).forEach(el => el && el.classList.add('hidden'));
-    // show selected
-    const target = sectionByValue[value];
-    if (target) {
-        target.classList.remove('hidden');
-        console.log('Showing section:', target.id); // <-- Debug line
-    } else {
-        console.log('Could not find section for value:', value); // <-- Debug line
-    }
-}
+      progressButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const stepIndex = parseInt(button.dataset.step);
+          if (stepIndex < currentStep) showStep(stepIndex);
+        });
+      });
 
-if (homeSelect) {
-    console.log('Home insurance dropdown found. Initializing...'); // <-- Debug line
-    // initialize based on current value (handles browser autofill/going back)
-    showPropertySection(homeSelect.value);
-    // update on change
-    homeSelect.addEventListener('change', e => showPropertySection(e.target.value));
-} else {
-    console.error('Home insurance dropdown (#homeQuoteType) not found!'); // <-- Debug line
-}
-  // --- Condo mailing toggle (scoped) ---
-  const condoMailingSection = document.getElementById('condoMailingAddressSection');
-  function updateCondoMailing(){
-    const selected = document.querySelector('#condo-section input[name="condoMailingSame"]:checked');
-    condoMailingSection?.classList.toggle('hidden', !selected || selected.value === 'yes');
-  }
-  document.querySelectorAll('#condo-section input[name="condoMailingSame"]').forEach(r => {
-    r.addEventListener('change', updateCondoMailing);
-  });
-  updateCondoMailing(); // init
+      // Home type routing (with Flood + Landlord + unified condo/renters)
+      const homeSelect = document.getElementById('homeQuoteType');
+      const sectionByValue = {
+        homeowners: document.getElementById('homeowners-section'),
+        condo:      document.getElementById('condo-renters-section'),
+        renters:    document.getElementById('condo-renters-section'),
+        flood:      document.getElementById('flood-section'),
+        landlord:   document.getElementById('landlord-section')
+      };
+      function showPropertySection(value) {
+        Object.values(sectionByValue).forEach(el => el && el.classList.add('hidden'));
+        const target = sectionByValue[value];
+        if (target) target.classList.remove('hidden');
+      }
+      if (homeSelect) {
+        showPropertySection(homeSelect.value);
+        homeSelect.addEventListener('change', e => showPropertySection(e.target.value));
+      }
 
-  // --- Homeowners mailing toggle (null-safe) ---
-  const hoMailingSection = document.getElementById('mailingAddressSection');
-  document.querySelectorAll('#homeowners-section input[name="mailingSame"]').forEach(r => {
-    r.addEventListener('change', () => {
-      const checked = document.querySelector('#homeowners-section input[name="mailingSame"]:checked');
-      hoMailingSection?.classList.toggle('hidden', !checked || checked.value === 'yes');
-    });
-  });
+      // Homeowners mailing toggle
+      const hoMailingSection = document.getElementById('mailingAddressSection');
+      document.querySelectorAll('#homeowners-section input[name="mailingSame"]').forEach(r => {
+        r.addEventListener('change', () => {
+          const checked = document.querySelector('#homeowners-section input[name="mailingSame"]:checked');
+          hoMailingSection?.classList.toggle('hidden', !checked || checked.value === 'yes');
+        });
+      });
 
-
-const reviewSection = document.getElementById('review-section');
-
-function buildReview() {
-  const allInputs = document.querySelectorAll('input, select, textarea');
-  let html = '<h5 class="mb-3">Please review your information:</h5><ul class="list-group">';
-
-  allInputs.forEach(input => {
-    const name = input.getAttribute('name');
-    const label = input.closest('.form-group')?.querySelector('label')?.innerText || input.placeholder || name;
-    const value = (input.type === 'radio' || input.type === 'checkbox')
-      ? input.checked ? input.value : ''
-      : input.value;
-
-    if (value && name && !input.closest('.hidden')) {
-      html += `<li class="list-group-item d-flex justify-content-between">
-                 <strong>${label}</strong>
-                 <span>${value}</span>
-               </li>`;
-    }
-  });
-
-  html += '</ul>';
-  reviewSection.innerHTML = html;
-}
-
-
-const mailingAddressSection = document.getElementById('mailingAddressSection');
-
-document.querySelectorAll('input[name="mailingSame"]').forEach(radio => {
-  radio.addEventListener('change', () => {
-    mailingAddressSection.classList.toggle('hidden', radio.value === 'yes' && radio.checked);
-  });
-});
-
-    // --- VEHICLE ENTRY ---
-    function createVehicleEntry() {
-        const vehicleCount = document.querySelectorAll('.vehicle-entry').length + 1;
+      // Vehicle adder: include per-vehicle coverage radios
+      function createVehicleEntry() {
         const vehiclesContainer = document.getElementById('vehiclesContainer');
+        const vehicleCount = document.querySelectorAll('.vehicle-entry').length + 1;
 
-        const newVehicleEntry = document.createElement('div');
-        newVehicleEntry.classList.add('vehicle-entry', 'mb-3', 'p-3', 'border', 'rounded');
-        newVehicleEntry.innerHTML = `
-            <h5 class="mt-4">Vehicle ${vehicleCount} <span class="required-star">*</span></h5>
-            <div class="form-group-grid md-cols-4">
-                <input type="text" name="vehicleYear" class="form-control-custom" placeholder="Year" required>
-                <input type="text" name="vehicleMake" class="form-control-custom" placeholder="Make" required>
-                <input type="text" name="vehicleModel" class="form-control-custom" placeholder="Model" required>
-                <input type="text" name="vehicleVin" class="form-control-custom" placeholder="17-digit VIN" required>
+        const wrap = document.createElement('div');
+        wrap.className = 'vehicle-entry mb-3 p-3 border rounded';
+        wrap.innerHTML = `
+          <h5 class="mt-4">Vehicle ${vehicleCount} <span class="required-star">*</span></h5>
+          <div class="form-group-grid md-cols-4">
+            <input type="text" name="vehicleYear" class="form-control-custom" placeholder="Year" required>
+            <input type="text" name="vehicleMake" class="form-control-custom" placeholder="Make" required>
+            <input type="text" name="vehicleModel" class="form-control-custom" placeholder="Model" required>
+            <input type="text" name="vehicleVin" class="form-control-custom" placeholder="17-digit VIN" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Use of Vehicle <span class="required-star">*</span></label>
+            <div class="d-flex">
+              <div class="form-check me-4">
+                <input class="form-radio" type="radio" name="vehicle${vehicleCount}Use" value="personal" required>
+                <label class="form-check-label">Personal</label>
+              </div>
+              <div class="form-check">
+                <input class="form-radio" type="radio" name="vehicle${vehicleCount}Use" value="work">
+                <label class="form-check-label">Work</label>
+              </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Use of Vehicle <span class="required-star">*</span></label>
-                <div class="d-flex">
-                    <div class="form-check me-4">
-                        <input class="form-radio" type="radio" name="vehicle${vehicleCount}Use" value="personal" required>
-                        <label class="form-check-label">Personal</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-radio" type="radio" name="vehicle${vehicleCount}Use" value="work">
-                        <label class="form-check-label">Work</label>
-                    </div>
-                </div>
+          </div>
+          <div class="mb-1">
+            <label class="form-label">Coverage for Vehicle ${vehicleCount} <span class="required-star">*</span></label>
+            <div class="d-flex">
+              <div class="form-check me-4">
+                <input class="form-radio" type="radio" name="vehicle${vehicleCount}Coverage" value="Full Coverage" required>
+                <label class="form-check-label">Full Coverage</label>
+              </div>
+              <div class="form-check">
+                <input class="form-radio" type="radio" name="vehicle${vehicleCount}Coverage" value="Liability Only">
+                <label class="form-check-label">Liability Only</label>
+              </div>
             </div>
+          </div>
         `;
+        vehiclesContainer.appendChild(wrap);
+      }
+      document.getElementById('addVehicleBtn')?.addEventListener('click', createVehicleEntry);
 
-        vehiclesContainer.appendChild(newVehicleEntry);
-    }
-
-    document.getElementById('addVehicleBtn')?.addEventListener('click', createVehicleEntry);
-
-    // --- CONDITIONAL FIELD TOGGLING ---
-    document.querySelectorAll('input[name="hasInsurance"]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            currentCoverageSection.classList.toggle('hidden', radio.value !== 'yes');
-            insuranceSection.classList.toggle('hidden', radio.value !== 'yes');
-        });
-    });
-
-    document.querySelectorAll('input[name="employmentStatus"]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            occupationSection.classList.toggle('hidden', radio.value !== 'working');
-        });
-    });
-
-    document.querySelectorAll('input[name="accidents"]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            accidentComment.classList.toggle('hidden', radio.value !== 'yes');
-        });
-    });
-
-    document.querySelectorAll('input[name="additionalDriver"]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            const show = radio.value === 'yes' && radio.checked;
-            driversContainer.classList.toggle('hidden', !show);
-            addDriverBtn.classList.toggle('hidden', !show);
-            if (!show) {
-                driversContainer.innerHTML = '<h5 class="mt-3">Additional Drivers</h5>';
-            }
-        });
-    });
-
-    document.getElementById('addDriverBtn')?.addEventListener('click', () => {
-        const count = document.querySelectorAll('.additional-driver-entry').length + 1;
-
-        const div = document.createElement('div');
-        div.classList.add('additional-driver-entry', 'border', 'rounded', 'p-3', 'mb-3');
-
-        div.innerHTML = `
-            <h6 class="mb-3">Driver ${count}</h6>
-            <div class="form-group-grid md-cols-4">
-                <input type="text" name="driverName${count}" class="form-control-custom" placeholder="Full Name" required>
-                <input type="date" name="driverDOB${count}" class="form-control-custom" placeholder="DOB" required>
-                <input type="text" name="driverLicense${count}" class="form-control-custom" placeholder="License Number" required>
-                <input type="text" name="driverSSN${count}" class="form-control-custom" placeholder="Last 4 of SSN" maxlength="4" pattern="\\d{4}" required>
+      // Inline drivers adder
+      const driversInlineContainer = document.getElementById('driversInlineContainer');
+      const addDriverInlineBtn = document.getElementById('addDriverInlineBtn');
+      let driverIdx = 1;
+      addDriverInlineBtn?.addEventListener('click', () => {
+        driverIdx++;
+        const card = document.createElement('div');
+        card.className = 'driver-entry border rounded p-3';
+        card.innerHTML = `
+          <h6 class="mb-3">Driver ${driverIdx}</h6>
+          <div class="form-group-grid md-cols-4">
+            <input type="text" name="driverName${driverIdx}" class="form-control-custom" placeholder="Full Name" required>
+            <input type="date" name="driverDOB${driverIdx}" class="form-control-custom" required>
+            <input type="text" name="driverLicense${driverIdx}" class="form-control-custom" placeholder="License Number" required>
+            <div>
+              <label class="form-label">SSN <small class="text-muted">(Optional)</small></label>
+              <input type="text" name="driverSSN${driverIdx}" class="form-control-custom" placeholder="Last 4 of SSN" maxlength="4" pattern="\\d{4}">
             </div>
-            <div class="form-group-grid md-cols-2 mt-3">
-                <input type="text" name="driverAddress${count}" class="form-control-custom" placeholder="Home Address" required>
-                <select name="driverState${count}" class="form-select-custom" required>
-                    <option selected disabled>State of License</option>
-                    <option value="TX">Texas</option>
-                    <option value="LA">Louisiana</option>
-                    <option value="OK">Oklahoma</option>
-                </select>
-            </div>
+          </div>
+          <div class="form-group-grid md-cols-3 mt-2">
+            <select name="driverState${driverIdx}" class="form-select-custom" required>
+              <option selected disabled>State of License</option>
+              <option value="TX">Texas</option>
+              <option value="LA">Louisiana</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OTHER">Other</option>
+            </select>
+            <input type="text" name="driverAddress${driverIdx}" class="form-control-custom" placeholder="Home Address" required>
+            <input type="text" name="driverZip${driverIdx}" class="form-control-custom" placeholder="ZIP Code" required>
+          </div>
         `;
+        driversInlineContainer.appendChild(card);
+      });
 
-        driversContainer.appendChild(div);
-    });
+      // Employment -> Occupation toggle
+      document.querySelectorAll('input[name="employmentStatus"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          occupationSection?.classList.toggle('hidden', radio.value !== 'working');
+        });
+      });
 
-// Homeowners - How Many Stories
-const homeownersStoriesSelect = document.querySelector('#homeowners-section .stories-select');
-const homeownersStoriesInput = document.querySelector('#homeowners-section input[name="propertyStories"]');
+      // Current insurance toggle + No-insurance expiry
+      document.querySelectorAll('input[name="hasInsurance"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          const yes = radio.value === 'yes' && radio.checked;
+          currentCoverageSection?.classList.toggle('hidden', !yes);
+          noInsuranceExpireSection?.classList.toggle('hidden', yes);
+        });
+      });
 
-if (homeownersStoriesSelect && homeownersStoriesInput) {
-    homeownersStoriesSelect.addEventListener('change', () => {
-        homeownersStoriesInput.classList.toggle('hidden', homeownersStoriesSelect.value !== 'other');
-        if (homeownersStoriesSelect.value === 'other') {
-            homeownersStoriesInput.setAttribute('required', 'true');
-        } else {
-            homeownersStoriesInput.removeAttribute('required');
-            homeownersStoriesInput.value = ''; // Clear value if hidden
-        }
-    });
-}
+      // Accidents/Tickets repeater
+      const violationsContainer = document.getElementById('violationsContainer');
+      const addViolationBtn = document.getElementById('addViolationBtn');
+      let vioIdx = 0;
+      addViolationBtn?.addEventListener('click', () => {
+        vioIdx++;
+        const v = document.createElement('div');
+        v.className = 'border rounded p-3';
+        v.innerHTML = `
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">Violation</label>
+              <input type="text" name="violationType${vioIdx}" class="form-control-custom" placeholder="e.g., At-fault accident, Speeding">
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Date</label>
+              <input type="date" name="violationDate${vioIdx}" class="form-control-custom">
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Damage Amount ($)</label>
+              <input type="number" name="violationDamage${vioIdx}" class="form-control-custom" min="0" step="1">
+            </div>
+            <div class="col-md-2">
+              <label class="form-label d-block">Ticket Received</label>
+              <div class="form-check form-check-inline">
+                <input class="form-radio" type="radio" name="violationTicket${vioIdx}" value="Yes">
+                <label class="form-check-label">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-radio" type="radio" name="violationTicket${vioIdx}" value="No">
+                <label class="form-check-label">No</label>
+              </div>
+            </div>
+          </div>
+        `;
+        violationsContainer.appendChild(v);
+      });
 
-// Homeowners - Construction Type
-const homeownersConstructionSelect = document.querySelector('#homeowners-section .construction-select');
-const homeownersConstructionInput = document.querySelector('#homeowners-section input[name="constructionType"]');
+      // Homeowners dynamic small toggles
+      const homeownersStoriesSelect = document.querySelector('#homeowners-section .stories-select');
+      const homeownersStoriesInput = document.querySelector('#homeowners-section input[name="propertyStories"]');
+      homeownersStoriesSelect?.addEventListener('change', () => {
+        const isOther = homeownersStoriesSelect.value === 'other';
+        homeownersStoriesInput.classList.toggle('hidden', !isOther);
+        if (isOther) homeownersStoriesInput.setAttribute('required','true'); else homeownersStoriesInput.removeAttribute('required');
+      });
 
-if (homeownersConstructionSelect && homeownersConstructionInput) {
-    homeownersConstructionSelect.addEventListener('change', () => {
-        homeownersConstructionInput.classList.toggle('hidden', homeownersConstructionSelect.value !== 'other');
-        if (homeownersConstructionSelect.value === 'other') {
-            homeownersConstructionInput.setAttribute('required', 'true');
-        } else {
-            homeownersConstructionInput.removeAttribute('required');
-            homeownersConstructionInput.value = ''; // Clear value if hidden
-        }
-    });
-}
+      const homeownersConstructionSelect = document.querySelector('#homeowners-section .construction-select');
+      const homeownersConstructionInput = document.querySelector('#homeowners-section input[name="constructionType"]');
+      homeownersConstructionSelect?.addEventListener('change', () => {
+        const isOther = homeownersConstructionSelect.value === 'other';
+        homeownersConstructionInput.classList.toggle('hidden', !isOther);
+        if (isOther) homeownersConstructionInput.setAttribute('required','true'); else homeownersConstructionInput.removeAttribute('required');
+      });
 
-// Homeowners - Other Feature Checkbox
-const featureOtherHomeCheckbox = document.getElementById('featureOtherHome');
-const otherFeatureTextContainerHome = document.getElementById('otherFeatureTextContainerHome');
-const otherFeatureHomeTextInput = document.querySelector('#otherFeatureTextContainerHome input[name="otherFeatureHomeText"]'); // Select the input inside the container
-
-if (featureOtherHomeCheckbox && otherFeatureTextContainerHome && otherFeatureHomeTextInput) {
-    featureOtherHomeCheckbox.addEventListener('change', () => {
+      const featureOtherHomeCheckbox = document.getElementById('featureOtherHome');
+      const otherFeatureTextContainerHome = document.getElementById('otherFeatureTextContainerHome');
+      const otherFeatureHomeTextInput = otherFeatureTextContainerHome?.querySelector('input[name="otherFeatureHomeText"]');
+      featureOtherHomeCheckbox?.addEventListener('change', () => {
         const isChecked = featureOtherHomeCheckbox.checked;
         otherFeatureTextContainerHome.classList.toggle('hidden', !isChecked);
-        if (isChecked) {
-            otherFeatureHomeTextInput.setAttribute('required', 'true');
-        } else {
-            otherFeatureHomeTextInput.removeAttribute('required');
-            otherFeatureHomeTextInput.value = ''; // Clear value if hidden
-        }
+        if (isChecked) otherFeatureHomeTextInput?.setAttribute('required','true'); else { otherFeatureHomeTextInput?.removeAttribute('required'); if (otherFeatureHomeTextInput) otherFeatureHomeTextInput.value=''; }
+      });
+
+      // Homeowners claims adder
+      const claimsContainer = document.getElementById('homeowners-claims-container');
+      const addClaimBtn = document.getElementById('add-homeowners-claim-btn');
+      let claimIndex = 0;
+      addClaimBtn?.addEventListener('click', () => {
+        claimIndex++;
+        const claimDiv = document.createElement('div');
+        claimDiv.classList.add('claim-entry','mb-3');
+        claimDiv.innerHTML = `
+          <div class="row g-2">
+            <div class="col-md-6">
+              <label class="form-label">Claim Date <span class="required-star">*</span></label>
+              <input type="date" name="homeownersClaimDate${claimIndex}" class="form-control form-control-sm" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Claim Amount <span class="required-star">*</span></label>
+              <input type="number" name="homeownersClaimAmount${claimIndex}" class="form-control form-control-sm" placeholder="e.g., 5000" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Claim Description</label>
+              <textarea name="homeownersClaimDescription${claimIndex}" class="form-control form-control-sm" rows="2" placeholder="Brief description of the claim"></textarea>
+            </div>
+          </div>
+        `;
+        claimsContainer.appendChild(claimDiv);
+      });
+
+      // Build Review
+      function buildReview() {
+        const allInputs = document.querySelectorAll('input, select, textarea');
+        let html = '<h5 class="mb-3">Please review your information:</h5><ul class="list-group">';
+        allInputs.forEach(input => {
+          const name = input.getAttribute('name');
+          if (!name) return;
+          const isHidden = input.closest('.hidden') !== null;
+          let value = '';
+          if (input.type === 'radio' || input.type === 'checkbox') {
+            value = input.checked ? input.value : '';
+          } else {
+            value = input.value;
+          }
+          if (value && !isHidden) {
+            // Try to find a label
+            let label = input.closest('div')?.querySelector('label')?.innerText?.trim();
+            if (!label) label = input.placeholder || name;
+            html += `
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>${label}</strong>
+                <span>${value}</span>
+              </li>`;
+          }
+        });
+        html += '</ul>';
+        reviewSection.innerHTML = html;
+      }
+
+      // Initial visibility
+      occupationSection?.classList.add('hidden');
+      currentCoverageSection?.classList.add('hidden');
+      noInsuranceExpireSection?.classList.add('hidden');
+
+      // Show first step
+      showStep(0);
     });
-}
-
-// Condo - Other Feature Checkbox
-// Note: You have an input directly inside the form-check div for condo-other-feature
-const condoOtherFeatureCheckbox = document.getElementById('condo-other-feature');
-const condoOtherFeatureTextInput = document.getElementById('condo-other-feature-text');
-
-if (condoOtherFeatureCheckbox && condoOtherFeatureTextInput) {
-    condoOtherFeatureCheckbox.addEventListener('change', () => {
-        const isChecked = condoOtherFeatureCheckbox.checked;
-        condoOtherFeatureTextInput.classList.toggle('hidden', !isChecked);
-        if (isChecked) {
-            condoOtherFeatureTextInput.setAttribute('required', 'true');
-        } else {
-            condoOtherFeatureTextInput.removeAttribute('required');
-            condoOtherFeatureTextInput.value = ''; // Clear value if hidden
-        }
-    });
-}
-
-// Condo - How Many Stories
-const condoStoriesSelect = document.querySelector('#condo-section .stories-select');
-const condoStoriesInput = document.querySelector('#condo-section input[name="specify_stories"]'); // Corrected name attribute
-
-if (condoStoriesSelect && condoStoriesInput) {
-    condoStoriesSelect.addEventListener('change', () => {
-        condoStoriesInput.classList.toggle('hidden', condoStoriesSelect.value !== 'other');
-        if (condoStoriesSelect.value === 'other') {
-            condoStoriesInput.setAttribute('required', 'true');
-        } else {
-            condoStoriesInput.removeAttribute('required');
-            condoStoriesInput.value = '';
-        }
-    });
-}
-
-// Condo - Construction Type
-const condoConstructionSelect = document.querySelector('#condo-section .construction-select');
-const condoConstructionInput = document.querySelector('#condo-section input[name="specify_construction_type"]'); // Corrected name attribute
-
-if (condoConstructionSelect && condoConstructionInput) {
-    condoConstructionSelect.addEventListener('change', () => {
-        condoConstructionInput.classList.toggle('hidden', condoConstructionSelect.value !== 'other');
-        if (condoConstructionSelect.value === 'other') {
-            condoConstructionInput.setAttribute('required', 'true');
-        } else {
-            condoConstructionInput.removeAttribute('required');
-            condoConstructionInput.value = '';
-        }
-    });
-}
-
-    document.querySelectorAll('input[name="additionalInsured"]').forEach(radio => {
-  radio.addEventListener('change', () => {
-    const show = radio.value === 'yes' && radio.checked;
-    rentersInsuredContainer.classList.toggle('hidden', !show);
-    addRentersInsuredBtn.classList.toggle('hidden', !show);
-  });
-});
-document.getElementById('add-renters-insured-btn')?.addEventListener('click', () => {
-  const count = document.querySelectorAll('.additional-insured-entry').length + 1;
-
-  const div = document.createElement('div');
-  div.classList.add('additional-insured-entry', 'border', 'rounded', 'p-3', 'mb-3');
-
-  div.innerHTML = `
-    <h6 class="mb-3">Additional Insured ${count}</h6>
-    <div class="form-group-grid md-cols-2">
-      <input type="text" name="insuredFirstName${count}" class="form-control-custom" placeholder="First Name" required>
-      <input type="text" name="insuredLastName${count}" class="form-control-custom" placeholder="Last Name" required>
-      <input type="date" name="insuredDOB${count}" class="form-control-custom" placeholder="DOB" required>
-      <input type="email" name="insuredEmail${count}" class="form-control-custom" placeholder="Email">
-    </div>
-  `;
-
-  rentersInsuredContainer.appendChild(div);
-});
-
-    // --- INITIAL VISIBILITY STATE ---
-    occupationSection?.classList.add('hidden');
-insuranceSection?.classList.add('hidden');
-accidentComment?.classList.add('hidden');
-currentCoverageSection?.classList.add('hidden');
-driversContainer?.classList.add('hidden');
-addDriverBtn?.classList.add('hidden');
-rentersInsuredContainer?.classList.add('hidden');
-addRentersInsuredBtn?.classList.add('hidden');
-
-    // --- SHOW FIRST STEP ON LOAD ---
-    showStep(0);
-});
   </script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-  </script>
-  <script src="js/script.js">
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
-  </script>
+
+  <!-- Google Translate (kept) -->
   <script type="text/javascript">
-   function googleTranslateElementInit() {
-        // Add a robust check to ensure the Google Translate API is fully loaded
-        if (typeof google === 'undefined' || typeof google.translate === 'undefined' || typeof google.translate.TranslateElement === 'undefined' || typeof google.translate.TranslateElement.InlineLayout === 'undefined') {
-            // If not fully loaded, try again after a short delay
-            setTimeout(googleTranslateElementInit, 100);
-            return; // Exit this call
-        }
-
-        const translateElement = document.getElementById('google_translate_element');
-        if (translateElement) {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en', // Set your page's default language
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                // Add other options here if needed, e.g., gaTrack: true
-            }, translateElement.id);
-        } else {
-            // If the element isn't ready, try again after a short delay
-            // This handles cases where load-footer.js injects the div after the callback fires.
-            setTimeout(googleTranslateElementInit, 100);
-        }
+    function googleTranslateElementInit() {
+      if (typeof google === 'undefined' || typeof google.translate === 'undefined' || typeof google.translate.TranslateElement === 'undefined' || typeof google.translate.TranslateElement.InlineLayout === 'undefined') {
+        setTimeout(googleTranslateElementInit, 100);
+        return;
+      }
+      const translateElement = document.getElementById('google_translate_element');
+      if (translateElement) {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, translateElement.id);
+      } else {
+        setTimeout(googleTranslateElementInit, 100);
+      }
     }
-
-    document.addEventListener('DOMContentLoaded', () => {
-  const claimsContainer = document.getElementById('homeowners-claims-container');
-  const addClaimBtn = document.getElementById('add-homeowners-claim-btn');
-
-  let claimIndex = 0;
-
-  addClaimBtn.addEventListener('click', () => {
-    claimIndex++;
-
-    // Create a new claim row
-    const claimDiv = document.createElement('div');
-    claimDiv.classList.add('claim-entry', 'mb-3');
-
-    claimDiv.innerHTML = `
-      <div class="row g-2">
-        <div class="col-md-6">
-          <label class="form-label">Claim Date <span class="required-star">*</span></label>
-          <input type="date" name="homeownersClaimDate${claimIndex}" class="form-control form-control-sm" required>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label">Claim Amount <span class="required-star">*</span></label>
-          <input type="number" name="homeownersClaimAmount${claimIndex}" class="form-control form-control-sm" placeholder="e.g., 5000" required>
-        </div>
-        <div class="col-12">
-          <label class="form-label">Claim Description</label>
-          <textarea name="homeownersClaimDescription${claimIndex}" class="form-control form-control-sm" rows="2" placeholder="Brief description of the claim"></textarea>
-        </div>
-      </div>
-    `;
-
-    claimsContainer.appendChild(claimDiv);
-  });
-});
-   </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
   </script>
-<script src="js/load-footer.js"></script>
-<script src="js/load-header.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
 
-<script src="js/script.js"></script>
-
-
+  <!-- Your header/footer loaders -->
+  <script src="js/load-footer.js"></script>
+  <script src="js/load-header.js"></script>
 </body>
 </html>
